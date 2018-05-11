@@ -4,6 +4,8 @@ Tracking things that have been mentioned or come up, until they can become issue
 
 ## Possible OSCAL schema changes
 
+* Move references section to the front in the catalog model
+  * How are references represented in profiles and resolved profiles?
 * Rename `@class` to `@name` throughout?
   * Poll data to see where `prop/@class=preceding-sibling::prop/@class` i.e. siblings have the same name - occurs in COBIT5, but elsewhere?
 * Introduce `<para>` as additional component-level line element replacing `<p>`? E.g. in assessments
