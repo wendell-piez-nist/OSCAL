@@ -10,7 +10,7 @@ Tracking things that have been mentioned or come up, until they can become issue
   * Poll data to see where `prop/@class=preceding-sibling::prop/@class` i.e. siblings have the same name - occurs in COBIT5, but elsewhere?
 * Introduce `<para>` as additional component-level line element replacing `<p>`? E.g. in assessments
   * This lets "prose be prose"
-  * Also provides an instruction point regarding the difference
+  * Also provides an instruction point regarding the difference between (addressable) lines (paras), and "plain p", i.e. unclassed, un-id'd HTML p....
 * Strip down prose
   * Remove `<span>` and anything else unwanted
   * Remove `@class|@id`
