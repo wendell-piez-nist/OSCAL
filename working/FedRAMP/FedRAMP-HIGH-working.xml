@@ -3,6 +3,10 @@
 <!-- Produced by running profile-produce.xpl on file:/home/wendell/Documents/OSCAL/working/FedRAMP/lib/excel-HIGH-extract.xml 2017-11-16-05:00 -->
 <profile xmlns="http://csrc.nist.gov/ns/oscal/1.0"
          id="uuid-3793ff7f-f182-4e7e-b0b2-4b0dc6fe521d">
+   <!-- NB since revs of May 2018 the IDs in this file are *broken* and do not resolve.
+      The data for this file (especially parameter settings) is expected to be provided by extraction from more current sources.
+      This file is retained as a reference for how it might look in tagging (with adjustments made for the pointers)
+   -->
    <title>FedRAMP HIGH Baseline PROFILE (extracted and aligned, no edits)</title>
    <!-- Baseline allocation of calls (in order): HIGH, MODERATE, LOW, sp800-53 -->
    <import href="../SP800-53/SP800-53-HIGH-baseline.xml">

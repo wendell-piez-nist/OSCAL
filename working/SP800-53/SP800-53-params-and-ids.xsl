@@ -16,24 +16,6 @@
   
   <xsl:mode on-no-match="shallow-copy"/>
   
-<!-- For whatever reason the source contains empty elements mapping to p elements... -->
-  <xsl:template match="p[not(matches(.,'\S'))]"/>
-  
-<!-- Reference handling: we rewrite all literal citations into links to copies created in an earlier step
-     inside /catalog/references -->
-  
-  <xsl:key name="citations-by-value" match="/*/references/ref/citation" use="normalize-space(.)"/>
-  
-  <xsl:template match="control/references/ref | subcontrol/references/ref">
-    <xsl:apply-templates/>
-  </xsl:template>
-  
-  <xsl:template match="control/references/ref/citation | subcontrol/references/ref/citation">
-    <link href="#{key('citations-by-value',normalize-space(.))/parent::ref/@id}" rel="reference">
-      <xsl:apply-templates/>
-    </link>
-  </xsl:template>
-  
   <!-- We produce param elements and insert them into controls, for any .//assign
        elements found herein.
   
@@ -59,15 +41,14 @@
           <xsl:apply-templates select="." mode="make-id"/>
         </xsl:attribute>
       </xsl:for-each>
-      <label>
+      <!--<label>
         <xsl:text>INSERT into </xsl:text>
         <xsl:apply-templates select="ancestor-or-self::*[@id][1]" mode="munge-id"/>
         <xsl:value-of select="ancestor::part[prop/@class='name'][1]/prop[@class='name'] ! (' (' || . || ')')"/>
-      </label>
-      <desc>
+      </label>-->
+      <label>
         <xsl:apply-templates/>
-      </desc>
-      
+      </label>
     </param>
   </xsl:template>
   
@@ -77,16 +58,15 @@
         <xsl:apply-templates select="." mode="make-id"/>
       </xsl:attribute>
       <label>
-        <xsl:text>SELECT for  </xsl:text>
-        <xsl:apply-templates select="ancestor-or-self::*[@id][1]" mode="munge-id"/>
+        <xsl:text>SELECTION</xsl:text>
       </label>
-      <xsl:for-each select="ancestor::part[prop/@class='name'][1]/prop[@class='name']">
+      <!--<xsl:for-each select="ancestor::part[prop/@class='name'][1]/prop[@class='name']">
         <desc>
           <xsl:text>Insertion into </xsl:text> 
           <xsl:apply-templates/>
           <xsl:value-of select="ancestor::part[prop/@class='name'][1]/prop[@class='name'] ! (' (' || . || ')')"/>
         </desc>
-      </xsl:for-each>
+      </xsl:for-each>-->
       <select>
         <xsl:if test="starts-with(.,'(one or more)')">
           <xsl:attribute name="how-many">one or more</xsl:attribute>
@@ -117,7 +97,7 @@
       <xsl:apply-templates select="@*"/>
       <xsl:attribute name="rel">related</xsl:attribute>
       <!-- display string should be acquired from the link target -->
-      <xsl:for-each select="key('cross-reference',@href)">
+      <!--<xsl:for-each select="key('cross-reference',@href)">
         <xsl:for-each select="prop[@class='name']">
           <xsl:apply-templates/>
           <xsl:text>: </xsl:text>
@@ -125,7 +105,7 @@
         <xsl:for-each select="title">
           <xsl:apply-templates/>
         </xsl:for-each>
-      </xsl:for-each>
+      </xsl:for-each>-->
     </xsl:copy>
   </xsl:template>
   
@@ -160,6 +140,7 @@
   <xsl:template as="xs:string" mode="munge-id" match="control | part">
     <xsl:value-of select="@id"/>
   </xsl:template>
+  
   <xsl:template as="xs:string" mode="munge-id" match="subcontrol">
     <xsl:value-of select="replace(@id,'\.(\.|$)','$1')"/>
   </xsl:template>
@@ -181,8 +162,14 @@
     <xsl:value-of>
       <xsl:apply-templates select="(ancestor::control | ancestor::subcontrol)[last()]" mode="munge-id"/>
       <xsl:text>_obj_</xsl:text>
-      <xsl:number format="1.a.1.a" level="multiple" count="part/part[@class='objective']"
-        from="part[@class='objective'][empty(parent::part)]"/>
+      <!--<xsl:number format="a.1.1.a.1.1." level="multiple" count="part[@class='objective']"
+        from="part[@class='objective'][empty(parent::part)]"/> works for AC-1 -->
+      <!-- Numbering scheme for AC-2     -->
+      <!--<xsl:number format="a.1.a.1" level="multiple" count="part/part[@class='objective']"
+        from="part[@class='objective'][empty(parent::part)]"/>-->
+      <!-- Instead of imposing a scheme, presently we rewrite the number given. -->
+      <xsl:value-of select="replace(prop[@class='name'],'[A-Z]+\-\d+\D','') =>
+        replace('\p{P}+','.') => replace('\.$','')"/>
     </xsl:value-of>
     <!-- Note outputs only happen to be valid in the result -->
   </xsl:template>

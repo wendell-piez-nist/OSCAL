@@ -3,7 +3,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:xw="http://csrc.nist.gov/ns/oscal/xslt/util"
   exclude-result-prefixes="xs xw"
-  
+   expand-text="true"
   
   version="3.0">
   
@@ -15,6 +15,49 @@
   <xsl:template match="/controls" xpath-default-namespace="http://scap.nist.gov/schema/sp800-53/feed/2.0">
     <xsl:next-match/>
   </xsl:template>
+  
+  <xsl:template match="family | title" xpath-default-namespace="http://scap.nist.gov/schema/sp800-53/2.0">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+    <xsl:value-of separator=" ">
+        <xsl:apply-templates mode="cap"  select="tokenize(.,'\s')"/>
+    </xsl:value-of>
+    </xsl:copy>
+  </xsl:template>
+   
+  <!--<xsl:if test="string-length(.) = (6) and (not(. = $stops))">
+    <xsl:message> not stopping {. } </xsl:message>
+  </xsl:if>-->
+  
+  <xsl:template as="xs:string" mode="cap" match=".">{ substring(.,1,1) }{ substring(.,2) => lower-case() }</xsl:template>
+  
+  <xsl:variable name="special" as="element()*">
+    <stop>PIV-I</stop>
+    <stop>PIV</stop>
+    <stop>PKI</stop>
+    <stop>I/O</stop>
+    <stop>SDLC</stop>    
+  </xsl:variable>
+  
+  <xsl:template as="xs:string" mode="cap" match=".[.=$special]">{ . }</xsl:template>
+  
+  <xsl:variable name="stops" as="element()*">
+    <stop>OF</stop>
+    <stop>W/O</stop>
+    <stop>FOR</stop>
+    <stop>BY</stop>
+    <stop>INTO</stop>
+    <stop>FROM</stop>
+    <stop>WITH</stop>
+    <stop>IN</stop>
+    <stop>TO</stop>
+    <stop>OR</stop>
+    <stop>AS</stop>
+    <stop>AT</stop>
+    <stop>AND</stop>
+  </xsl:variable>
+  
+  <xsl:template as="xs:string" mode="cap" match=".[.=$stops]">{ lower-case(.) }</xsl:template>
   
   <xsl:template match="text()">
     <xsl:apply-templates select="$operations">
