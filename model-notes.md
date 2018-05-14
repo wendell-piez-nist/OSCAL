@@ -4,7 +4,9 @@ Tracking things that have been mentioned or come up, until they can become issue
 
 ## Possible OSCAL schema changes
 
-* Move references section to the front in the catalog model
+### Catalog
+
+* Move references section to the front
   * How are references represented in profiles and resolved profiles?
 * Rename `@class` to `@name` throughout?
   * Poll data to see where `prop/@class=preceding-sibling::prop/@class` i.e. siblings have the same name - occurs in COBIT5, but elsewhere?
@@ -20,3 +22,11 @@ Tracking things that have been mentioned or come up, until they can become issue
 * Require `link/@href` in schema?
   * Arguments for enforcing this in the schema layer, not Schematron (as error or warning)
   * nb we already have Schematron that detects missing links and broken internal links
+
+### Profile
+
+* Add capabity to patch (modify) by regex-based or other many-to-one match?
+  * Supporting global and en masse removals and additions
+    * Support passing in parameters?
+    * Dynamic expansion of values...?
+  * Test this on SP800-53 profiles (priority settings)
