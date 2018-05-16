@@ -61,7 +61,7 @@
     </xsl:template>
     
     
-    <xsl:template priority="2" match="control[prop/@class='priority'] | subcontrol[prop/@class='priority']" mode="write-patch"/>
+    <xsl:template priority="2" match="control[not(prop/@class='priority')] | subcontrol[not(prop/@class='priority')]" mode="write-patch"/>
         
     <xsl:template match="control | subcontrol" mode="write-patch">
         <alter>

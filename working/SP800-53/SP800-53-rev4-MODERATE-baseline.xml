@@ -1,8 +1,8 @@
-<!-- Produced by SP800-53-profile-with-filter.xsl 2018-05-16-04:00
-        runtime parameter settings: $baseline='HIGH'-->
+<!-- Produced by SP800-53-profile-with-filter.xsl 2018-05-14-04:00
+        runtime parameter settings: $baseline='MODERATE'-->
 <profile xmlns="http://csrc.nist.gov/ns/oscal/1.0"
-         id="uuid-46dce7a1-65a8-4ade-844b-9ac95874ddfa">
-   <title>SP800-53 HIGH BASELINE IMPACT</title>
+         id="uuid-5957a919-e8b1-4540-a9fa-f88316ce8a73">
+   <title>SP800-53 MODERATE BASELINE IMPACT</title>
    <import href="SP800-53-rev4-catalog.xml">
       <include>
          <call control-id="ac-1"/>
@@ -11,23 +11,17 @@
          <call subcontrol-id="ac-2.2"/>
          <call subcontrol-id="ac-2.3"/>
          <call subcontrol-id="ac-2.4"/>
-         <call subcontrol-id="ac-2.5"/>
-         <call subcontrol-id="ac-2.11"/>
-         <call subcontrol-id="ac-2.12"/>
-         <call subcontrol-id="ac-2.13"/>
          <call control-id="ac-3"/>
          <call control-id="ac-4"/>
          <call control-id="ac-5"/>
          <call control-id="ac-6"/>
          <call subcontrol-id="ac-6.1"/>
          <call subcontrol-id="ac-6.2"/>
-         <call subcontrol-id="ac-6.3"/>
          <call subcontrol-id="ac-6.5"/>
          <call subcontrol-id="ac-6.9"/>
          <call subcontrol-id="ac-6.10"/>
          <call control-id="ac-7"/>
          <call control-id="ac-8"/>
-         <call control-id="ac-10"/>
          <call control-id="ac-11"/>
          <call subcontrol-id="ac-11.1"/>
          <call control-id="ac-12"/>
@@ -39,8 +33,6 @@
          <call subcontrol-id="ac-17.4"/>
          <call control-id="ac-18"/>
          <call subcontrol-id="ac-18.1"/>
-         <call subcontrol-id="ac-18.4"/>
-         <call subcontrol-id="ac-18.5"/>
          <call control-id="ac-19"/>
          <call subcontrol-id="ac-19.5"/>
          <call control-id="ac-20"/>
@@ -58,68 +50,46 @@
          <call subcontrol-id="au-2.3"/>
          <call control-id="au-3"/>
          <call subcontrol-id="au-3.1"/>
-         <call subcontrol-id="au-3.2"/>
          <call control-id="au-4"/>
          <call control-id="au-5"/>
-         <call subcontrol-id="au-5.1"/>
-         <call subcontrol-id="au-5.2"/>
          <call control-id="au-6"/>
          <call subcontrol-id="au-6.1"/>
          <call subcontrol-id="au-6.3"/>
-         <call subcontrol-id="au-6.5"/>
-         <call subcontrol-id="au-6.6"/>
          <call control-id="au-7"/>
          <call subcontrol-id="au-7.1"/>
          <call control-id="au-8"/>
          <call subcontrol-id="au-8.1"/>
          <call control-id="au-9"/>
-         <call subcontrol-id="au-9.2"/>
-         <call subcontrol-id="au-9.3"/>
          <call subcontrol-id="au-9.4"/>
-         <call control-id="au-10"/>
          <call control-id="au-11"/>
          <call control-id="au-12"/>
-         <call subcontrol-id="au-12.1"/>
-         <call subcontrol-id="au-12.3"/>
          <call control-id="ca-1"/>
          <call control-id="ca-2"/>
          <call subcontrol-id="ca-2.1"/>
-         <call subcontrol-id="ca-2.2"/>
          <call control-id="ca-3"/>
          <call subcontrol-id="ca-3.5"/>
          <call control-id="ca-5"/>
          <call control-id="ca-6"/>
          <call control-id="ca-7"/>
          <call subcontrol-id="ca-7.1"/>
-         <call control-id="ca-8"/>
          <call control-id="ca-9"/>
          <call control-id="cm-1"/>
          <call control-id="cm-2"/>
          <call subcontrol-id="cm-2.1"/>
-         <call subcontrol-id="cm-2.2"/>
          <call subcontrol-id="cm-2.3"/>
          <call subcontrol-id="cm-2.7"/>
          <call control-id="cm-3"/>
-         <call subcontrol-id="cm-3.1"/>
          <call subcontrol-id="cm-3.2"/>
          <call control-id="cm-4"/>
-         <call subcontrol-id="cm-4.1"/>
          <call control-id="cm-5"/>
-         <call subcontrol-id="cm-5.1"/>
-         <call subcontrol-id="cm-5.2"/>
-         <call subcontrol-id="cm-5.3"/>
          <call control-id="cm-6"/>
-         <call subcontrol-id="cm-6.1"/>
-         <call subcontrol-id="cm-6.2"/>
          <call control-id="cm-7"/>
          <call subcontrol-id="cm-7.1"/>
          <call subcontrol-id="cm-7.2"/>
-         <call subcontrol-id="cm-7.5"/>
+         <call subcontrol-id="cm-7.4"/>
          <call control-id="cm-8"/>
          <call subcontrol-id="cm-8.1"/>
-         <call subcontrol-id="cm-8.2"/>
          <call subcontrol-id="cm-8.3"/>
-         <call subcontrol-id="cm-8.4"/>
          <call subcontrol-id="cm-8.5"/>
          <call control-id="cm-9"/>
          <call control-id="cm-10"/>
@@ -127,46 +97,31 @@
          <call control-id="cp-1"/>
          <call control-id="cp-2"/>
          <call subcontrol-id="cp-2.1"/>
-         <call subcontrol-id="cp-2.2"/>
          <call subcontrol-id="cp-2.3"/>
-         <call subcontrol-id="cp-2.4"/>
-         <call subcontrol-id="cp-2.5"/>
          <call subcontrol-id="cp-2.8"/>
          <call control-id="cp-3"/>
-         <call subcontrol-id="cp-3.1"/>
          <call control-id="cp-4"/>
          <call subcontrol-id="cp-4.1"/>
-         <call subcontrol-id="cp-4.2"/>
          <call control-id="cp-6"/>
          <call subcontrol-id="cp-6.1"/>
-         <call subcontrol-id="cp-6.2"/>
          <call subcontrol-id="cp-6.3"/>
          <call control-id="cp-7"/>
          <call subcontrol-id="cp-7.1"/>
          <call subcontrol-id="cp-7.2"/>
          <call subcontrol-id="cp-7.3"/>
-         <call subcontrol-id="cp-7.4"/>
          <call control-id="cp-8"/>
          <call subcontrol-id="cp-8.1"/>
          <call subcontrol-id="cp-8.2"/>
-         <call subcontrol-id="cp-8.3"/>
-         <call subcontrol-id="cp-8.4"/>
          <call control-id="cp-9"/>
          <call subcontrol-id="cp-9.1"/>
-         <call subcontrol-id="cp-9.2"/>
-         <call subcontrol-id="cp-9.3"/>
-         <call subcontrol-id="cp-9.5"/>
          <call control-id="cp-10"/>
          <call subcontrol-id="cp-10.2"/>
-         <call subcontrol-id="cp-10.4"/>
          <call control-id="ia-1"/>
          <call control-id="ia-2"/>
          <call subcontrol-id="ia-2.1"/>
          <call subcontrol-id="ia-2.2"/>
          <call subcontrol-id="ia-2.3"/>
-         <call subcontrol-id="ia-2.4"/>
          <call subcontrol-id="ia-2.8"/>
-         <call subcontrol-id="ia-2.9"/>
          <call subcontrol-id="ia-2.11"/>
          <call subcontrol-id="ia-2.12"/>
          <call control-id="ia-3"/>
@@ -185,15 +140,11 @@
          <call subcontrol-id="ia-8.4"/>
          <call control-id="ir-1"/>
          <call control-id="ir-2"/>
-         <call subcontrol-id="ir-2.1"/>
-         <call subcontrol-id="ir-2.2"/>
          <call control-id="ir-3"/>
          <call subcontrol-id="ir-3.2"/>
          <call control-id="ir-4"/>
          <call subcontrol-id="ir-4.1"/>
-         <call subcontrol-id="ir-4.4"/>
          <call control-id="ir-5"/>
-         <call subcontrol-id="ir-5.1"/>
          <call control-id="ir-6"/>
          <call subcontrol-id="ir-6.1"/>
          <call control-id="ir-7"/>
@@ -201,16 +152,12 @@
          <call control-id="ir-8"/>
          <call control-id="ma-1"/>
          <call control-id="ma-2"/>
-         <call subcontrol-id="ma-2.2"/>
          <call control-id="ma-3"/>
          <call subcontrol-id="ma-3.1"/>
          <call subcontrol-id="ma-3.2"/>
-         <call subcontrol-id="ma-3.3"/>
          <call control-id="ma-4"/>
          <call subcontrol-id="ma-4.2"/>
-         <call subcontrol-id="ma-4.3"/>
          <call control-id="ma-5"/>
-         <call subcontrol-id="ma-5.1"/>
          <call control-id="ma-6"/>
          <call control-id="mp-1"/>
          <call control-id="mp-2"/>
@@ -219,37 +166,26 @@
          <call control-id="mp-5"/>
          <call subcontrol-id="mp-5.4"/>
          <call control-id="mp-6"/>
-         <call subcontrol-id="mp-6.1"/>
-         <call subcontrol-id="mp-6.2"/>
-         <call subcontrol-id="mp-6.3"/>
          <call control-id="mp-7"/>
          <call subcontrol-id="mp-7.1"/>
          <call control-id="pe-1"/>
          <call control-id="pe-2"/>
          <call control-id="pe-3"/>
-         <call subcontrol-id="pe-3.1"/>
          <call control-id="pe-4"/>
          <call control-id="pe-5"/>
          <call control-id="pe-6"/>
          <call subcontrol-id="pe-6.1"/>
-         <call subcontrol-id="pe-6.4"/>
          <call control-id="pe-8"/>
-         <call subcontrol-id="pe-8.1"/>
          <call control-id="pe-9"/>
          <call control-id="pe-10"/>
          <call control-id="pe-11"/>
-         <call subcontrol-id="pe-11.1"/>
          <call control-id="pe-12"/>
          <call control-id="pe-13"/>
-         <call subcontrol-id="pe-13.1"/>
-         <call subcontrol-id="pe-13.2"/>
          <call subcontrol-id="pe-13.3"/>
          <call control-id="pe-14"/>
          <call control-id="pe-15"/>
-         <call subcontrol-id="pe-15.1"/>
          <call control-id="pe-16"/>
          <call control-id="pe-17"/>
-         <call control-id="pe-18"/>
          <call control-id="pl-1"/>
          <call control-id="pl-2"/>
          <call subcontrol-id="pl-2.3"/>
@@ -260,7 +196,6 @@
          <call control-id="ps-2"/>
          <call control-id="ps-3"/>
          <call control-id="ps-4"/>
-         <call subcontrol-id="ps-4.2"/>
          <call control-id="ps-5"/>
          <call control-id="ps-6"/>
          <call control-id="ps-7"/>
@@ -271,7 +206,6 @@
          <call control-id="ra-5"/>
          <call subcontrol-id="ra-5.1"/>
          <call subcontrol-id="ra-5.2"/>
-         <call subcontrol-id="ra-5.4"/>
          <call subcontrol-id="ra-5.5"/>
          <call control-id="sa-1"/>
          <call control-id="sa-2"/>
@@ -287,13 +221,8 @@
          <call subcontrol-id="sa-9.2"/>
          <call control-id="sa-10"/>
          <call control-id="sa-11"/>
-         <call control-id="sa-12"/>
-         <call control-id="sa-15"/>
-         <call control-id="sa-16"/>
-         <call control-id="sa-17"/>
          <call control-id="sc-1"/>
          <call control-id="sc-2"/>
-         <call control-id="sc-3"/>
          <call control-id="sc-4"/>
          <call control-id="sc-5"/>
          <call control-id="sc-7"/>
@@ -301,14 +230,10 @@
          <call subcontrol-id="sc-7.4"/>
          <call subcontrol-id="sc-7.5"/>
          <call subcontrol-id="sc-7.7"/>
-         <call subcontrol-id="sc-7.8"/>
-         <call subcontrol-id="sc-7.18"/>
-         <call subcontrol-id="sc-7.21"/>
          <call control-id="sc-8"/>
          <call subcontrol-id="sc-8.1"/>
          <call control-id="sc-10"/>
          <call control-id="sc-12"/>
-         <call subcontrol-id="sc-12.1"/>
          <call control-id="sc-13"/>
          <call control-id="sc-15"/>
          <call control-id="sc-17"/>
@@ -318,12 +243,10 @@
          <call control-id="sc-21"/>
          <call control-id="sc-22"/>
          <call control-id="sc-23"/>
-         <call control-id="sc-24"/>
          <call control-id="sc-28"/>
          <call control-id="sc-39"/>
          <call control-id="si-1"/>
          <call control-id="si-2"/>
-         <call subcontrol-id="si-2.1"/>
          <call subcontrol-id="si-2.2"/>
          <call control-id="si-3"/>
          <call subcontrol-id="si-3.1"/>
@@ -333,14 +256,9 @@
          <call subcontrol-id="si-4.4"/>
          <call subcontrol-id="si-4.5"/>
          <call control-id="si-5"/>
-         <call subcontrol-id="si-5.1"/>
-         <call control-id="si-6"/>
          <call control-id="si-7"/>
          <call subcontrol-id="si-7.1"/>
-         <call subcontrol-id="si-7.2"/>
-         <call subcontrol-id="si-7.5"/>
          <call subcontrol-id="si-7.7"/>
-         <call subcontrol-id="si-7.14"/>
          <call control-id="si-8"/>
          <call subcontrol-id="si-8.1"/>
          <call subcontrol-id="si-8.2"/>
@@ -392,11 +310,6 @@
       <alter control-id="ac-8">
          <add position="starting">
             <prop class="priority">P1</prop>
-         </add>
-      </alter>
-      <alter control-id="ac-10">
-         <add position="starting">
-            <prop class="priority">P3</prop>
          </add>
       </alter>
       <alter control-id="ac-11">
@@ -509,11 +422,6 @@
             <prop class="priority">P1</prop>
          </add>
       </alter>
-      <alter control-id="au-10">
-         <add position="starting">
-            <prop class="priority">P2</prop>
-         </add>
-      </alter>
       <alter control-id="au-11">
          <add position="starting">
             <prop class="priority">P3</prop>
@@ -550,11 +458,6 @@
          </add>
       </alter>
       <alter control-id="ca-7">
-         <add position="starting">
-            <prop class="priority">P2</prop>
-         </add>
-      </alter>
-      <alter control-id="ca-8">
          <add position="starting">
             <prop class="priority">P2</prop>
          </add>
@@ -889,11 +792,6 @@
             <prop class="priority">P2</prop>
          </add>
       </alter>
-      <alter control-id="pe-18">
-         <add position="starting">
-            <prop class="priority">P3</prop>
-         </add>
-      </alter>
       <alter control-id="pl-1">
          <add position="starting">
             <prop class="priority">P1</prop>
@@ -1019,37 +917,12 @@
             <prop class="priority">P1</prop>
          </add>
       </alter>
-      <alter control-id="sa-12">
-         <add position="starting">
-            <prop class="priority">P1</prop>
-         </add>
-      </alter>
-      <alter control-id="sa-15">
-         <add position="starting">
-            <prop class="priority">P2</prop>
-         </add>
-      </alter>
-      <alter control-id="sa-16">
-         <add position="starting">
-            <prop class="priority">P2</prop>
-         </add>
-      </alter>
-      <alter control-id="sa-17">
-         <add position="starting">
-            <prop class="priority">P1</prop>
-         </add>
-      </alter>
       <alter control-id="sc-1">
          <add position="starting">
             <prop class="priority">P1</prop>
          </add>
       </alter>
       <alter control-id="sc-2">
-         <add position="starting">
-            <prop class="priority">P1</prop>
-         </add>
-      </alter>
-      <alter control-id="sc-3">
          <add position="starting">
             <prop class="priority">P1</prop>
          </add>
@@ -1129,11 +1002,6 @@
             <prop class="priority">P1</prop>
          </add>
       </alter>
-      <alter control-id="sc-24">
-         <add position="starting">
-            <prop class="priority">P1</prop>
-         </add>
-      </alter>
       <alter control-id="sc-28">
          <add position="starting">
             <prop class="priority">P1</prop>
@@ -1165,11 +1033,6 @@
          </add>
       </alter>
       <alter control-id="si-5">
-         <add position="starting">
-            <prop class="priority">P1</prop>
-         </add>
-      </alter>
-      <alter control-id="si-6">
          <add position="starting">
             <prop class="priority">P1</prop>
          </add>

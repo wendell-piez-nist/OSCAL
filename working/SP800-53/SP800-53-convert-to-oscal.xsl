@@ -53,8 +53,7 @@
   
   <xsl:template mode="integrate-objectives" match="feed:control[exists(withdrawn)] | control-enhancement[exists(withdrawn)]"/>
     
-    
-    <xsl:template mode="integrate-objectives" match="feed:control | control-enhancement">
+  <xsl:template mode="integrate-objectives" match="feed:control | control-enhancement">
       <xsl:apply-templates mode="#current"/>
   </xsl:template>
   
@@ -135,7 +134,7 @@
   </xsl:template>
   
   <xsl:template match="statement/description">
-      <p class="description">
+      <p>
         <xsl:apply-templates select="@*" mode="asElement"/>
         <xsl:apply-templates/>
       </p>
@@ -171,7 +170,7 @@
   </xsl:template>
   
   <xsl:template match="decision">
-    <p class="decision">
+    <p>
         <xsl:apply-templates/>
     </p>
   </xsl:template>
@@ -185,12 +184,16 @@
   <xsl:template match="potential-assessment">
     <part class="assessment">
       <xsl:apply-templates select="@* except @sequence" mode="asElement"/>
-      <xsl:apply-templates/>
+      <xsl:for-each-group select="object" group-by="true()">
+        <part class="objects">
+          <xsl:apply-templates select="current-group()"/>
+        </part>
+      </xsl:for-each-group>
     </part>
   </xsl:template>
   
   <xsl:template match="object">
-    <p class="object">
+    <p>
       <xsl:apply-templates/>
     </p>
   </xsl:template>

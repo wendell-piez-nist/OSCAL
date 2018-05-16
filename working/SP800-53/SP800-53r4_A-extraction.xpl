@@ -93,20 +93,20 @@
       
   </p:xslt>
   
-  <p:identity name="analysis">
-    <p:input port="source">
-      <p:pipe port="result" step="final"/>
+  <p:xslt name="analysis">
+    <p:input port="stylesheet">
+      <p:document href="SP800-53-analyze.xsl"/>
     </p:input>
-  </p:identity>
+  </p:xslt>
   
   <p:for-each name="baseline">
     <p:iteration-source select="*/*">
       <p:inline>
-        <oscal:schema-set>
+        <oscal:profile-set>
           <oscal:LOW/>
           <oscal:MODERATE/>
           <oscal:HIGH/>
-        </oscal:schema-set>
+        </oscal:profile-set>
       </p:inline>
     </p:iteration-source>
     

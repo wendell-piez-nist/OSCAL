@@ -27,6 +27,25 @@
   
   <xsl:key name="citations-by-value" match="/*/references/ref/citation" use="normalize-space(.)"/>
   
+<!-- 'Withdrawn' controls are re-expressed with properties -->
+  <xsl:template match="control[exists(.//withdrawn)] | subcontrol[exists(.//withdrawn)]">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:apply-templates select="prop/(. | preceding-sibling::*)"/>
+      <prop class="status">Withdrawn</prop>
+      <xsl:apply-templates select="prop/following-sibling::*"/>
+    </xsl:copy>
+  </xsl:template>
+
+<!-- Stripping this unwanted ws -->
+  <xsl:template match="text()[not(matches(.,'S'))][exists(../withdrawn)]"/>
+  
+  <xsl:template match="withdrawn">
+    <i>
+      <xsl:apply-templates/>
+    </i>
+  </xsl:template>
+  
   <xsl:template match="control/references/ref | subcontrol/references/ref">
     <xsl:apply-templates/>
   </xsl:template>

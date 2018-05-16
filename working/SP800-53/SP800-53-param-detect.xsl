@@ -23,7 +23,8 @@
   <xsl:template match="catalog">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
-      <xsl:apply-templates/>
+      <xsl:apply-templates select="title,declarations"/>
+      <!-- In this pass we produce a references section, but we don't link it till later. -->
       <references>
         <xsl:for-each-group select="//citation" group-by="normalize-space(.)">
           <xsl:sort select="current-grouping-key()"  lang="en"/>
@@ -32,6 +33,7 @@
           </ref>
         </xsl:for-each-group>
       </references>
+      <xsl:apply-templates select="* except (title | declarations)"/>
     </xsl:copy>
   </xsl:template>
   

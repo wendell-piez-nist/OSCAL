@@ -53,12 +53,13 @@
   </xsl:template>
   
   <xsl:template match="selection" mode="make-param">
+    <xsl:variable name="oneOrMore" select="starts-with(.,'(one or more)')"/>
     <param>
       <xsl:attribute name="id">
         <xsl:apply-templates select="." mode="make-id"/>
       </xsl:attribute>
       <label>
-        <xsl:text>SELECTION</xsl:text>
+        <xsl:text expand-text="true">SELECTION{ if ( $oneOrMore) then ' (one or more)' else '' }</xsl:text>
       </label>
       <!--<xsl:for-each select="ancestor::part[prop/@class='name'][1]/prop[@class='name']">
         <desc>
@@ -68,7 +69,7 @@
         </desc>
       </xsl:for-each>-->
       <select>
-        <xsl:if test="starts-with(.,'(one or more)')">
+        <xsl:if test="$oneOrMore">
           <xsl:attribute name="how-many">one or more</xsl:attribute>
         </xsl:if>
         <xsl:apply-templates mode="#default"/>
