@@ -2,16 +2,17 @@
 
 Tracking things that have been mentioned or come up, until they can become issues or go stale.
 
-## Possible OSCAL schema changes
+## Possible OSCAL schema changes under discussion
 
-### Catalog - to do
+### Catalog
 
 - [ ] Rename `class` to `name` throughout
-  - [ ] this impacts Schematrons, CSS and XSLT 
+  - [ ] This impacts Schematrons, CSS and XSLT
+  - [ ] Can we remove support for multiple @name (where it is found)?
 
 ### Profile
 
-- [ ] Add capabity to patch (modify) by regex-based or other many-to-one m
+- [ ] Add capabity to patch (modify) by regex-based or other multiple match
   - [ ] Supporting global and en masse removals and additions
     - [ ] Support passing in parameters?
     - [ ] Dynamic expansion of values...?
