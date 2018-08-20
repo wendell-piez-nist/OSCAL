@@ -1,0 +1,218 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://csrc.nist.gov/ns/oscal/1.0/sample01-structured",
+  "title": "Sample 01 Control Schema",
+  "type": "object",
+  "definitions": {
+    "param": {
+      "$id": "#/definitions/param",
+      "type": "object",
+      "properties": {
+        "desc": {
+          "$ref": "#/definitions/desc"
+        },
+        "label": {
+          "$ref": "#/definitions/label"
+        },
+        "value": {
+          "$ref": "#/definitions/value"
+        },
+        "class": {
+          "$ref": "#/definitions/class"
+        }
+      },
+      "propertyNames": {
+        "enum": [ "desc", "label", "value", "class" ]
+      }
+    },
+    "desc": {
+      "$id": "#/definitions/desc",
+      "type": "string"
+    },
+    "label": {
+      "$id": "#/definitions/label",
+      "type": "string"
+    },
+    "value": {
+      "$id": "#/definitions/value",
+      "type": "string"
+    },
+    "link": {
+      "$id": "#/definitions/link",
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri-reference"
+        },
+        "rel": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "enum": [ "href", "rel", "value" ]
+      }
+    },
+    "references": {
+      "$id": "#/definitions/references",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ref"
+      },
+      "propertyNames": {
+        "enum": [ "refs" ]
+      }
+    },
+    "ref": {
+      "$id": "#/definitions/ref",
+      "type": "object",
+      "properties": {
+        "citation": {
+          "type": "string"
+        }
+      },
+      "propertyNames": {
+        "enum": [ "citation" ]
+      }
+    },
+    "prop": {
+      "$id": "#/definitions/prop",
+      "type": "object",
+      "properties": {
+        "class": {
+          "$ref": "#/definitions/class"
+        },
+        "value": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [ "class" ],
+      "propertyNames": {
+        "enum": [ "class", "value", "id" ]
+      }
+    },
+    "part": {
+      "$id": "#/definitions/part",
+      "type": "object",
+      "properties": {
+        "prop": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "propertyNames": {
+            "$ref": "sample01-structured-meta-schema.json#/definitions/propNames"
+          }
+        },
+        "parts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "$ref": "#/definitions/part"
+          },
+          "propertyNames": {
+            "$ref": "sample01-structured-meta-schema.json#/definitions/partNames"
+          }
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/paragraph"
+          }
+        },
+        "unorderedLists": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/unorderedList"
+          }
+        },
+        "class": {
+          "$ref": "#/definitions/class"
+        },
+        "id": {
+          "type": "string"
+        }
+      },
+      "required": [ "class" ],
+      "propertyNames": {
+        "enum": [ "prop", "parts", "paragraphs", "unorderedLists", "class", "id" ]
+      }
+    },
+    "paragraph": {
+      "$id": "#/definitions/paragraph",
+      "type": "string"
+    },
+    "unorderedList": {
+      "$id": "#/definitions/unorderedList",
+      "type": "object",
+      "properties": {
+        "listItems": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/listItem"
+          }
+        }
+      },
+      "propertyNames": {
+        "enum": [ "listItems" ]
+      }
+    },
+    "listItem": {
+      "$id": "#/definitions/listItem",
+      "type": "string"
+    },
+    "class": {
+      "$id": "#/definitions/class",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "props": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "propertyNames": {
+        "$ref": "sample01-structured-meta-schema.json#/definitions/propNames"  
+      }      
+    },
+    "params": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/param"
+      },
+      "propertyNames": {
+        "$ref": "sample01-structured-meta-schema.json#/definitions/paramNames"
+      }
+    },
+    "parts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/definitions/part" 
+      },
+      "propertyNames": {
+        "$ref": "sample01-structured-meta-schema.json#/definitions/partNames"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/link"
+      }
+    },
+    "references": {
+      "$ref": "#/definitions/references"
+    }
+  },
+  "propertyNames": {
+    "enum": [ "title", "props", "params", "parts", "links", "references" ]
+  }
+}

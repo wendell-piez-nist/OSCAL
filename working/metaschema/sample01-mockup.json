@@ -1,0 +1,65 @@
+{"control": {
+    "props": [
+        {
+            "class": "prop1",
+            "value": "Property 1"
+        },
+        {
+            "class": "prop2",
+            "value": "Property 2"
+        }
+    ],
+    "params": [
+        {
+            "id": "param3",
+            "class": "param",
+            "desc": "Parameter 3 description",
+            "label": "Parameter 3",
+            "value": "Parameter value 3"
+        },
+        {
+            "id": "param4",
+            "class": "param",
+            "desc": "Parameter 4 description",
+            "label": "Parameter 4",
+            "value": "Parameter value 4"
+        }
+    ],
+    "parts": [
+        {
+            "class": "part5",
+            "prose": [
+                "<p>Here's some random prose.<\/p>",
+                "<ul>\n <li>LI 1<\/li>\n <li>LI 2<\/li>\n <li>LI 3<\/li>\n <\/ul>",
+                "<p>More prose for the heck of it.<\/p>"
+            ]
+        },
+        {
+            "class": "part6",
+            "prose": ["<p>Prose in a new part.<\/p>"]
+        },
+        {
+            "class": "part7",
+            "props": [
+                {
+                    "class": "part7-prop1",
+                    "value": "Part property value"
+                }
+            ],
+            "prose": ["<p>Complex parts may have props and parts of their own.<\/p>"],
+            "parts": [
+                {
+                    "class": "part7-1",
+                    "prose": ["<p>Subpart prose.<\/p>"]
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "rel": "reference",
+            "href": "#somelink",
+            "value": "link"
+        }
+    ]
+}}

@@ -1,0 +1,120 @@
+<?xml-model href="metaschema3.rnc" type="application/relax-ng-compact-syntax"?>
+<?xml-model href="metaschema-check.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<METASCHEMA top="controls" use="control">
+
+  <!-- The METASCHEMA  provides a means of developing and producing parallel XSD and JSON schemas
+      from a single source, validating the same models in both syntaxes.
+  It does this by defining "primitives" or "prototypes" that are then exploited by
+  declarations which know how to bind them to appropriate data types. Since their behaviors
+  are well-defined, these prototypes provide a framing structure from which an appropriate
+  set of declarations (either for XML or for JSON data) may be expanded. The same
+  declarations set can provide runtime configuration to conversion scripts that cast
+  between XML and JSON equivalents.
+  
+  -->
+
+
+  <!-- type must be one of the following:
+  field     - scalar value / no mixed inline content
+  line      - supports inline mixed content including bold, italic, sub/superscript and {{insert}}
+  component - mix of everything including maybe prose (once)
+    (component was 'part')
+  
+  NB how prose appears only in particular locations, namely (once) in components.
+  
+  Design note: in some designs, an element 'p' might be produced as a line, supporting markdown in the JSON.
+  But this doesn't support lists or preformatted blocks. For those, use a statement or prose inside a component
+  
+  -->
+
+  <define-component name="control" group-as="controls">
+    <attribute name="class"/>
+    <field required="yes" named="title"/>
+    <fields named="prop" group-as="props"/>
+    <components named="param" group-as="params" label="id"/>
+
+
+    <components named="part" group-as="parts"/>
+    <fields named="link" group-as="links"/>
+    <!--<components declared-as="subcontrol"/>-->
+    <component named="references"/>
+  </define-component>
+
+  <define-field name="title" has-id="none" as="mixed"/>
+
+  <define-field name="prop" group-as="props">
+    <attribute name="class" required="yes"/>
+  </define-field>
+
+  <define-component group-as="params" name="param" label="id" has-id="required">
+    <attribute name="id" required="yes" datatype="ID"/>
+    <attribute name="class"/>
+    <!-- should be label, desc* but the sample has it backward -->
+    <fields      named="desc" group-as="descriptions"/>
+    <field       named="label"/>
+    <fields      named="requirement" group-as="requirements"/>
+    <choice>
+      <field     named="value"/>
+      <component named="select"/>
+    </choice>
+    <fields named="link" group-as="links"/>
+    <components named="part" group-as="parts"/>
+  </define-component>
+
+  
+<!-- key design q: is an entity a property of an object (such as a parameter belongs to a control)
+     or is it a member of a sequence (array) contained in that object (such as a control in a group)
+     So we promote param/@id to its label, but not control/@id (or don't we?)
+     
+     How, on the Schematron side, do we validate that IDs given as labels are unique (in document wide scope)?
+     
+  -->
+  <define-field name="label" has-id="none" as="mixed"/>
+
+  <!-- @has-id = none on lines and properties, when there are no attributes, permits
+     us to produce a string (not an object) on the JSON side. -->
+  <define-field name="desc" group-as="descriptions" has-id="none"  as="mixed"/>
+
+  <define-field name="requirement" group-as="requirements">
+    <attribute name="test"/>
+  </define-field>
+
+  <define-field name="value" has-id="none" as="mixed"/>
+
+  <define-component name="select">
+    
+    <attribute name="how-many"/>
+    <components named="choice" group-as="alternatives"/>
+  </define-component>
+
+  <define-field name="choice" group-as="alternatives" as="mixed"/>
+
+  <define-component name="part" group-as="parts">
+    <attribute name="class"/>
+    <field     named="title"/>
+    <fields    named="prop" group-as="props"/>
+    <prose/>
+    <components named="part" group-as="parts"/>
+    <fields     named="link" group-as="links"/>
+  </define-component>
+
+  <define-field name="link" group-as="links" as="mixed">
+    <attribute name="href" datatype="anyURI"/>
+    <attribute name="rel"  datatype="NCName"/>
+  </define-field>
+
+  <define-component name="references">
+    <components group-as="refs" named="ref"/>
+  </define-component>
+
+  <define-component name="ref" group-as="refs">
+    <fields group-as="citations" named="citation"/>
+  </define-component>
+
+  <define-field as="mixed" group-as="citations" name="citation">
+    <attribute name="href" datatype="anyURI"/>
+  </define-field>
+
+<!-- See metaschema-sketch4.xml for a full Metaschema including groups and subcontrols (but not declarations) -->
+
+</METASCHEMA>

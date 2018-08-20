@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- OSCAL LITERALIZATION happened here -->
+<control xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <title>Sample Control, with Title</title>
+    <prop1 type="oscal:property" class="prop1">Property 1</prop1>
+    <prop2 type="oscal:property" class="prop2">Property 2</prop2>
+    <prop-r type="oscal:property" class="prop-r">Property Repeatable</prop-r>
+    <prop-r type="oscal:property" class="prop-r" id="special-property">Another property Repeatable</prop-r>
+    <param id="param3" class="param3">
+        <desc>Parameter 3 description</desc>
+        <label>Parameter 3</label>
+        <value>Parameter value 3</value>
+    </param>
+    <param id="param4">
+        <desc>Parameter 4 description</desc>
+        <label>Parameter 4</label>
+        <value>Parameter value 4</value>
+    </param>
+    <part5 type="oscal:part" id="part5" class="part5">
+        <p>Here's some random prose.</p>
+        <ul>
+            <li>LI 1</li>
+            <li>LI 2</li>
+            <li>LI 3</li>
+        </ul>
+        <p>More prose for the heck of it.</p>
+    </part5>
+    <part6 type="oscal:part" class="part6">
+        <p>Prose in a new part.</p>
+    </part6>
+    <part7 type="oscal:part" class="part7">
+        <part7-prop1 type="oscal:property" class="part7-prop1">Part property value</part7-prop1>
+        <p>Complex parts may have props and parts of their own.</p>
+        <part7-1 type="oscal:part" class="part7-1">
+         <p>Subpart prose.</p>
+      </part7-1>
+    </part7>
+    <part8repeats type="oscal:part" class="part8repeats">
+        <p>Uhoh</p>
+    </part8repeats>
+    <part8repeats type="oscal:part" class="part8repeats">
+        <p>Uhoh</p>
+    </part8repeats>
+    <link rel="reference" href="#somelink">link</link>
+    <references>
+        <ref>
+            <citation>A citation of some nature</citation>
+        </ref>
+    </references>
+</control>

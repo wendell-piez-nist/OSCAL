@@ -1,0 +1,162 @@
+default namespace = ""
+
+# extra-schema constraints:
+#  prose may not appear twice among siblings
+#  @named may not be repeated among siblings
+#  same w/ @group-as
+#  likewise @named may not equal any ../../@group-as
+#  @declared-as always resolves (to some /*/*/@name)
+start =
+    element METASCHEMA {
+        attribute top { xsd:NCName },
+        (component-definition
+         | property-definition
+         | line-definition
+         | part-definition
+         | statement-definition)+
+    }
+component-definition =
+    element define-component {
+        attribute group-as { xsd:NCName },
+        attribute name { xsd:NCName },
+        attribute label-as { "id" }?,
+        attribute require { xsd:NCName }?,
+        \attribute*,
+        (lines
+         | line
+         | properties
+         | property
+         | statements
+         | statement
+         | parts
+         | part
+         | components
+         | component)*
+    }
+component-contents =
+    (property
+     | properties
+     | line
+     | lines
+     | statement
+     | statements
+     | component
+     | components
+     | part
+     | parts)*
+component =
+    element component {
+        attribute declared-as { xsd:NCName }
+        | (attribute named { xsd:NCName },
+           \attribute*,
+           component-contents)
+    }
+components =
+    element components {
+        attribute declared-as { xsd:NCName }
+        | (attribute group-as { xsd:NCName },
+           attribute named { xsd:NCName },
+           attribute label-as { "id" }?,
+           \attribute*,
+           component-contents)
+    }
+property-definition =
+    element define-property {
+        attribute group-as { xsd:NCName }?,
+        attribute name { xsd:NCName },
+        attribute label-as { "id" }?,
+        \attribute*
+    }
+property =
+    element property {
+        attribute declared-as { xsd:NCName }
+        | (attribute named { xsd:NCName },
+           attribute required { xsd:NCName }?,
+           \attribute*)
+    }
+properties =
+    element properties {
+        attribute declared-as { xsd:NCName }
+        | (attribute group-as { xsd:NCName },
+           attribute named { xsd:NCName },
+           attribute label-as { "id" }?,
+           attribute required { xsd:NCName }?,
+           \attribute*)
+    }
+line-definition =
+    element define-line {
+        attribute group-as { xsd:NCName },
+        attribute name { xsd:NCName },
+        attribute label-as { "id" }?,
+        \attribute*
+    }
+line =
+    element line {
+        attribute declared-as { xsd:NCName }
+        | (attribute named { xsd:NCName },
+           attribute required { xsd:NCName }?,
+           \attribute*)
+    }
+lines =
+    element lines {
+        attribute declared-as { xsd:NCName }
+        | (attribute group-as { xsd:NCName },
+           attribute named { xsd:NCName },
+           attribute label-as { "id" }?,
+           attribute required { xsd:NCName }?,
+           \attribute*)
+    }
+statement-definition =
+    element define-statement {
+        attribute group-as { xsd:NCName }?,
+        attribute name { xsd:NCName },
+        attribute label-as { "id" }?,
+        \attribute+
+    }
+statement =
+    element statement {
+        attribute declared-as { xsd:NCName }
+        | (attribute named { xsd:NCName },
+           attribute required { xsd:NCName }?)
+    }
+statements =
+    element statements {
+        attribute declared-as { xsd:NCName }
+        | (attribute group-as { xsd:NCName },
+           attribute named { xsd:NCName },
+           attribute label-as { "id" }?,
+           attribute required { xsd:NCName }?)
+    }
+
+part-definition =
+    element define-part {
+        attribute group-as { xsd:NCName },
+        attribute name { xsd:NCName },
+        attribute label-as { "id" }?,
+        \attribute*,
+        (prose | component-contents)*
+    }
+part =
+    element part {
+        attribute declared-as { xsd:NCName }
+        | (attribute named { xsd:NCName },
+           \attribute*,
+           (prose | component-contents)*)
+    }
+parts =
+    element parts {
+        attribute declared-as { xsd:NCName }
+        | (attribute group-as { xsd:NCName },
+           attribute named { xsd:NCName },
+           attribute label-as { "id" }?,
+           \attribute*,
+           (prose | component-contents)*)
+    }
+prose = element prose { empty }
+\attribute =
+    element attribute {
+        attribute datatype { xsd:NCName }?,
+        attribute name { xsd:NCName },
+        attribute required { xsd:NCName }?
+    }
+\mixed = element mixed { empty }

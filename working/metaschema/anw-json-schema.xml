@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns="http://www.w3.org/2005/xpath-functions">
+   <string key="$schema">http://json-schema.org/draft-07/schema#</string>
+   <string key="$id">http://csrc.nist.gov/ns/oscal/1.0/sample01-structured</string>
+   <string key="title">Sample 01 Control Schema</string>
+   <string key="type">object</string>
+   <map key="definitions">
+      <map key="param">
+         <string key="$id">#/definitions/param</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="desc">
+               <string key="$ref">#/definitions/desc</string>
+            </map>
+            <map key="label">
+               <string key="$ref">#/definitions/label</string>
+            </map>
+            <map key="value">
+               <string key="$ref">#/definitions/value</string>
+            </map>
+            <map key="class">
+               <string key="$ref">#/definitions/class</string>
+            </map>
+         </map>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>desc</string>
+               <string>label</string>
+               <string>value</string>
+               <string>class</string>
+            </array>
+         </map>
+      </map>
+      <map key="desc">
+         <string key="$id">#/definitions/desc</string>
+         <string key="type">string</string>
+      </map>
+      <map key="label">
+         <string key="$id">#/definitions/label</string>
+         <string key="type">string</string>
+      </map>
+      <map key="value">
+         <string key="$id">#/definitions/value</string>
+         <string key="type">string</string>
+      </map>
+      <map key="link">
+         <string key="$id">#/definitions/link</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="href">
+               <string key="type">string</string>
+               <string key="format">uri-reference</string>
+            </map>
+            <map key="rel">
+               <string key="type">string</string>
+            </map>
+            <map key="value">
+               <string key="type">string</string>
+            </map>
+         </map>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>href</string>
+               <string>rel</string>
+               <string>value</string>
+            </array>
+         </map>
+      </map>
+      <map key="references">
+         <string key="$id">#/definitions/references</string>
+         <string key="type">array</string>
+         <map key="items">
+            <string key="$ref">#/definitions/ref</string>
+         </map>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>refs</string>
+            </array>
+         </map>
+      </map>
+      <map key="ref">
+         <string key="$id">#/definitions/ref</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="citation">
+               <string key="type">string</string>
+            </map>
+         </map>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>citation</string>
+            </array>
+         </map>
+      </map>
+      <map key="prop">
+         <string key="$id">#/definitions/prop</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="class">
+               <string key="$ref">#/definitions/class</string>
+            </map>
+            <map key="value">
+               <string key="type">string</string>
+            </map>
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+         </map>
+         <array key="required">
+            <string>class</string>
+         </array>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>class</string>
+               <string>value</string>
+               <string>id</string>
+            </array>
+         </map>
+      </map>
+      <map key="part">
+         <string key="$id">#/definitions/part</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="prop">
+               <string key="type">object</string>
+               <map key="additionalProperties">
+                  <string key="type">string</string>
+               </map>
+               <map key="propertyNames">
+                  <string key="$ref">sample01-structured-meta-schema.json#/definitions/propNames</string>
+               </map>
+            </map>
+            <map key="parts">
+               <string key="type">object</string>
+               <map key="additionalProperties">
+                  <string key="type">object</string>
+                  <string key="$ref">#/definitions/part</string>
+               </map>
+               <map key="propertyNames">
+                  <string key="$ref">sample01-structured-meta-schema.json#/definitions/partNames</string>
+               </map>
+            </map>
+            <map key="paragraphs">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/paragraph</string>
+               </map>
+            </map>
+            <map key="unorderedLists">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/unorderedList</string>
+               </map>
+            </map>
+            <map key="class">
+               <string key="$ref">#/definitions/class</string>
+            </map>
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+         </map>
+         <array key="required">
+            <string>class</string>
+         </array>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>prop</string>
+               <string>parts</string>
+               <string>paragraphs</string>
+               <string>unorderedLists</string>
+               <string>class</string>
+               <string>id</string>
+            </array>
+         </map>
+      </map>
+      <map key="paragraph">
+         <string key="$id">#/definitions/paragraph</string>
+         <string key="type">string</string>
+      </map>
+      <map key="unorderedList">
+         <string key="$id">#/definitions/unorderedList</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="listItems">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/listItem</string>
+               </map>
+            </map>
+         </map>
+         <map key="propertyNames">
+            <array key="enum">
+               <string>listItems</string>
+            </array>
+         </map>
+      </map>
+      <map key="listItem">
+         <string key="$id">#/definitions/listItem</string>
+         <string key="type">string</string>
+      </map>
+      <map key="class">
+         <string key="$id">#/definitions/class</string>
+         <string key="type">string</string>
+      </map>
+   </map>
+   <map key="properties">
+      <map key="title">
+         <string key="type">string</string>
+      </map>
+      <map key="props">
+         <map key="additionalProperties">
+            <string key="type">string</string>
+         </map>
+         <map key="propertyNames">
+            <string key="$ref">sample01-structured-meta-schema.json#/definitions/propNames</string>
+         </map>
+      </map>
+      <map key="params">
+         <string key="type">object</string>
+         <map key="additionalProperties">
+            <string key="$ref">#/definitions/param</string>
+         </map>
+         <map key="propertyNames">
+            <string key="$ref">sample01-structured-meta-schema.json#/definitions/paramNames</string>
+         </map>
+      </map>
+      <map key="parts">
+         <string key="type">object</string>
+         <map key="additionalProperties">
+            <string key="$ref">#/definitions/part</string>
+         </map>
+         <map key="propertyNames">
+            <string key="$ref">sample01-structured-meta-schema.json#/definitions/partNames</string>
+         </map>
+      </map>
+      <map key="links">
+         <string key="type">array</string>
+         <map key="items">
+            <string key="$ref">#/definitions/link</string>
+         </map>
+      </map>
+      <map key="references">
+         <string key="$ref">#/definitions/references</string>
+      </map>
+   </map>
+   <map key="propertyNames">
+      <array key="enum">
+         <string>title</string>
+         <string>props</string>
+         <string>params</string>
+         <string>parts</string>
+         <string>links</string>
+         <string>references</string>
+      </array>
+   </map>
+</map>

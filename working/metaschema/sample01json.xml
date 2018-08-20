@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns="http://www.w3.org/2005/xpath-functions">
+   <map key="control">
+      <array key="props">
+         <map>
+            <string key="class">prop1</string>
+            <string key="value">Property 1</string>
+         </map>
+         <map>
+            <string key="class">prop2</string>
+            <string key="value">Property 2</string>
+         </map>
+      </array>
+      <array key="params">
+         <map>
+            <string key="id">param3</string>
+            <string key="class">param</string>
+            <string key="desc">Parameter 3 description</string>
+            <string key="label">Parameter 3</string>
+            <string key="value">Parameter value 3</string>
+         </map>
+         <map>
+            <string key="id">param4</string>
+            <string key="class">param</string>
+            <string key="desc">Parameter 4 description</string>
+            <string key="label">Parameter 4</string>
+            <string key="value">Parameter value 4</string>
+         </map>
+      </array>
+      <array key="parts">
+         <map>
+            <string key="class">part5</string>
+            <array key="prose">
+               <string>&lt;p&gt;Here's some random prose.&lt;/p&gt;</string>
+               <string>&lt;ul&gt;
+            &lt;li&gt;LI 1&lt;/li&gt;
+            &lt;li&gt;LI 2&lt;/li&gt;
+            &lt;li&gt;LI 3&lt;/li&gt;
+        &lt;/ul&gt;</string>
+               <string>&lt;p&gt;More prose for the heck of it.&lt;/p&gt;</string>
+            </array>
+         </map>
+         <map>
+            <string key="class">part6</string>
+            <array key="prose">
+               <string>&lt;p&gt;Prose in a new part.&lt;/p&gt;</string>
+            </array>
+         </map>
+         <map>
+            <string key="class">part7</string>
+            <array key="props">
+               <map>
+                  <string key="class">part7-prop1</string>
+                  <string key="value">Part property value</string>
+               </map>
+            </array>
+            <array key="prose">
+               <string>&lt;p&gt;Complex parts may have props and parts of their own.&lt;/p&gt;</string>
+            </array>
+            <array key="parts">
+               <map>
+                  <string key="class">part7-1</string>
+                  <array key="prose">
+                     <string>&lt;p&gt;Subpart prose.&lt;/p&gt;</string>
+                  </array>
+               </map>
+            </array>
+         </map>
+      </array>
+      <array key="links">
+         <map>
+            <string key="rel">reference</string>
+            <string key="href">#somelink</string>
+            <string key="value">link</string>
+         </map>
+      </array>
+   </map>
+</map>

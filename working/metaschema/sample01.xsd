@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://csrc.nist.gov/ns/oscal/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0">
+  
+  <xs:element name="control">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="oscal:prop"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="oscal:param"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="oscal:part"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="oscal:link"/>
+        <xs:element minOccurs="0" ref="oscal:references"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="param">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="oscal:desc"/>
+        <xs:element ref="oscal:label"/>
+        <xs:element ref="oscal:value"/>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+      <xs:attribute name="id"    use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="desc">
+    <xs:complexType mixed="true"/>
+  </xs:element>
+
+  <xs:element name="label">
+    <xs:complexType mixed="true"/>
+  </xs:element>
+  
+  <xs:element name="value">
+    <xs:complexType mixed="true"/>
+  </xs:element>
+  
+  <xs:element name="link">
+    <xs:complexType mixed="true">
+       <xs:attribute name="href" type="xs:anyURI"/>
+       <xs:attribute name="rel"  type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="references">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="oscal:ref"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="ref">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="oscal:citation"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="citation">
+    <xs:complexType mixed="true"/>
+  </xs:element>
+  
+  <xs:element name="prop">
+    <xs:complexType mixed="true">
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="part">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="oscal:prop"/>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element ref="oscal:part"/>
+          <xs:element ref="oscal:p"/>
+          <xs:element ref="oscal:ul"/>
+        </xs:choice>
+      </xs:sequence>
+      <xs:attribute name="class" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="p" type="xs:string"/>
+  
+  <xs:element name="ul">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="oscal:li"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="li" type="xs:string"/>
+</xs:schema>

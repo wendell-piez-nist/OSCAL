@@ -58,9 +58,9 @@
       <xsl:attribute name="id">
         <xsl:apply-templates select="." mode="make-id"/>
       </xsl:attribute>
-      <label>
+      <!--<label>
         <xsl:text expand-text="true">SELECTION{ if ( $oneOrMore) then ' (one or more)' else '' }</xsl:text>
-      </label>
+      </label>-->
       <!--<xsl:for-each select="ancestor::part[prop/@class='name'][1]/prop[@class='name']">
         <desc>
           <xsl:text>Insertion into </xsl:text> 
@@ -169,6 +169,7 @@
       <!--<xsl:number format="a.1.a.1" level="multiple" count="part/part[@class='objective']"
         from="part[@class='objective'][empty(parent::part)]"/>-->
       <!-- Instead of imposing a scheme, presently we rewrite the number given. -->
+      <!-- CHECK FOR CORRECTNESS -->
       <xsl:value-of select="replace(prop[@class='name'],'[A-Z]+\-\d+\D','') =>
         replace('\p{P}+','.') => replace('\.$','')"/>
     </xsl:value-of>

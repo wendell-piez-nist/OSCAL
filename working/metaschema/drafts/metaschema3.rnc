@@ -1,0 +1,78 @@
+default namespace = ""
+
+# extra-schema constraints:
+#  prose may not appear twice among siblings i.e. count(prose) is never gt 1
+#  @named may not be repeated among siblings
+#  same w/ @group-as
+#  likewise @named may not equal any @group-as
+#  @named always resolves (to some /*/*/@name)
+
+start =
+    element METASCHEMA {
+        attribute top { xsd:NCName },
+        attribute use { xsd:NCName },
+        (  component-definition
+         | field-definition )+
+    }
+
+declaration-references =
+        (choice |
+         fields | field |
+         components | component)*
+
+choice = element choice { declaration-references }
+
+component-definition =
+    element define-component {
+        attribute name { xsd:NCName },
+        attribute group-as { xsd:NCName }?,
+        attribute label { "id" }?,
+        attribute has-id { "none" | "required" }?, # not given = "optional"
+        \attribute*,
+        # NB more than one 'prose' not supported - w/o required elements interceding
+        (prose | declaration-references)*
+    }
+
+component =
+    element component {
+        attribute named { xsd:NCName },
+        attribute required { "yes" }? }
+        
+components =
+    element components {
+        attribute named { xsd:NCName },
+        attribute group-as { xsd:NCName },
+        attribute label { "id" }?
+    }
+
+field-definition =
+    element define-field {
+        attribute name { xsd:NCName },
+        attribute group-as { xsd:NCName }?,
+        attribute as { "boolean" | "mixed" }?,
+        attribute has-id { "none" | "required" }?, # not given = "optional"
+        attribute label { "id" }?,
+        \attribute*
+}
+
+field =
+    element field {
+        attribute named { xsd:NCName },
+        attribute required { "yes" }?
+    }
+
+fields =
+    element fields {
+        attribute named { xsd:NCName },
+        attribute group-as { xsd:NCName },
+        attribute label { "id" }?
+    }
+     
+prose = element prose { empty }
+
+\attribute =
+    element attribute {
+        attribute datatype { xsd:NCName }?,
+        attribute name { xsd:NCName },
+        attribute required { "yes" }?
+    }

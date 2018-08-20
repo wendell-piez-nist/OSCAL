@@ -22,13 +22,21 @@
 <!-- Unwanted properties - these will be provided at the profile level and don't belong in the catalog  -->
   <xsl:template match="prop[@class=('baseline-impact','priority')]"/>
   
+  <!--Truncate properties that echo their parents -->
+  <xsl:template match="part/prop[@class='name'][starts-with(.,../ancestor::*[prop/@class='name'][1]/prop[@class='name'])]">
+    <prop class="label">
+      <xsl:value-of select="substring-after(.,../ancestor::*[prop/@class='name'][1]/prop[@class='name'])"/>
+    </prop>
+  </xsl:template>
+  
 <!-- Reference handling: we rewrite all literal citations into links to copies created in an earlier step
      inside /catalog/references -->
   
   <xsl:key name="citations-by-value" match="/*/references/ref/citation" use="normalize-space(.)"/>
   
-<!-- 'Withdrawn' controls are re-expressed with properties -->
-  <xsl:template match="control[exists(.//withdrawn)] | subcontrol[exists(.//withdrawn)]">
+<!-- 'Withdrawn' controls are re-expressed with properties. withdrawn is an inline
+     element appearing in paragraph content. -->
+  <xsl:template match="control[exists(.//withdrawn except subcontrol//withdrawn)] | subcontrol[exists(.//withdrawn)]">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
       <xsl:apply-templates select="prop/(. | preceding-sibling::*)"/>

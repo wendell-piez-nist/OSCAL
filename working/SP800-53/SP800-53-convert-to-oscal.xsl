@@ -6,6 +6,7 @@
   xmlns:feed="http://scap.nist.gov/schema/sp800-53/feed/2.0"
   xmlns:html="http://www.w3.org/1999/xhtml"
   xmlns:xlink="https://www.w3.org/TR/xlink/"
+  xmlns:java="java:java.util.UUID"
   xpath-default-namespace="http://scap.nist.gov/schema/sp800-53/2.0"
   xmlns="http://csrc.nist.gov/ns/oscal/1.0"
    exclude-result-prefixes="#all"
@@ -21,9 +22,11 @@
   <xsl:variable name="objectives" select="if (true()) then document('800-53a-objectives.xml',$source) else ()"/>
   
   <xsl:template match="feed:controls">
-    <catalog>
+    <!--id="NIST_SP-800-53_rev4_catalog.{ format-date(current-date(),'[Y][M01][D01]') }"-->
+    <catalog id="uuid-{java:random-UUID()}" model-version="0.9.11">
+      <!-- for now, 0.9.11 b/c Sprint 11 -->
       <title>NIST SP800-53</title>
-      <declarations href="SP800-53-declarations.xml"/>
+      <declarations href="NIST_SP-800-53_rev4_declarations.xml"/>
 
       <xsl:for-each-group select="feed:control" group-by="family">
         <group class="family">
@@ -83,9 +86,13 @@
   </xsl:template>
 -->  
 
+
+  <!-- The number coming out of the NVD XML is preserved until id's are assigned - truncated
+       in a later step. But whitespace has to be stripped to normalize. -->
+  
   <xsl:template match="number">
     <prop class="name">
-      <xsl:apply-templates/>
+      <xsl:value-of select="replace(.,'\s','')"/>
     </prop>
   </xsl:template>
   

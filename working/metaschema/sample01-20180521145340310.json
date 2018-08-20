@@ -1,0 +1,65 @@
+
+  { "id" : "metaschema-sample-20180521",
+    "title" : "Sample Control, with Title",
+    "props" : 
+    [ 
+      { "class" : "prop1",
+        "value" : "Property 1" },
+      
+      { "class" : "prop2",
+        "value" : "Property 2" },
+      
+      { "class" : "prop-r",
+        "value" : "Property Repeatable" },
+      
+      { "class" : "prop-r",
+        "id" : "special-property",
+        "value" : "Another property Repeatable" } ],
+    "params" : 
+    { "param3" : 
+      { "class" : "param3",
+        "desc" : "Parameter 3 description",
+        "label" : "Parameter 3",
+        "value" : "Parameter value 3" },
+      "param4" : 
+      { "desc" : "Parameter 4 description",
+        "label" : "Parameter 4",
+        "value" : "Parameter value 4" } },
+    "parts" : 
+    [ 
+      { "id" : "part5",
+        "class" : "part5",
+        "prose" : 
+        [ "\u003cp\u003eHere's some random prose. \u003cinsert param-id=\"param4\"\/\u003e\u003c\/p\u003e",
+          "\u003cul\u003e\n            \u003cli\u003eLI 1\u003c\/li\u003e\n            \u003cli\u003eLI 2\u003c\/li\u003e\n            \u003cli\u003eLI 3\u003c\/li\u003e\n        \u003c\/ul\u003e",
+          "\u003cp\u003eMore prose for the heck of it.\u003c\/p\u003e" ] },
+      
+      { "class" : "part6",
+        "prose" : 
+        [ "\u003cp\u003eProse in a new part.\u003c\/p\u003e" ] },
+      
+      { "class" : "part7",
+        "props" : 
+        [ 
+          { "class" : "part7-prop1",
+            "value" : "Part property value" } ],
+        "prose" : 
+        [ "\u003cp\u003eComplex parts may have props and parts of their own.\u003c\/p\u003e" ],
+        "parts" : 
+        [ 
+          { "class" : "part7-1",
+            "prose" : 
+            [ "\u003cp\u003eSubpart prose.\u003c\/p\u003e" ] } ] },
+      
+      { "class" : "part8repeats",
+        "prose" : 
+        [ "\u003cp\u003eUhoh\u003c\/p\u003e" ] },
+      
+      { "class" : "part8repeats",
+        "prose" : 
+        [ "\u003cp\u003eUhoh\u003c\/p\u003e" ] } ],
+    "links" : 
+    [ 
+      { "rel" : "reference",
+        "href" : "#somelink",
+        "value" : "link  \u003cb\u003ewith bold\u003c\/b\u003e" } ] }

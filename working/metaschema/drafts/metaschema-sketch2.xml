@@ -1,0 +1,145 @@
+<?xml-model href="metaschema2.rnc" type="application/relax-ng-compact-syntax"?>
+<METASCHEMA top="controls">
+
+<!-- The METASCHEMA  provides a means of developing and producing parallel XSD and JSON schemas
+      from a single source, validating the same models in both syntaxes.
+  It does this by constraining what is permitted in the schema, limiting constructs to
+  a number of prototype models that govern how contents are to be handled. These
+  prototype models all have well-defined behaviors; moreover, they exclude (by design)
+  the capability of producing any models that *can't* be cast across the boundary line
+  (with known fidelity).
+  
+  -->
+  <!-- constraints:
+    
+    Target content models will never have substructures or mixing
+      apart from 'prose' and everything it includes (so that is sequestered here)
+    This is achieved by following the pattern (a*, b*, c*),
+      where sequences of 'a' 'b' and 'c' are implicitly grouped
+       components always have names and plurals (for implicit wrapping)
+         it implies a sequence of like-named elements that can be mapped into a JSON array w/ key
+       'element', 'components', 'prose' can mix, but 'prose' may not appear more than once in a component definition
+       'text' cannot mix except with 'element' inside 'define-mix'
+       'prose' calls out to prose, for which we use a small clean HTML analog
+       NB we support no mixed content yet, not even in titles or citations
+         (so no anchors, robust formatting or parameter insertion points are specified)
+    In expression, attributes @class and @id are always permitted on elements or components,
+      and will come for free (require no declaration)
+      
+    Constraints in addition to metaschema.rnc
+      //@name[. = preceding::*/@name] gives only attributes (such as href)
+      empty(//@named[not(. = //@name)]) indicates referential integrity
+      empty(//@named[.=../preceding-sibling::*/@named] ) so groups or elements are not repeated
+         (which foils regular grouping)
+      //@require is one or both of tokens 'class','id' (otherwise the named attribute is declared as optional)
+      
+      /*/@top must be = some /define-component/@group-as
+      
+  -->
+  
+  
+<!-- type must be one of the following:
+  property  - scalar value / no mixed inline content
+  line      - supports inline mixed content including bold, italic, sub/superscript and ^insert^
+  statement - supports prose (only)
+  feature   - mix of prop, line, statement, feature, part
+  part      - mix of everything with prose (prose can only occur once)
+  
+  -->
+  
+<!-- Use @declared-as for two reasons: 1. consolidate modeling (code reuse); 2. recursive structures   -->
+  <define-component name="control" group-as="controls">
+    <attribute   name="class"/>
+    <line        named="title" required="yes"/>
+    <properties  named="prop"  group-as="props">
+      <attribute name="class"  required="yes"/>
+    </properties>
+    <features    named="param" group-as="params">
+      <attribute name="id"     required="yes" datatype="ID"/>
+      <attribute name="class"/>
+      <lines     named="desc"  group-as="descriptions"/>
+      <lines     named="label" group-as="labels"/>
+      <property  named="requirement">
+        <attribute name="test"/>
+      </property>
+      <property  named="value"/>
+      <lines     declared-as="link"/>
+    </features>
+    <parts       declared-as="part"/>
+    <lines       declared-as="link"/>
+    <!--<components declared-as="subcontrol"/>-->
+    <feature     declared-as="references"/>
+  </define-component>
+ 
+<!-- there are implicit (default) declarations for block, line, property and statement
+       so defining them is not necessary
+            declare them to add attributes e.g. 'link' line below.
+     part and feature require declarations (to establish where prose lives)
+     @group-as can be given on the reference or the declaration (reference wins)
+     
+  -->
+  
+
+  
+  <define-part name="part" group-as="parts">
+    <attribute name="class" required="no"/>
+    <line      named="title" required="no"/>
+    <properties named="prop"  group-as="props">
+      <attribute name="class" required="yes"/>
+    </properties>
+    <prose/>
+    <parts      declared-as="part"/>
+    <lines      declared-as="link"/>
+  </define-part>
+
+  <define-line name="link" group-as="links">
+    <attribute name="href" required="no" datatype="anyURI"/>
+    <attribute name="rel"  required="no" datatype="NCName"/>
+  </define-line>
+
+  <define-feature name="references" group-as="references">
+    <features named="ref" group-as="references">
+      <lines named="citation"  group-as="citations">
+        <attribute name="href" required="no" datatype="anyURI"/>
+      </lines>
+    </features>
+  </define-feature>  
+
+
+
+  <!--groups, controls and subcontrols are all components-->
+  
+  <!--<define-component name="group" group-as="groups">
+    <block      named="title" required="yes"/>
+    <properties named="prop"  group-as="props">
+      <attribute name="class" required="yes"/>
+    </properties>
+    <features   named="param" group-as="params">
+      <attribute name="id" required="yes"/>
+      <lines    named="desc"  group-as="descriptions"/>
+      <lines    named="label" group-as="labels"/>
+      <property named="value"/>
+      <lines    declared-as="link"/>
+    </features>
+    <parts      declared-as="part"/>
+    <components declared-as="control"/>
+    <feature    declared-as="references"/>
+  </define-component>-->
+  <!--<define-component name="subcontrol" group-as="subcontrols">
+    <block      named="title" required="yes"/>
+    <properties named="prop"  group-as="props">
+      <attribute name="class" required="yes"/>
+    </properties>
+    <features   named="param" group-as="params">
+      <attribute name="id" required="yes"/>
+      <lines    named="desc"  group-as="descriptions"/>
+      <lines    named="label" group-as="labels"/>
+      <property named="value"/>
+      <lines    declared-as="link"/>
+    </features>
+    <parts      declared-as="part"/>
+    <lines      declared-as="link"/>
+    <feature    declared-as="references"/>
+  </define-component>-->
+  
+</METASCHEMA>

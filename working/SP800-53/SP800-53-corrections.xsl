@@ -91,7 +91,7 @@
       <match replace="indirectly—that is">indirectly�that is</match>
       <match replace="notifications—or">notifications�or</match>
       
-      
+      <match replace=" [Assignment"> Assignment</match>
       
     </sequence>
   </xsl:variable>

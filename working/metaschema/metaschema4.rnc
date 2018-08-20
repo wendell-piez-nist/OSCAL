@@ -1,0 +1,78 @@
+default namespace = ""
+
+# extra-schema constraints:
+#  prose may not appear twice among siblings i.e. count(prose) is never gt 1
+#  @named may not be repeated among siblings
+#  same w/ @group-as
+#  likewise @named may not equal any @group-as
+#  @named always resolves (to some /*/*/@name)
+
+start =
+    element METASCHEMA {
+        attribute top { xsd:NCName },
+        attribute use { xsd:NCName },
+        (  assembly-definition
+         | field-definition )+
+    }
+
+declaration-references =
+        (choice |
+         fields | field |
+         assemblies | assembly)*
+
+choice = element choice { declaration-references }
+
+assembly-definition =
+    element define-assembly {
+        attribute name       { xsd:NCName },
+        attribute group-as   { xsd:NCName }?,
+        attribute has-id { "none" | "required" }?, # not given = "optional"
+        attribute address { xsd:NCName }?,
+        flag*,
+        # NB more than one 'prose' not supported - w/o required elements interceding
+        (prose | declaration-references)*
+    }
+
+assembly =
+    element assembly {
+        attribute named { xsd:NCName },
+        attribute required { "yes" }? }
+        
+assemblies =
+    element assemblies {
+        attribute named { xsd:NCName },
+        attribute group-as { xsd:NCName },
+        attribute address { xsd:NCName }?
+    }
+
+field-definition =
+    element define-field {
+        attribute name { xsd:NCName },
+        attribute group-as { xsd:NCName }?,
+        attribute as { "boolean" | "mixed" }?,
+        attribute has-id { "none" | "required" }?, # not given = "optional"
+        flag*
+}
+
+field =
+    element field {
+        attribute named { xsd:NCName },
+        attribute required { "yes" }?
+    }
+
+fields =
+    element fields {
+        attribute named    { xsd:NCName },
+        attribute group-as { xsd:NCName },
+        attribute address  { xsd:NCName }?
+    }
+     
+prose = element prose { empty }
+
+# map to attributes in XML
+flag =
+    element flag {
+        attribute datatype { xsd:NCName }?,
+        attribute name { xsd:NCName },
+        attribute required { "yes" }?
+    }

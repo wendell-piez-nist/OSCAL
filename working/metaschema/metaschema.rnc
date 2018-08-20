@@ -1,0 +1,45 @@
+default namespace = ""
+
+start =
+  element METASCHEMA {
+    attribute top { xsd:NCName },
+    ( component-declaration
+    | element-declaration )+
+  }
+
+component-declaration = element define-component {
+       attribute group-as { xsd:NCName },
+       attribute name     { xsd:NCName },
+       attribute require {  xsd:NMTOKENS }?,
+       attributes,
+       text-or-stuff
+     }
+     
+element-declaration =  element define-block {
+         attribute name { xsd:NCName },
+         attributes,
+         text-or-stuff
+       }
+
+attributes = element attribute {
+         attribute name     { xsd:NCName },
+         attribute datatype { xsd:NCName }?,
+         attribute required { 'no' }? # Otherwise may be assumed to be 'yes'
+       }*
+
+# See how, because the order of component, element and prose declarations is constraining, their order here must be free ...
+text-or-stuff = (element text { empty } | ( component-ref | element-ref | prose )* )
+# An implicit constraint is that count(prose) le 1
+
+component-ref =
+  element components {
+    attribute named { xsd:NCName }
+  }
+
+prose = element prose { empty } +
+
+element-ref = element block {
+               attribute named    { xsd:NCName },
+               attribute required   { 'no' }?, # When not given, assume to be 'yes'
+               attribute repeatable { 'yes' }? # When not given, assume to be 'no'
+             }

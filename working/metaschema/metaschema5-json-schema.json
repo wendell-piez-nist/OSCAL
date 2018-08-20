@@ -1,0 +1,196 @@
+
+  { "$schema" : "http://json-schema.org/draft-07/schema#",
+    "$id" : "http://csrc.nist.gov/ns/oscal/1.0-metaschema.json",
+    "$comment" : "METASCHEMA Test JSON Schema",
+    "type" : "object",
+    "definitions" : 
+    { "control" : 
+      { "$id" : "#/definitions/control",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "class" : 
+          { "type" : "string" },
+          "title" : 
+          { "type" : "string",
+            "$ref" : "#/definitions/title" },
+          "props" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/prop" } },
+          "params" : 
+          { "type" : "object",
+            "properties" : 
+            { "$ref" : "#/definitions/param" } },
+          "parts" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/part" } },
+          "links" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/link" } },
+          "references" : 
+          { "type" : "object",
+            "$ref" : "#/definitions/references" } } },
+      "title" : 
+      { "$id" : "#/definitions/title",
+        "type" : "string" },
+      "prop" : 
+      { "$id" : "#/definitions/prop",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "class" : 
+          { "type" : "string" },
+          "VALUE" : 
+          { "type" : "string" } } },
+      "param" : 
+      { "$id" : "#/definitions/param",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "class" : 
+          { "type" : "string" },
+          "descriptions" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/desc" } },
+          "label" : 
+          { "type" : "string",
+            "$ref" : "#/definitions/label" },
+          "requirements" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/requirement" } },
+          "value" : 
+          { "type" : "string",
+            "$ref" : "#/definitions/value" },
+          "select" : 
+          { "type" : "object",
+            "$ref" : "#/definitions/select" },
+          "links" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/link" } },
+          "parts" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/part" } } } },
+      "label" : 
+      { "$id" : "#/definitions/label",
+        "type" : "string" },
+      "desc" : 
+      { "$id" : "#/definitions/desc",
+        "type" : "string" },
+      "requirement" : 
+      { "$id" : "#/definitions/requirement",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "test" : 
+          { "type" : "string" },
+          "VALUE" : 
+          { "type" : "string" } } },
+      "value" : 
+      { "$id" : "#/definitions/value",
+        "type" : "string" },
+      "select" : 
+      { "$id" : "#/definitions/select",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "how-many" : 
+          { "type" : "string" },
+          "alternatives" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/choice" } } } },
+      "choice" : 
+      { "$id" : "#/definitions/choice",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "TEXT" : 
+          { "type" : "string" } } },
+      "part" : 
+      { "$id" : "#/definitions/part",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "class" : 
+          { "type" : "string" },
+          "title" : 
+          { "type" : "string",
+            "$ref" : "#/definitions/title" },
+          "props" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/prop" } },
+          "prose" : 
+          { "$ref" : "#/definitions/prose" },
+          "parts" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/part" } },
+          "links" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/link" } } } },
+      "link" : 
+      { "$id" : "#/definitions/link",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "href" : 
+          { "type" : "string" },
+          "rel" : 
+          { "type" : "string" },
+          "TEXT" : 
+          { "type" : "string" } } },
+      "references" : 
+      { "$id" : "#/definitions/references",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "refs" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/ref" } } } },
+      "ref" : 
+      { "$id" : "#/definitions/ref",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "citations" : 
+          { "type" : "array",
+            "items" : 
+            { "$ref" : "#/definitions/citation" } } } },
+      "citation" : 
+      { "$id" : "#/definitions/citation",
+        "type" : "object",
+        "properties" : 
+        { "id" : 
+          { "type" : "string" },
+          "href" : 
+          { "type" : "string" },
+          "TEXT" : 
+          { "type" : "string" } } } },
+    "properties" : 
+    { "controls" : 
+      { "type" : "array",
+        "items" : 
+        { "$ref" : "#/definitions/control" } } },
+    "propertyNames" : 
+    { "enum" : 
+      [ "controls" ] } }

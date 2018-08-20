@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Validates with ../xml/oscal-catalog.xsd and with sample -->
+<?xml-stylesheet type="text/css" href="../../lib/CSS/oscal-author.css" title="Author" alternate="no"?>
+<control id="metaschema-sample-20180521" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://csrc.nist.gov/ns/oscal/1.0 oscal-metaschema.xsd"
+ xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+    <title>Sample Control, with Title</title>
+    <prop class="prop1">Property 1</prop>
+    <prop class="prop2">Property 2</prop>
+    <prop class="prop-r">Property Repeatable</prop>
+    <prop class="prop-r" id="special-property">Another property Repeatable</prop>
+    <param id="param3" class="param3">
+        <desc>Parameter 3 description</desc>
+        <label>Parameter 3</label>
+        <value>Parameter value 3</value>
+    </param>
+    <param id="param4">
+        <desc>Parameter 4 description</desc>
+        <label>Parameter 4</label>
+        <value>Parameter value 4</value>
+    </param>
+    <part id="part5" class="part5">
+        <p>Here's some random prose. <insert param-id="param4"/></p>
+        <ul>
+            <li>LI 1</li>
+            <li>LI 2</li>
+            <li>LI 3</li>
+        </ul>
+        <p>More prose for the heck of it.</p>
+    </part>
+    <part class="part6">
+        <p>Prose in a new part.</p>
+    </part>
+    <part class="part7">
+        <prop class="part7-prop1">Part property value</prop>
+        <p>Complex parts may have props and parts of their own.</p>
+        <part class="part7-1"><p>Subpart prose.</p></part>
+    </part>
+    <part class="part8repeats">
+        <p>Uhoh</p>
+    </part>
+    <part class="part8repeats">
+        <p>Uhoh</p>
+    </part>
+    <link rel="reference" href="#somelink">link <b>with bold</b></link>
+    <references>
+        <ref>
+            <citation>A citation of some nature</citation>
+        </ref>
+    </references>
+</control>

@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "sample01-structured-meta-schema.json",
+  "definitions": {
+    "propNames": {
+      "$id": "#/definitions/propNames",
+      "enum": [ "prop-r", "prop1", "prop2", "part7-prop1" ]
+    },
+    "paramNames": {
+      "$id": "#/definitions/paramNames",
+      "enum": [ "param3", "param4" ]
+    },
+    "partNames": {
+      "$id": "#/definitions/partNames",
+      "enum": [ "part5", "part6", "part7", "part8repeats", "part7-1" ]
+    }
+  }
+}

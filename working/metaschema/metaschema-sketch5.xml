@@ -1,0 +1,249 @@
+<?xml-model href="metaschema-check.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<METASCHEMA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="metaschema5.xsd" top="controls" use="control">
+
+  <!-- The METASCHEMA  provides a means of developing and producing parallel XSD and JSON schemas
+      from a single source, validating the same models in both syntaxes.
+  It does this by defining "primitives" or "prototypes" that are then exploited by
+  declarations which know how to bind them to appropriate data types. Since their behaviors
+  are well-defined, these prototypes provide a framing structure from which an appropriate
+  set of declarations (either for XML or for JSON data) may be expanded. The same
+  declarations set can provide runtime configuration to conversion scripts that cast
+  between XML and JSON equivalents.
+  
+  -->
+  <!--
+  
+  Uses / applications
+    Schema generation (XSD, JSON schema, other) for mappable representations
+    Produce conversion code
+  -->
+
+  <!-- type must be one of the following:
+  field     - line of text w/ or w/o mixed inline content (as="mixed")
+  component - mix of everything including maybe prose (once)
+    (component was 'part')
+  
+  Design note: in some designs, an element 'p' might be produced as a line, supporting markdown in the JSON.
+  But this doesn't support lists or preformatted blocks. For those, use a statement or prose inside a component
+  
+  -->
+
+  <define-assembly name="control" group-as="controls">
+    <flag name="id" datatype="ID" required="yes"/>
+    <flag name="class"/>
+    <formal-name>Control</formal-name>
+    <description>A specific means or point of security control</description>
+    <remarks>
+      <p>Almost anything can be a control.</p>
+    </remarks>
+    <model>
+      <field required="yes" named="title"/>
+      <fields named="prop" group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part" group-as="parts"/>
+      <fields named="link" group-as="links"/>
+      <!--<assemblies named="subcontrol" group-as="subcontrols" address="id"/>-->
+      <assembly named="references"/>
+    </model>
+    <example>
+      <control xmlns="http://csrc.nist.gov/ns/oscal/1.0" id="control1">
+        <title>Control 1</title>
+      </control>
+    </example>
+
+  </define-assembly>
+
+  
+
+  <define-field name="title" has-id="none" as="mixed"/>
+
+  <define-field name="prop" group-as="props">
+    <flag name="class" required="yes"/>
+    <formal-name>Property</formal-name>
+  </define-field>
+
+  <define-assembly group-as="params" name="param" address="id">
+    <flag name="class"/>
+    <model>
+      <!-- when address-by is given a flag of that name is required: also
+         a singleton constraint comes into play (must be the only assembly
+         with that flag value among its siblings 
+         <flag name="id" required="yes" datatype="ID"/>-->
+      <!-- should be label, desc* but the sample has it backward -->
+      <fields named="desc" group-as="descriptions"/>
+      <field named="label"/>
+      <fields named="requirement" group-as="requirements"/>
+      <choice>
+        <field named="value"/>
+        <assembly named="select"/>
+      </choice>
+      <fields named="link" group-as="links"/>
+      <assemblies named="part" group-as="parts"/>
+    </model>
+  </define-assembly>
+
+
+  <!-- key design q: is an entity a property of an object (such as a parameter belongs to a control)
+     or is it a member of a sequence (array) contained in that object (such as a control in a group)
+     So we promote param/@id to its label, but not control/@id (or don't we?)
+     
+     How, on the Schematron side, do we validate that IDs given as labels are unique (in document wide scope)?
+     
+  -->
+  <define-field name="label" has-id="none" as="mixed"/>
+
+  <!-- @has-id = none on fields, when there are no attributes, permits
+     us to produce a string (not an object) on the JSON side. -->
+  <define-field name="desc" group-as="descriptions" has-id="none" as="mixed"/>
+
+  <define-field name="requirement" group-as="requirements">
+    <flag name="test"/>
+  </define-field>
+
+  <define-field name="value" has-id="none" as="mixed"/>
+  
+
+  <define-assembly name="select">
+    <flag name="how-many"/>
+    <model>
+      <assemblies named="choice" group-as="alternatives"/>
+    </model>
+  </define-assembly>
+
+  <define-field name="choice" group-as="alternatives" as="mixed">
+    <model/>
+  </define-field>
+
+  <define-assembly name="part" group-as="parts">
+    <flag name="class"/>
+    <model>
+      <field named="title"/>
+      <fields named="prop" group-as="props"/>
+      <prose/>
+      <assemblies named="part" group-as="parts"/>
+      <fields named="link" group-as="links"/>
+    </model>
+  </define-assembly>
+
+  <define-field name="link" group-as="links" as="mixed">
+    <flag name="href" datatype="anyURI"/>
+    <flag name="rel" datatype="NCName"/>
+  </define-field>
+
+  <define-assembly name="references">
+    <model>
+      <assemblies group-as="refs" named="ref"/>
+    </model>
+  </define-assembly>
+
+  <define-assembly name="ref" group-as="refs">
+    <model>
+      <fields group-as="citations" named="citation"/>
+    </model>
+  </define-assembly>
+
+  <!--<define-field as="mixed" group-as="citations" name="citation">
+    <flag name="href" datatype="anyURI"/>
+  </define-field>-->
+
+
+  <define-field as="mixed" group-as="citations" name="citation">
+    <flag name="href" datatype="anyURI"/>
+    <formal-name>Citation</formal-name>
+    <description>Citation of a resource</description>
+    <remarks>
+      <p>Echoes the NISO JATS (and NISO STS) <code>mixed-citation</code> element.</p>
+    </remarks>
+    <example>
+      <citation xmlns="http://csrc.nist.gov/ns/oscal/1.0" href="somesiteurl.net">Some
+          <strong>citation</strong> of some sort</citation>
+    </example>
+  </define-field>
+
+  <!--<define-assembly name="catalog" group-as="control-catalog">
+    <model>
+      <field named="title" required="yes"/>
+      <assemblies named="section" group-as="sections"/>
+      <choice>
+        <assemblies named="group" group-as="groups"/>
+        <assemblies named="control" group-as="controls"/>
+      </choice>
+      <assembly named="references"/>
+    </model>
+    <example>
+      <catalog xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+        <title>A Miniature Catalog</title>
+        <control id="single">
+          <title>A Single control</title>
+        </control>
+      </catalog>
+    </example>
+          
+  </define-assembly>-->
+
+  
+
+  <!--<define-assembly name="section" group-as="sections">
+    <model>
+      <flag name="class"/>
+      <field named="title" required="yes"/>
+      <prose/>
+      <assemblies named="section" group-as="sections"/>
+      <assembly named="references"/>
+    </model>
+  </define-assembly>
+
+  <define-assembly name="group" group-as="groups">
+    <model>
+      <flag name="class"/>
+      <field named="title" required="yes"/>
+      <fields named="prop" group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part" group-as="parts"/>
+      <choice>
+        <assemblies named="group" group-as="groups"/>
+        <assemblies named="control" group-as="controls"/>
+      </choice>
+      <assembly named="references"/>
+    </model>
+    <example>
+      <subcontrol xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+        <title>My subcontrol</title>
+        <prop class="required">some property</prop>
+      </subcontrol>
+    </example>
+          
+  </define-assembly>
+
+  <define-assembly name="subcontrol" group-as="subcontrols">
+    <model>
+      <field named="title" required="yes"/>
+      <fields named="prop" group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part" group-as="parts"/>
+      <fields named="link" group-as="links"/>
+      <assembly named="references"/>
+    </model>
+  </define-assembly>-->
+
+  <define-flag name="id" datatype="ID" global="yes">
+    <formal-name>ID</formal-name>
+    <description>Unique identifier</description>
+    <remarks>
+      <p>Anything can get an ID</p>
+    </remarks>
+    <example>
+      <citation xmlns="http://csrc.nist.gov/ns/oscal/1.0" href="somesiteurl.net">Some
+          <strong>citation</strong> of some sort</citation>
+    </example>
+  </define-flag>
+
+  <define-flag name="class" datatype="NMTOKEN">
+    <formal-name>Class</formal-name>
+    <description>Identifies the property or object within the control; a semantic hint</description>
+  </define-flag>
+  
+  <define-flag name="href" datatype="anyURI"/>
+  
+</METASCHEMA>

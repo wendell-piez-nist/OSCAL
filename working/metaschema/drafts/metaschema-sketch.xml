@@ -1,0 +1,91 @@
+<?xml-model href="metaschema.rnc" type="application/relax-ng-compact-syntax"?>
+<METASCHEMA top="controls">
+<!-- constraints:
+    
+    Target content models will never have substructures or mixing
+      apart from 'prose' and everything it includes (so that is sequestered here)
+    This is achieved by following the pattern (a*, b*, c*),
+      where sequences of 'a' 'b' and 'c' are implicitly grouped
+       components always have names and plurals (for implicit wrapping)
+         it implies a sequence of like-named elements that can be mapped into a JSON array w/ key
+       'element', 'components', 'prose' can mix, but 'prose' may not appear more than once in a component definition
+       'text' cannot mix except with 'element' inside 'define-mix'
+       'prose' calls out to prose, for which we use a small clean HTML analog
+       NB we support no mixed content yet, not even in titles or citations
+         (so no anchors, robust formatting or parameter insertion points are specified)
+    In expression, attributes @class and @id are always permitted on elements or components,
+      and will come for free (require no declaration)
+      
+    Constraints in addition to metaschema.rnc
+      //@name[. = preceding::*/@name] gives only attributes (such as href)
+      empty(//@named[not(. = //@name)]) indicates referential integrity
+      empty(//@named[.=../preceding-sibling::*/@named] ) so groups or elements are not repeated
+         (which foils regular grouping)
+      //@require is one or both of tokens 'class','id' (otherwise the named attribute is declared as optional)
+  -->
+  
+  <define-component name="control" group-as="controls">
+    <block      named="title"/>
+    <components named="prop"/>
+    <components named="param"/>
+    <components named="part"/>
+    <components named="link"/>
+    <block      named="references" required="no"/>
+  </define-component>
+
+  <define-block name="title">
+    <text/>
+  </define-block>
+
+  <define-component name="prop" group-as="props" require="class">
+    <text/>
+  </define-component>
+
+  <define-component name="param" group-as="params" require="id">
+    <components named="desc"/>
+    <components named="label"/>
+    <components named="value"/>
+    <components named="link"/>
+  </define-component>
+  
+  <define-component name="desc" group-as="descriptions">
+    <text/>
+  </define-component>
+  
+  <define-component name="label" group-as="labels">
+    <text/>
+  </define-component>
+  
+  <define-component name="value" group-as="values">
+    <text/>
+  </define-component>
+  
+  <define-component name="part" group-as="parts">
+    <block      named="title" required="no"/>
+    <components named="prop"/>
+    <components named="param"/>
+    <prose/>
+    <components named="part"/>
+    <components named="link"/>
+  </define-component>
+
+  <define-component name="link" group-as="links">
+    <attribute name="href" required="no" datatype="anyURI"/>
+    <attribute name="rel"  required="no" datatype="NCName"/>
+    <text/>
+  </define-component>
+
+  <define-block name="references">
+    <components named="ref"/>
+  </define-block>
+  
+  <define-component name="ref" group-as="references" require="id">
+    <components named="citation"/>
+  </define-component>
+  
+  <define-component name="citation" group-as="citations">
+    <attribute name="href" required="no" datatype="anyURI"/>
+    <text/>
+  </define-component>
+
+</METASCHEMA>

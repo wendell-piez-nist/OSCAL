@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0">
+  <xs:import namespace="http://csrc.nist.gov/ns/oscal/1.0" schemaLocation="oscal.xsd"/>
+  <xs:element name="METASCHEMA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="define-assembly"/>
+          <xs:element ref="define-field"/>
+        </xs:choice>
+        <xs:element maxOccurs="unbounded" ref="define-flag"/>
+      </xs:sequence>
+      <xs:attribute name="top" use="required" type="xs:NCName"/>
+      <xs:attribute name="use" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="define-assembly">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="flag"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:element ref="assemblies"/>
+          <xs:element ref="field"/>
+          <xs:element ref="choice"/>
+          <xs:element ref="fields"/>
+          <xs:element ref="prose"/>
+        </xs:choice>
+        <xs:element minOccurs="0" ref="assembly"/>
+      </xs:sequence>
+      <xs:attribute name="address" type="xs:NCName"/>
+      <xs:attribute name="group-as" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="choice">
+    <xs:complexType>
+      <xs:choice>
+        <xs:sequence>
+          <xs:element ref="field"/>
+          <xs:element ref="assembly"/>
+        </xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="assemblies"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="fields">
+    <xs:complexType>
+      <xs:attribute name="group-as" use="required" type="xs:NCName"/>
+      <xs:attribute name="named" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="prose">
+    <xs:complexType/>
+  </xs:element>
+  <xs:element name="define-field">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="flag"/>
+        <xs:sequence>
+          <xs:element ref="formal-name"/>
+          <xs:element ref="description"/>
+          <xs:element ref="remarks"/>
+          <xs:element ref="model"/>
+          <xs:element ref="example"/>
+        </xs:sequence>
+      </xs:choice>
+      <xs:attribute name="as" type="xs:NCName"/>
+      <xs:attribute name="group-as" type="xs:NCName"/>
+      <xs:attribute name="has-id" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="define-flag">
+    <xs:complexType>
+      <xs:sequence minOccurs="0">
+        <xs:element ref="formal-name"/>
+        <xs:element ref="description"/>
+        <xs:element ref="remarks"/>
+        <xs:element ref="model"/>
+        <xs:element ref="example"/>
+      </xs:sequence>
+      <xs:attribute name="datatype" use="required" type="xs:NCName"/>
+      <xs:attribute name="global" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="flag">
+    <xs:complexType>
+      <xs:attribute name="datatype" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="assemblies">
+    <xs:complexType>
+      <xs:attribute name="address" type="xs:NCName"/>
+      <xs:attribute name="group-as" use="required" type="xs:NCName"/>
+      <xs:attribute name="named" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="field">
+    <xs:complexType>
+      <xs:attribute name="named" use="required" type="xs:NCName"/>
+      <xs:attribute name="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="assembly">
+    <xs:complexType>
+      <xs:attribute name="named" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="formal-name" type="xs:NCName"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="remarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="p"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="p">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="code"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="code" type="xs:NCName"/>
+  <xs:element name="model">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="attribute"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="attribute">
+    <xs:complexType>
+      <xs:attribute name="datatype" use="required" type="xs:NCName"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="example">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:any namespace="http://csrc.nist.gov/ns/oscal/1.0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

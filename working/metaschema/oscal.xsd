@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://csrc.nist.gov/ns/oscal/1.0" xmlns:oscal="http://csrc.nist.gov/ns/oscal/1.0">
+  <xs:import schemaLocation="metaschema5.xsd"/>
+  <xs:element name="citation">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="oscal:strong"/>
+      </xs:sequence>
+      <xs:attribute name="href" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="strong" type="xs:NCName"/>
+  <xs:element name="control">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="oscal:title"/>
+      </xs:sequence>
+      <xs:attribute name="href" use="required" type="xs:NCName"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+</xs:schema>

@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-model href="metaschema-check.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<METASCHEMA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="metaschema5.xsd" top="controls" use="control"
+  xmlns:o="http://csrc.nist.gov/ns/oscal/1.0">
+
+  <define-assembly name="control" group-as="controls">
+    <flag name="id" datatype="ID" required="yes"/>
+    <flag name="class"/>
+    <formal-name>Control</formal-name>
+    <description>A structured information object representing a security control</description>
+    <remarks>
+      <p>Controls may be grouped using <code>group</code>, and controls may be partitioned using
+        <code>part</code> or extended using <code>subcontrol</code>.</p>
+    </remarks>
+    <model>
+      <field      named="title" required="yes"/>
+      <fields     named="prop"  group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part"  group-as="parts"/>
+      <fields     named="link"  group-as="links"/>
+      <!--<assemblies named="subcontrol" group-as="subcontrols" address="id"/>-->
+      <assembly named="references"/>
+    </model>
+    <example>
+      <control id="x" xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+        <title>Control 1</title>
+      </control>
+    </example>
+  </define-assembly>
+
+  <define-field name="title" has-id="none" as="mixed">
+    <formal-name>Title</formal-name>
+    <description>A title for display and navigation, exclusive of more specific properties</description>
+  </define-field>
+
+  <define-field name="prop" group-as="props">
+    <flag name="class" required="yes"/>
+    <formal-name>Property</formal-name>
+    <description>A value with a name, attributed to the containing control, subcontrol, part,
+          or group</description>
+    <remarks>
+      <p>The notation used by a property is up to an application; otherwise, properties are
+        distinguished in OSCAL by not permitting inline markup of any kind. They are expected to be
+        simple scalar values or to use machine-readable/parseable notation (not XML), as defined by
+        and for an application.</p>
+      <p>The lexical composition of properties may be constrained by declarations including matching
+        to regular expressions or declaring known datatype notations (tbd).</p>
+      <p>Because properties are often used as selectors or identifiers for OSCAL operations, their
+        values can be expected frequently to be normalized (e.g.,
+        with respect to whitespace) in use; however, this is application defined.</p>
+      <p>For singletons (that is, the only element among siblings with its <code>@class</code>),
+        properties are especially useful as proxies (unique identifiers) for their controls, such
+        that controls may be returned one for one on queries for properties (name and value). The
+        robustness of such queries can be ensured by appropriate property declarations (as
+        singletons and as identifiers); cf <code>declare-prop</code> in the declarations model
+        (which also supports other constraints over property values).</p>
+      <p>Properties permit the deployment and management of arbitrary controlled values, with and
+        among control objects (controls and parts and extensions), for any purpose useful to an
+        application or implementation of those controls. Typically and routinely, properties will be
+        used to sort, select, order, and arrange controls or relate them to one another or to class
+        hierarchies, taxonomies, or external authorities.</p>
+    </remarks>
+    <example>
+      <o:prop class="name">A1</o:prop>
+    </example>
+  </define-field>
+
+  <define-assembly group-as="params" name="param" address="id">
+    <flag name="class"/>
+    <formal-name>Parameter</formal-name>
+    <description>
+        A parameter setting, to be propagated to points of insertion
+      </description>
+    <model>
+      <!-- when address-by is given a flag of that name is required: also
+         a singleton constraint comes into play (must be the only assembly
+         with that flag value among its siblings 
+         <flag name="id" required="yes" datatype="ID"/>-->
+      <!-- should be label, desc* but the sample has it backward -->
+      <fields named="desc" group-as="descriptions"/>
+      <field  named="label"/>
+      <fields named="requirement" group-as="requirements"/>
+      <choice>
+        <field    named="value"/>
+        <assembly named="select"/>
+      </choice>
+      <fields named="link" group-as="links"/>
+      <assemblies named="part" group-as="parts"/>
+    </model>
+  </define-assembly>
+
+
+  <define-field name="label" has-id="none" as="mixed">
+    <formal-name>Parameter label</formal-name>
+    <description>
+        A placeholder for a missing value, in display
+      </description>
+  </define-field>
+
+  <!-- @has-id = none on fields, when there are no attributes, permits
+     us to produce a string (not an object) on the JSON side. -->
+  <define-field name="desc" group-as="descriptions" has-id="none" as="mixed">
+
+    <formal-name>Parameter description</formal-name>
+    <description>
+        Indicates and explains the purpose and use of a parameter
+      </description>
+  </define-field>
+
+  <define-field name="requirement" group-as="requirements">
+    <flag name="test"/>
+    <formal-name>Requirement</formal-name>
+    <description>A constraint to which this element's value is expected to conform</description>
+  </define-field>
+
+  <define-field name="value" has-id="none" as="mixed">
+    <formal-name>Value constraint</formal-name>
+    <description>Indicates a permissible value for a parameter or property</description>
+    <remarks>
+      <p>In a declaration, <code>value</code> will commonly be given in groups, indicating a set of
+        enumerated permissible values (i.e., for an element to be valid to a value constraint, it
+        must equal one of the given values).</p>
+      <p>In a parameter, a value represents a value assignment to the parameter, overriding any
+        value given at the point of insertion. When parameters are provided in OSCAL profiles, their
+        values will override any values assigned <q>lower down the stack</q>.</p>
+    </remarks>
+  </define-field>
+
+
+  <define-assembly name="select">
+    <flag name="how-many"/>
+    <formal-name>Selection</formal-name>
+    <description>Presenting a choice among alternatives</description>
+    <model>
+      <assemblies named="choice" group-as="alternatives"/>
+    </model>
+  </define-assembly>
+
+  <define-field name="choice" group-as="alternatives" as="mixed">
+    <formal-name>Choice</formal-name>
+    <description>A value selection among several</description>
+  </define-field>
+
+  <define-assembly name="part" group-as="parts">
+    <flag name="class"/>
+
+    <formal-name>Part</formal-name>
+    <description>A partition or component of a control, subcontrol or part</description>
+    <remarks>
+      <p>Like properties (<code>prop</code>) and parameters (<code>param</code>), parts can be
+        distinguished from other elements within their controls by their assigned
+        <code>@class</code>, such that they may be subjected to <q>declarations logic</q> using
+        these values as bindings (and thereby getting open-ended extensibility).</p>
+      <p>An assigned class may frequently provide for a header in display, such that
+        <code>part[@class='objectives']</code> is displayed under a header <em>Objectives</em>, etc.
+        Parts may also however have their own titles (<code>title</code> elements).</p>
+      <p>Generally speaking, <code>part</code> elements will be of two kinds. Many parts are logical
+        partitions or sections for prose; these may be called <q>statements</q> and may be expected
+        to have simple prose contents, even just one paragraph. Other parts may be more formally
+        constructed out of properties (<code>prop</code> elements) and/or their own parts. Such
+        structured objects (sometimes called <q>features</q>) may, at the extreme, function
+        virtually as control extensions or subcontrol-like objects (<q>enhancements</q>). Since the
+        composition of parts can be constrained using OSCAL declarations (of the items or components
+        to be given in a part or in this type of part), their use for encoding <q>objects</q> of
+        arbitrary complexity within controls, is effectively open-ended.</p>
+    </remarks>
+    <model>
+      <field named="title"/>
+      <fields named="prop" group-as="props"/>
+      <prose/>
+      <assemblies named="part" group-as="parts"/>
+      <fields named="link" group-as="links"/>
+    </model>
+  </define-assembly>
+
+  <define-field name="link" group-as="links" as="mixed">
+    <flag name="href" datatype="anyURI"/>
+    <flag name="rel" datatype="NCName"/>
+
+    <formal-name>Link</formal-name>
+    <description>
+        A line or paragraph with a hypertext link
+      </description>
+    <remarks>
+      <p>Works like an HTML anchor (<code>a</code>) except this is a line-oriented (block)
+        element.</p>
+    </remarks>
+
+  </define-field>
+
+  <define-assembly name="references">
+
+    <formal-name>References</formal-name>
+    <description>
+        A group of reference descriptions
+      </description>
+    <model>
+      <assemblies group-as="refs" named="ref"/>
+    </model>
+  </define-assembly>
+
+  <define-assembly name="ref" group-as="refs">
+
+    <formal-name>Reference</formal-name>
+    <description>
+        A reference, with one or more citations to standards, related documents, or other
+          resources
+      </description>
+    <model>
+      <fields group-as="citations" named="citation"/>
+    </model>
+  </define-assembly>
+
+  <!--<define-field as="mixed" group-as="citations" name="citation">
+    <flag name="href" datatype="anyURI"/>
+  </define-field>-->
+
+
+  <define-field as="mixed" group-as="citations" name="citation">
+    <flag name="href" datatype="anyURI"/>
+    <formal-name>Citation</formal-name>
+    <description>Citation of a resource</description>
+    <remarks>
+      <p>Echoes the NISO JATS (and NISO STS) <code>mixed-citation</code> element.</p>
+    </remarks>
+
+    <example>
+      <o:citation>Some <o:strong>citation</o:strong> of some sort</o:citation>
+    </example>
+  </define-field>
+
+  <!--<define-assembly name="catalog" group-as="control-catalog">
+    <model>
+      <field named="title" required="yes"/>
+      <assemblies named="section" group-as="sections"/>
+      <choice>
+        <assemblies named="group" group-as="groups"/>
+        <assemblies named="control" group-as="controls"/>
+      </choice>
+      <assembly named="references"/>
+    </model>
+    <example>
+      <catalog xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+        <title>A Miniature Catalog</title>
+        <control id="single">
+          <title>A Single control</title>
+        </control>
+      </catalog>
+    </example>
+          
+  </define-assembly>-->
+
+
+
+  <!--<define-assembly name="section" group-as="sections">
+    <model>
+      <flag name="class"/>
+      <field named="title" required="yes"/>
+      <prose/>
+      <assemblies named="section" group-as="sections"/>
+      <assembly named="references"/>
+    </model>
+  </define-assembly>
+
+  <define-assembly name="group" group-as="groups">
+    <model>
+      <flag name="class"/>
+      <field named="title" required="yes"/>
+      <fields named="prop" group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part" group-as="parts"/>
+      <choice>
+        <assemblies named="group" group-as="groups"/>
+        <assemblies named="control" group-as="controls"/>
+      </choice>
+      <assembly named="references"/>
+    </model>
+    <example>
+      <subcontrol xmlns="http://csrc.nist.gov/ns/oscal/1.0">
+        <title>My subcontrol</title>
+        <prop class="required">some property</prop>
+      </subcontrol>
+    </example>
+          
+  </define-assembly>
+
+  <define-assembly name="subcontrol" group-as="subcontrols">
+    <model>
+      <field named="title" required="yes"/>
+      <fields named="prop" group-as="props"/>
+      <assemblies named="param" group-as="params" address="id"/>
+      <assemblies named="part" group-as="parts"/>
+      <fields named="link" group-as="links"/>
+      <assembly named="references"/>
+    </model>
+  </define-assembly>-->
+
+  <define-flag name="id" datatype="ID" global="yes">
+    <formal-name>ID / identifier</formal-name>
+    <description>Unique identifier</description>
+    <remarks>
+      <p>No mechanism is proposed to ensure that <code>@id</code> values do not collide across
+        different catalogs. Use profiling without <q>merge</q> to detect such clashes.</p>
+    </remarks>
+    <example>
+      <o:citation id="xyz">Some <o:strong>citation</o:strong> of some sort</o:citation>
+    </example>
+  </define-flag>
+
+  <define-flag name="class" datatype="NMTOKEN">
+    <formal-name>Class</formal-name>
+    <description>Identifies the property or object within the control; a semantic hint</description>
+    <remarks>
+      <p>Overloading this attribute with more than one value is permitted, but not recommended.</p>
+    </remarks>
+  </define-flag>
+
+  <define-flag name="href" datatype="anyURI">
+
+    <formal-name>hypertext reference</formal-name>
+    <description>A link to a document or document fragment (actual, nominal or projected)</description>
+    <remarks>
+      <p>Note in particular that <code>@href</code> targets include elements (locations) in
+        representations of documents that exist only by virtue of dynamic application, such as (for
+        example) the results of profile resolution.</p>
+    </remarks>
+  </define-flag>
+
+</METASCHEMA>

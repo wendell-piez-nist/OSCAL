@@ -28,7 +28,7 @@
     <xsl:template match="catalog">
         <profile id="uuid-{uuid:randomUUID()}">
             <title xsl:expand-text="true">SP800-53 { $baseline } BASELINE IMPACT</title>
-            <import href="SP800-53-rev4-catalog.xml">
+            <import href="NIST_SP800-53_rev4_catalog.xml">
                 <include>
                     <xsl:apply-templates select="key('components-by-baseline',$baseline)" mode="write-call"/>
                 </include>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns="http://www.w3.org/2005/xpath-functions">
+   <string key="$schema">http://json-schema.org/draft-07/schema#</string>
+   <string key="$id">http://csrc.nist.gov/ns/oscal/1.0-metaschema.json</string>
+   <string key="$comment">METASCHEMA Test JSON Schema</string>
+   <string key="type">object</string>
+   <map key="definitions">
+      <map key="control">
+         <string key="$id">#/definitions/control</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="class">
+               <string key="type">string</string>
+            </map>
+            <map key="title">
+               <string key="type">string</string>
+               <string key="$ref">#/definitions/title</string>
+            </map>
+            <map key="props">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/prop</string>
+               </map>
+            </map>
+            <map key="params">
+               <string key="type">object</string>
+               <map key="properties">
+                  <string key="$ref">#/definitions/param</string>
+               </map>
+            </map>
+            <map key="parts">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/part</string>
+               </map>
+            </map>
+            <map key="links">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/link</string>
+               </map>
+            </map>
+      
+            <map key="references">
+               <string key="type">object</string>
+               <string key="$ref">#/definitions/references</string>
+            </map>
+         </map>
+      </map>
+      <map key="title">
+         <string key="$id">#/definitions/title</string>
+         <string key="type">string</string>
+      </map>
+      <map key="prop">
+         <string key="$id">#/definitions/prop</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="class">
+               <string key="type">string</string>
+            </map>
+            <string key="VALUE">string</string>
+         </map>
+      </map>
+      <map key="param">
+         <string key="$id">#/definitions/param</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+      
+            <map key="class">
+               <string key="type">string</string>
+            </map>
+      
+            <map key="descriptions">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/desc</string>
+               </map>
+            </map>
+            <map key="label">
+               <string key="type">string</string>
+               <string key="$ref">#/definitions/label</string>
+            </map>
+            <map key="requirements">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/requirement</string>
+               </map>
+            </map>
+      
+            <map key="value">
+               <string key="type">string</string>
+               <string key="$ref">#/definitions/value</string>
+            </map>
+            <map key="select">
+               <string key="type">object</string>
+               <string key="$ref">#/definitions/select</string>
+            </map>
+      
+            <map key="links">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/link</string>
+               </map>
+            </map>
+            <map key="parts">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/part</string>
+               </map>
+            </map>
+         </map>
+      </map>
+      <map key="label">
+         <string key="$id">#/definitions/label</string>
+         <string key="type">string</string>
+      </map>
+      <map key="desc">
+         <string key="$id">#/definitions/desc</string>
+         <string key="type">string</string>
+      </map>
+      <map key="requirement">
+         <string key="$id">#/definitions/requirement</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="test">
+               <string key="type">string</string>
+            </map>
+            <string key="VALUE">string</string>
+         </map>
+      </map>
+      <map key="value">
+         <string key="$id">#/definitions/value</string>
+         <string key="type">string</string>
+      </map>
+      <map key="select">
+         <string key="$id">#/definitions/select</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+
+            <map key="how-many">
+               <string key="type">string</string>
+            </map>
+            <map key="alternatives">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/choice</string>
+               </map>
+            </map>
+         </map>
+      </map>
+      <map key="choice">
+         <string key="$id">#/definitions/choice</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <string key="TEXT">string</string>
+         </map>
+      </map>
+      <map key="part">
+         <string key="$id">#/definitions/part</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="class">
+               <string key="type">string</string>
+            </map>
+            <map key="title">
+               <string key="type">string</string>
+               <string key="$ref">#/definitions/title</string>
+            </map>
+            <map key="props">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/prop</string>
+               </map>
+            </map>
+            <map key="prose">
+               <string key="$ref">#/definitions/prose</string>
+            </map>
+            <map key="parts">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/part</string>
+               </map>
+            </map>
+            <map key="links">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/link</string>
+               </map>
+            </map>
+         </map>
+      </map>
+      <map key="link">
+         <string key="$id">#/definitions/link</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="href">
+               <string key="type">string</string>
+            </map>
+            <map key="rel">
+               <string key="type">string</string>
+            </map>
+            <string key="TEXT">string</string>
+         </map>
+      </map>
+      <map key="references">
+         <string key="$id">#/definitions/references</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="refs">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/ref</string>
+               </map>
+            </map>
+         </map>
+      </map>
+      <map key="ref">
+         <string key="$id">#/definitions/ref</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="citations">
+               <string key="type">array</string>
+               <map key="items">
+                  <string key="$ref">#/definitions/citation</string>
+               </map>
+            </map>
+         </map>
+      </map>
+      <map key="citation">
+         <string key="$id">#/definitions/citation</string>
+         <string key="type">object</string>
+         <map key="properties">
+            <map key="id">
+               <string key="type">string</string>
+            </map>
+            <map key="href">
+               <string key="type">string</string>
+            </map>
+            <string key="TEXT">string</string>
+         </map>
+      </map>
+   </map>
+   <map key="properties">
+      <map key="controls">
+         <string key="type">array</string>
+         <map key="items">
+            <string key="$ref">#/definitions/control</string>
+         </map>
+      </map>
+   </map>
+   <map key="propertyNames">
+      <array key="enum">
+         <string>controls</string>
+      </array>
+   </map>
+</map>

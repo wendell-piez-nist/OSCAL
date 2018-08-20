@@ -1,0 +1,30 @@
+page ::= block*
+
+block ::= (paragraph | preformat) /* leaving out lists for now */
+
+paragraph ::= inline-content le
+
+preformat ::= '```' le paragraph+ '```' le
+
+
+inline-content  ::= (char | inline-element )*
+
+inline-element  ::= (italic-inline | bold-inline | code-inline )
+
+italic-inline ::= "_" wdchar+ (wschar+ wdchar+)? "_"
+bold-inline   ::= "*" wdchar+ (wschar+ wdchar+)?  "*"
+code-inline   ::= "`" wdchar+ (wschar+ wdchar+)?  "`"
+
+char     ::= (wschar | wdchar)
+<?TOKENS?>
+
+
+le       ::= [#x000A#x000D]
+wschar   ::= [#x0020#x0009] // wschar excludes line ends
+
+wdchar   ::= [#x0020-#xD7FF]
+           | [#xE000-#xFFFD]
+           | [#x10000-#x10FFFF]
+           | [^#x0009#x000A#x000C#x000D]
+
+
