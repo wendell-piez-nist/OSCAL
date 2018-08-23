@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="NVD-objective-numbering.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<?xml-model href="../NVD-objective-numbering.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<controls:controls xmlns="http://scap.nist.gov/schema/sp800-53/2.0" xmlns:controls="http://scap.nist.gov/schema/sp800-53/feed/2.0" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" pub_date="2015-01-09T08:26:01.231-05:00">
+    <controls:control>
+        <family>ACCESS CONTROL</family>
+        <number>AC-1</number>
+        <title>ACCESS CONTROL POLICY AND PROCEDURES</title>
+        <objective>
+            <number>AC-1(a)</number>
+            <decision>Determine if the organization:</decision>
+            <objective>
+                <number>AC-1(a)(1)</number>
+                <objective>
+                    <number>AC-1(a)(1)[1]</number>
+                    <decision>develops and documents an access control policy that addresses:</decision>
+                    <objective>
+                        <number>AC-1(a)(1)[1][a]</number>
+                        <decision>purpose;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][b]</number>
+                        <decision>scope;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][c]</number>
+                        <decision>roles;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][d]</number>
+                        <decision>responsibilities;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][e]</number>
+                        <decision>management commitment;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][f]</number>
+                        <decision>coordination among organizational entities;</decision>
+                    </objective>
+                    <objective>
+                        <number>AC-1(a)(1)[1][g]</number>
+                        <decision>compliance;</decision>
+                    </objective>
+                </objective>
+                <objective>
+                    <number>AC-1(a)(1)[2]</number>
+                    <decision>defines personnel or roles to whom the access control policy are to be disseminated;</decision>
+                </objective>
+                <objective>
+                    <number>AC-1(a)(1)[3]</number>
+                    <decision>disseminates the access control policy to organization-defined personnel or roles;</decision>
+                </objective>
+            </objective>
+            <objective>
+                <number>AC-1(a)(2)</number>
+                <objective>
+                    <number>AC-1(a)(2)[1]</number>
+                    <decision>develops and documents procedures to facilitate the implementation of the access control policy and associated access control controls;</decision>
+                </objective>
+                <objective>
+                    <number>AC-1(a)(2)[2]</number>
+                    <decision>defines personnel or roles to whom the procedures are to be disseminated;</decision>
+                </objective>
+                <objective>
+                    <number>AC-1(a)(2)[3]</number>
+                    <decision>disseminates the procedures to organization-defined personnel or roles;</decision>
+                </objective>
+            </objective>
+            </objective>
+        <objective>
+            <number>AC-1(b)</number>
+            <objective>
+                <number>AC-1(b)(1)</number>
+                <objective>
+                    <number>AC-1(b)(1)[1]</number>
+                    <decision>defines the frequency to review and update the current access control policy;</decision>
+                </objective>
+                <objective>
+                    <number>AC-1(b)(1)[2]</number>
+                    <decision>reviews and updates the current access control policy with the organization-defined frequency;</decision>
+                </objective>
+            </objective>
+            <objective>
+                <number>AC-1(b)(2)</number>
+                <objective>
+                    <number>AC-1(b)(2)[1]</number>
+                    <decision>defines the frequency to review and update the current access control procedures; and</decision>
+                </objective>
+                <objective>
+                    <number>AC-1(b)(2)[2]</number>
+                    <decision>reviews and updates the current access control procedures with the organization-defined frequency.</decision>
+                </objective>
+            </objective>
+        </objective>
+    </controls:control>
+</controls:controls>

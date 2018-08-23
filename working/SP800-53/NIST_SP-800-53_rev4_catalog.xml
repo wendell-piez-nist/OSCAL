@@ -1,11 +1,10 @@
 <!-- XML produced by extraction/mapping from NVD XML :2018-08-20T10:10:37.37-04:00 -->
 <!-- Valid against the OSCAL catalog schema (project path schema/xml/oscal-catalog-schema.xsd) -->
-<?xml-stylesheet type="text/xsl" href="catalog-table-of-IDS-html.xsl"?>
 <catalog xmlns="http://csrc.nist.gov/ns/oscal/1.0"
          id="uuid-266b9949-f49f-4cb0-a30f-1a78da5f8cfb"
          model-version="0.9.11">
    <title>NIST SP800-53</title>
-   <declarations href="SP800-53-declarations.xml"/>
+   <declarations href="NIST_SP-800-53_rev4_declarations.xml"/>
    <references>
       <ref id="ref001">
          <citation href="http://www.gpo.gov/fdsys/granule/CFR-2012-title5-vol2/CFR-2012-title5-vol2-sec731-106/content-detail.html">5 C.F.R. 731.106</citation>
