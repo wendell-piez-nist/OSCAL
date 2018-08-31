@@ -19,6 +19,10 @@
   
   <xsl:variable name="source" select="/"/>
   
+  <xsl:variable name="objectives" select="if (true()) then document('800-53a-objectives.xml',$source) else ()"/>
+  
+  <xsl:key match="feed:control | control-enhancement" name="control-by-no" use="replace(number,'\s','')"/>
+  
   <xsl:template match="feed:controls">
     <!--id="NIST_SP-800-53_rev4_catalog.{ format-date(current-date(),'[Y][M01][D01]') }"-->
     <catalog id="uuid-{java:random-UUID()}" model-version="0.9.11">
@@ -27,9 +31,7 @@
       <declarations href="NIST_SP-800-53_rev4_declarations.xml"/>
 
       <xsl:for-each-group select="feed:control" group-by="family">
-        <!-- ID is the upper case letters from the first control's number -->
-        <xsl:variable name="label-id" select="replace(current-group()[1]/number,'\P{Lu}','') ! lower-case(.)"/>
-        <group class="family" label-id="{ $label-id }">
+        <group class="family">
           <title><xsl:value-of select="current-grouping-key()"/></title>
           <xsl:apply-templates select="current-group()"/>
         </group>
@@ -39,70 +41,30 @@
   
   <xsl:template match="feed:control">
     <control class="SP800-53">
-      <xsl:attribute name="label-id">
-        <xsl:apply-templates select="number" mode="label-as-id"/>
-      </xsl:attribute>
-      
-      
+      <xsl:variable name="this" select="."/>
       <xsl:apply-templates select="title"/>
       <xsl:apply-templates select="* except (title | references)"/>
+      <xsl:apply-templates mode="integrate-objectives" select="$objectives/key('control-by-no',$this/number/replace(.,'\s',''),.)"/>
       <xsl:apply-templates select="control-enhancements/control-enhancement"/>
       <xsl:apply-templates select="references"/>    
     </control>
   </xsl:template>
   
-
-  
-
-  <xsl:variable name="brace" as="xs:string">[\p{Ps}\p{Pe}]</xsl:variable>
-  
-  <xsl:template match="feed:control/number | control-enhancement/number" mode="label-as-id" as="xs:string">
-    <xsl:value-of
-      select="replace(lower-case(.), '\(', '.') ! replace(., '\)', '')"/>
-  </xsl:template>
-  
-<!-- Only inside controls do statements get numbers; in subcontrols (enhancements) they are unnumbered blocks -->
-  <xsl:template match="statement/number" mode="label-as-id" as="xs:string">
-    <xsl:variable name="control-label" select="lower-case(ancestor::feed:control/number)"/>
-<!-- the local part removes the control label and strips a final period   -->
-    <xsl:variable name="local-part" select="substring-after(lower-case(.),$control-label) ! replace(.,'\.$','')"/>
-    <xsl:value-of select="$control-label || '_smt-' || $local-part"/>
-  </xsl:template>
-  
-  
-  <xsl:template match="objective/number" mode="label-as-id" as="xs:string">
-    <xsl:variable name="on">
-      <xsl:analyze-string select="." regex="\[[\da-z]+\]">
-        <xsl:non-matching-substring>
-          <xsl:value-of select="."/>
-        </xsl:non-matching-substring>
-      </xsl:analyze-string>
-    </xsl:variable>
-    <xsl:variable name="as">
-      <xsl:text>_obj</xsl:text>
-      <xsl:analyze-string select="." regex="\[[\da-z]+\]">
-        <xsl:matching-substring>
-          <xsl:value-of select="."/>
-        </xsl:matching-substring>
-      </xsl:analyze-string>
-      
-    </xsl:variable>
-    <xsl:variable name="on-part" select="replace(lower-case($on), '\(', '.') ! replace(., '\)', '')"/>
-    <xsl:variable name="as-part" select="replace(lower-case($as), '\[', '.') ! replace(., '\]', '')"/>
-    
-    <xsl:value-of select="$on-part || $as-part"/>
-    <!--<xsl:value-of
-      select="replace(number, '[\-\(]', '.') ! replace(., '\)', '.') ! lower-case(.)"/>-->
-  </xsl:template>
-  
-  <xsl:template match="*" mode="label-as-id">
-    <xsl:message>ID without number? for <xsl:value-of select="name()"/></xsl:message>
-  </xsl:template>
-  
   <!--suppressed in default traversal-->
   <xsl:template match="control-enhancements"/>
   
+  <xsl:template mode="integrate-objectives" match="feed:control[exists(withdrawn)] | control-enhancement[exists(withdrawn)]"/>
     
+  <xsl:template mode="integrate-objectives" match="feed:control | control-enhancement">
+      <xsl:apply-templates mode="#current"/>
+  </xsl:template>
+  
+  <xsl:template mode="integrate-objectives" match="title | number | control-enhancements"/>
+  
+  <xsl:template mode="integrate-objectives" match="feed:control/* | control-enhancement/*" priority="-0.1">
+    <xsl:apply-templates select="." mode="#default"/>
+  </xsl:template>
+  
   <xsl:template match="title">
     <title>
       <xsl:apply-templates/>
@@ -128,12 +90,12 @@
        in a later step. But whitespace has to be stripped to normalize. -->
   
   <xsl:template match="number">
-    <prop class="label">
+    <prop class="name">
       <xsl:value-of select="replace(.,'\s','')"/>
     </prop>
   </xsl:template>
   
-  <xsl:template match="descriptions | decisions">
+  <xsl:template match="descriptions | decisions | objectives | potential-assessments">
       <xsl:apply-templates/>
   </xsl:template>
   
@@ -146,39 +108,25 @@
   
   <xsl:template match="control-enhancement">
     <subcontrol class="SP800-53-enhancement">
-      <xsl:attribute name="label-id">
-         <xsl:apply-templates select="number" mode="label-as-id"/>
-      </xsl:attribute>
+      <xsl:variable name="this" select="."/>
       <xsl:apply-templates select="title"/>
       <xsl:apply-templates select="@* except @sequence" mode="asElement"/>
+      
       <xsl:apply-templates select="* except title"/>
+      <xsl:apply-templates mode="integrate-objectives"
+        select="$objectives/key('control-by-no',$this/number/replace(.,'\s',''),/)"/>
     </subcontrol>
   </xsl:template>
   
   <xsl:template match="statement">
     <part class="statement">
-      <xsl:attribute name="label-id">
-        <xsl:apply-templates select="number" mode="label-as-id"/>
-      </xsl:attribute>
       <xsl:apply-templates select="@*" mode="asElement"/>
       <xsl:apply-templates/>
     </part>
   </xsl:template>
   
-  <xsl:template match="feed:control/statement | control-enhancement/statement">
-    <part class="statement">
-      <xsl:attribute name="label-id" >
-        <xsl:apply-templates select="../number" mode="label-as-id"/>
-        <xsl:text>_smt</xsl:text>
-      </xsl:attribute>
-      <xsl:apply-templates select="@*" mode="asElement"/>
-      <xsl:apply-templates/>
-    </part>
-  </xsl:template>
-  
-  <!--<xsl:template match="statement/statement" priority="2">
+  <xsl:template match="statement/statement" priority="2">
     <part class="item">
-      <xsl:apply-templates select="number" mode="label-as-id"/>
       <xsl:apply-templates select="@*" mode="asElement"/>
       <xsl:apply-templates/>
     </part>
@@ -186,11 +134,10 @@
   
   <xsl:template match="statement/statement/statement" priority="3">
     <part class="item">
-      <xsl:apply-templates select="number" mode="label-as-id"/>
       <xsl:apply-templates select="@*" mode="asElement"/>
       <xsl:apply-templates/>
     </part>
-  </xsl:template>-->
+  </xsl:template>
   
   <xsl:template match="statement/description">
       <p>
@@ -214,58 +161,15 @@
   <!-- In latest sp80053a, objective is recursive,
        resulting in nested part//part -->
   
-  <xsl:template match="appendixA">
-    <xsl:apply-templates select="objective | potential-assessments/potential-assessment"/>
-  </xsl:template>
-  
-  
   <xsl:template match="objective">
     <part class="objective">
-      <xsl:attribute name="label-id">
-        <xsl:apply-templates select="number" mode="label-as-id"/>
-      </xsl:attribute>
-      <!--<xsl:for-each select="number[@as|@on]">
-        <xsl:variable name="compound-value" select="string-join((@on,@as),'_')"/>
-        <xsl:attribute name="new-id">
-          <xsl:apply-templates select="." mode="label-as-id"/>
-        </xsl:attribute>
-      </xsl:for-each>-->
-      <xsl:variable name="target-label">
-        <xsl:analyze-string select="string(number)" regex="\[[\da-z]+\]">
-          <xsl:non-matching-substring>
-            <xsl:value-of select="."/>
-          </xsl:non-matching-substring>
-        </xsl:analyze-string>
-      </xsl:variable>
-      <xsl:variable name="target-as" select="replace($target-label, '\)', '.') ! replace(., '\(', '')"/>
-      
-      <!--<link><xsl:value-of select="$target-as"/></link>-->
-      <xsl:apply-templates mode="corresp-link" select="key('statement-by-number',$target-as)"/>
-    
       <xsl:apply-templates select="@*" mode="asElement"/>
-      
       <xsl:apply-templates/>
     </part>
   </xsl:template>
   
-  <xsl:key name="statement-by-number" match="statement" use="number"/>
-  
-  <xsl:template match="*" mode="corresp-link">
-    <link rel="corresp">
-      <xsl:attribute name="href">
-        <xsl:text>#</xsl:text>
-        <xsl:apply-templates select="number" mode="label-as-id"/>
-      </xsl:attribute>
-      <xsl:value-of select="number"/>
-    </link>
-  </xsl:template>
-  
   <xsl:template match="supplemental-guidance">
     <part class="guidance">
-      <xsl:attribute name="label-id">
-        <xsl:apply-templates select="../number" mode="label-as-id"/>
-        <xsl:text>_gdn</xsl:text>
-      </xsl:attribute>
       <xsl:apply-templates select="@*" mode="asElement"/>
       <xsl:apply-templates/>
     </part>
@@ -341,7 +245,6 @@
   
 
   <xsl:template match="withdrawn">
-    <prop class="status">Withdrawn</prop>
     <xsl:apply-templates/>
   </xsl:template>
   

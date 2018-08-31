@@ -19,9 +19,20 @@
   <!-- We produce param elements and insert them into controls, for any .//assign
        elements found herein.
   
+  
   Note 'assign' is a temporary (placeholder) element from an earlier step; it
   marks where 'assignment' syntax has been used in the source. In the result,
   it produces a param|insert pair. -->
+  
+<!-- Promoting label ids (id values derived from labels in earlier steps) to IDs. No further IDs should
+     be required and they should even validate. -->
+  <xsl:template match="@label-id">
+    <xsl:attribute name="id" select="."/>
+  </xsl:template>
+  
+  <!-- Just in case -->
+  <xsl:template match="@id[exists(../@label-id)]"/>
+  
   <xsl:template match="control | subcontrol">
     <xsl:copy>
       <xsl:apply-templates select="@*"/>
@@ -88,43 +99,28 @@
   </xsl:template>
   
   <xsl:template match="assign | selection" mode="make-id">
-    <xsl:apply-templates mode="munge-id" select="(ancestor::control | ancestor::subcontrol)[last()]"/>
+    <xsl:value-of select="(ancestor::control | ancestor::subcontrol)[last()]/@id"/>
     <xsl:text>_prm_</xsl:text>
     <xsl:number count="assign | selection" from="control | subcontrol" level="any" format="1"/>
   </xsl:template>
 
-  <xsl:template match="link[starts-with(@href,'#')]">
+  <xsl:key name="control-by-label" match="control | subcontrol" use="prop[@class='label']"/>
+  
+  <xsl:template match="link">
     <xsl:copy>
-      <xsl:apply-templates select="@*"/>
       <xsl:attribute name="rel">related</xsl:attribute>
-      <!-- display string should be acquired from the link target -->
-      <!--<xsl:for-each select="key('cross-reference',@href)">
-        <xsl:for-each select="prop[@class='name']">
-          <xsl:apply-templates/>
-          <xsl:text>: </xsl:text>
-        </xsl:for-each>
-        <xsl:for-each select="title">
-          <xsl:apply-templates/>
-        </xsl:for-each>
-      </xsl:for-each>-->
+      <xsl:for-each select="key('control-by-label',.)">
+        <xsl:attribute name="href">
+          <xsl:text>#</xsl:text>
+          <xsl:value-of select="@label-id"/>
+        </xsl:attribute>
+      </xsl:for-each>
+      
+      <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:key name="by-id"           match="*[@id]" use="@id"/>
-  <xsl:key name="cross-reference" match="*[@id]" use="'#' || @id"/>
   
-  <xsl:template match="@id">
-    <xsl:attribute name="id">
-      <xsl:apply-templates select=".." mode="munge-id"/>
-    </xsl:attribute>
-  </xsl:template>
-  
-  <xsl:template match="@href[starts-with(.,'#')]">
-    <xsl:attribute name="href">
-      <xsl:text>#</xsl:text>
-      <xsl:apply-templates select="key('cross-reference',string(.))" mode="munge-id"/>
-    </xsl:attribute>
-  </xsl:template>
   
   <!--<xsl:template match="part[@class='objective']">
     <xsl:copy>
@@ -136,45 +132,35 @@
     </xsl:copy>
   </xsl:template>-->
   
-  <!-- @id munging modified for rev5 not including SP800-53A  -->
+  <!-- prepare for @id munging modifications for rev4/ rev5, SP800-53A ... -->
   <!--<xsl:value-of select="replace(@id,'\p{P}\p{P}*','.') => replace('\.(\.|$)','$1')"/>-->
-  <xsl:template as="xs:string" mode="munge-id" match="control | part">
-    <xsl:value-of select="@id"/>
+  <!--<xsl:template as="xs:string" mode="munge-id" match="control | part">
+    <xsl:value-of select="replace(@id,'\p{P}\p{P}*','.') => replace('\.(\.|$)','$1')"/>
+    <!-\-<xsl:value-of select="@id"/>-\->
   </xsl:template>
   
   <xsl:template as="xs:string" mode="munge-id" match="subcontrol">
     <xsl:value-of select="replace(@id,'\.(\.|$)','$1')"/>
-  </xsl:template>
+  </xsl:template>-->
   
-  <xsl:template as="xs:string?" mode="munge-id" match="*[@id]" priority="-0.1">
-    <xsl:value-of select="@id"/>
-  </xsl:template>
-    
-    <xsl:template as="xs:string" mode="munge-id" match="part[@class='item']">
-      <xsl:value-of>
-      <xsl:apply-templates select="(ancestor::control | ancestor::subcontrol)[last()]" mode="munge-id"/>
-      <xsl:text>_smt_</xsl:text>
-      <xsl:number format="a.1.a.1" level="multiple" count="part[@class='item']" from="control | subcontrol"/>
-    </xsl:value-of>
-    <!-- Note outputs only happen to be valid in the result -->
-  </xsl:template>
   
-  <xsl:template as="xs:string" mode="munge-id" match="part[@class='objective']">
+  
+  <!--<xsl:template as="xs:string" mode="munge-id" match="part[@class='objective']">
     <xsl:value-of>
       <xsl:apply-templates select="(ancestor::control | ancestor::subcontrol)[last()]" mode="munge-id"/>
       <xsl:text>_obj_</xsl:text>
-      <!--<xsl:number format="a.1.1.a.1.1." level="multiple" count="part[@class='objective']"
-        from="part[@class='objective'][empty(parent::part)]"/> works for AC-1 -->
-      <!-- Numbering scheme for AC-2     -->
-      <!--<xsl:number format="a.1.a.1" level="multiple" count="part/part[@class='objective']"
-        from="part[@class='objective'][empty(parent::part)]"/>-->
-      <!-- Instead of imposing a scheme, presently we rewrite the number given. -->
-      <!-- CHECK FOR CORRECTNESS -->
-      <xsl:value-of select="replace(prop[@class='name'],'[A-Z]+\-\d+\D','') =>
+      <!-\-<xsl:number format="a.1.1.a.1.1." level="multiple" count="part[@class='objective']"
+        from="part[@class='objective'][empty(parent::part)]"/> works for AC-1 -\->
+      <!-\- Numbering scheme for AC-2     -\->
+      <!-\-<xsl:number format="a.1.a.1" level="multiple" count="part/part[@class='objective']"
+        from="part[@class='objective'][empty(parent::part)]"/>-\->
+      <!-\- Instead of imposing a scheme, presently we rewrite the number given. -\->
+      <!-\- CHECK FOR CORRECTNESS -\->
+      <xsl:value-of select="replace(prop[@class='label'],'[A-Z]+\-\d+\D','') =>
         replace('\p{P}+','.') => replace('\.$','')"/>
     </xsl:value-of>
-    <!-- Note outputs only happen to be valid in the result -->
-  </xsl:template>
+    <!-\- Note outputs only happen to be valid in the result -\->
+  </xsl:template>-->
   
   <!--<xsl:template as="xs:string" mode="munge-id" match="part">
     <!-\- id leads with element class or name code, plus @id value stripped of punctuation -\->

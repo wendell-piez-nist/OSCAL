@@ -23,9 +23,9 @@
   <xsl:template match="prop[@class=('baseline-impact','priority')]"/>
   
   <!--Truncate properties that echo their parents -->
-  <xsl:template match="part/prop[@class='name'][starts-with(.,../ancestor::*[prop/@class='name'][1]/prop[@class='name'])]">
+  <xsl:template match="part/prop[@class='label'][starts-with(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])]">
     <prop class="label">
-      <xsl:value-of select="substring-after(.,../ancestor::*[prop/@class='name'][1]/prop[@class='name'])"/>
+      <xsl:value-of select="substring-after(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])"/>
     </prop>
   </xsl:template>
   

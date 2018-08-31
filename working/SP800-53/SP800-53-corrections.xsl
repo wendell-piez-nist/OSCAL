@@ -25,6 +25,14 @@
     </xsl:copy>
   </xsl:template>
    
+  <xsl:template match="number"  xpath-default-namespace="http://scap.nist.gov/schema/sp800-53/2.0">
+    <xsl:copy>
+      <xsl:copy-of select="@*"/>
+      <xsl:value-of select="replace(string(.),'\s','')"/>
+    </xsl:copy>
+  </xsl:template>
+    
+   
   <!--<xsl:if test="string-length(.) = (6) and (not(. = $stops))">
     <xsl:message> not stopping {. } </xsl:message>
   </xsl:if>-->

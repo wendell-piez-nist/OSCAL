@@ -11,7 +11,7 @@
   
   
   <p:input port="source" primary="true">
-    <p:document href="rev4/800-53-controls.xml"/>
+    <p:document href="../../sources/800-53/rev4/800-53-controls.xml"/>
   </p:input>
   
   <p:input port="parameters" kind="parameter"/>
@@ -22,19 +22,16 @@
   <p:output port="_A_corrected" primary="false">
     <p:pipe port="result" step="corrected"/>
   </p:output>
-  <p:output port="_B_merged" primary="false">
-    <p:pipe port="result" step="merged"/>
-  </p:output>
-  <p:output port="_C_converted" primary="false">
+  <p:output port="_B_converted" primary="false">
     <p:pipe port="result" step="converted"/>
   </p:output>
-  <p:output port="_D_enhanced" primary="false">
-    <p:pipe port="result" step="parameters-detected"/>
+  <p:output port="_C_assessed" primary="false">
+    <p:pipe port="result" step="assessed"/>
   </p:output>
-  <p:output port="_E_improved" primary="false">
+  <p:output port="_D_improved" primary="false">
     <p:pipe port="result" step="improved"/>
   </p:output>
-  <p:output port="_F_reduced" primary="false">
+  <p:output port="_E_reduced" primary="false">
     <p:pipe port="result" step="reduced"/>
   </p:output>
   <p:output port="final" primary="true">
@@ -50,11 +47,10 @@
   
   <p:serialization port="_0_input"     indent="true"/>
   <p:serialization port="_A_corrected" indent="true"/>
-  <p:serialization port="_B_merged"    indent="true"/>
-  <p:serialization port="_C_converted" indent="true"/>
-  <p:serialization port="_D_enhanced"  indent="true"/>
-  <p:serialization port="_E_improved"  indent="true"/>
-  <p:serialization port="_F_reduced"   indent="true"/>
+  <p:serialization port="_B_converted" indent="true"/>
+  <p:serialization port="_C_assessed"  indent="true"/>
+  <p:serialization port="_D_improved"  indent="true"/>
+  <p:serialization port="_E_reduced"   indent="true"/>
   
   <p:identity name="input"/>
 
@@ -65,22 +61,16 @@
     </p:input>
   </p:xslt>
 
-  <!--<p:identity name="merged"/>-->
-  <p:xslt name="merged">
-    <p:input port="stylesheet">
-      <p:document href="NVD-SP800-53-integrate-objectives.xsl"/>
-    </p:input>
-  </p:xslt>
-  
   <!--<p:identity name="converted"/>-->
   <p:xslt name="converted">
     <p:input port="stylesheet">
-      <p:document href="SP800-53-convert-to-oscal.xsl"/>
+      <p:document href="SP800-53-convert-to-oscal-old.xsl"/>
     </p:input>
   </p:xslt>
   
+  
   <!--<p:identity name="enhanced"/>-->
-  <p:xslt name="parameters-detected">
+  <p:xslt name="assessed">
     <p:input port="stylesheet">
       <p:document href="SP800-53-param-detect.xsl"/>
     </p:input>
@@ -92,8 +82,6 @@
       <p:document href="SP800-53-params-and-ids.xsl"/>
     </p:input>
   </p:xslt>
-  
-  <!--<p:identity name="reduced"/>-->
   
   <p:xslt name="reduced">
     <p:input port="stylesheet">

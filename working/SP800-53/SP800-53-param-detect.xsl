@@ -37,39 +37,28 @@
     </xsl:copy>
   </xsl:template>
   
-  <xsl:template match="control | subcontrol | part" mode="id" as="xs:string">
-    <xsl:for-each select="prop[@class='name']">
-      <xsl:attribute name="id" select="translate(.,'()[]','..--') ! replace(.,'\C','.') ! lower-case(.)"/>
-    </xsl:for-each>
-    <xsl:if test="not(prop/@class='name')">OOPS</xsl:if>
-  </xsl:template>
+  <!--<xsl:template match="control | subcontrol | part" mode="id" as="xs:string">
+    <xsl:value-of>
+      <xsl:for-each select="prop[@class='label']">
+        <xsl:attribute name="id" select="translate(.,'()[]','..-\-') ! replace(.,'\C','.') ! lower-case(.)"/>
+      </xsl:for-each>
+      <xsl:if test="not(prop/@class='label')">OOPS</xsl:if>
+    </xsl:value-of>
+  </xsl:template>-->
+ 
   
   <xsl:template match="control | subcontrol | part">
     <xsl:copy>
       <xsl:copy-of select="@*"/>
-      <xsl:if test="prop/@class = 'name'">
-        <xsl:attribute name="id">
-          <xsl:apply-templates select="." mode="id"/>
-        </xsl:attribute>
-      </xsl:if>
       <xsl:apply-templates/>
     </xsl:copy>
   </xsl:template>
   
-  <xsl:key name="control-by-name" match="control | subcontrol" use="prop[@class='name']"/>
+  <!--<xsl:template match="*" mode="id">
+    <xsl:value-of select="@id"/>
+  </xsl:template>-->
   
-  <xsl:template match="link">
-    <xsl:copy>
-      <xsl:for-each select="key('control-by-name',.)">
-      <xsl:attribute name="href">
-        <xsl:text>#</xsl:text>
-        <xsl:apply-templates select="." mode="id"/>
-      </xsl:attribute>
-      </xsl:for-each>
-     
-      <xsl:apply-templates/>
-    </xsl:copy>
-  </xsl:template>
+  
       
   <xsl:template match="text()">
     <xsl:analyze-string select="." regex="\[(Assignment|Withdrawn)[^\]]*\]">

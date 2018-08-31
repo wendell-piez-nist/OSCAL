@@ -37,58 +37,10 @@
         </xsl:copy>
     </xsl:template>
     
-    <!-- This transformation *only* provides missing levels of
-     structure where labeling indicates it. It does not
-    provide IDs where they are missing. -->
-
-    <!--<xsl:template match="number">
-        <xsl:copy>
-            <xsl:variable name="parent-label" select="string( (parent::objective/parent::controls:control, parent::objective, parent::control-enhancement)/number)"/>
-            <xsl:attribute name="parent" select="$parent-label"/>
-            <xsl:attribute name="ft" select="oscal:first-token(.,parent::*/number)"/>
-            <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>-->
-    
-<!-- Matching only at the top level; inside, called by name... -->
-
-
-    <xsl:template match="objective/objective" mode="hide">
-        
-        <xsl:copy> <xsl:variable name="in" select="string(ancestor::*[number][1]/number)"/>
-            <xsl:attribute name="in" select="$in"/>
-            <xsl:attribute name="ft" select="oscal:first-token(number,$in)"/>
-                <xsl:apply-templates select="node() | @*"/>
-            </xsl:copy>
-        
-    </xsl:template>
-    
-    <xsl:template match="number">
-        <xsl:copy>
-          <xsl:attribute name="placement">
-              <xsl:analyze-string select="." regex="\[[\da-z]+\]">
-                  <xsl:non-matching-substring>
-                      <xsl:value-of select="."/>
-                  </xsl:non-matching-substring>
-              </xsl:analyze-string>
-          </xsl:attribute>
-        <xsl:attribute name="as">
-            <xsl:text>obj</xsl:text>
-                  <xsl:analyze-string select="." regex="\[[\da-z]+\]">
-                      <xsl:matching-substring>
-                          <xsl:value-of select="."/>
-                      </xsl:matching-substring>
-                  </xsl:analyze-string>
-              
-          </xsl:attribute>
-        
-          <xsl:apply-templates/>
-        </xsl:copy>
-    </xsl:template>
-    
     <xsl:template match="controls:control/objective | control-enhancement/objective">
+
         <xsl:variable name="in" select="string(ancestor::*[number][1]/number)"/>
-        
+        <xsl:apply-templates select="* except objective"/>
         
       <!-- This is really a splitter, not a grouper... but in our data this is enough -->
         <xsl:for-each-group select="objective" group-by="oscal:first-token(number,$in)">
@@ -98,9 +50,9 @@
                 </xsl:when>
                 <xsl:otherwise>
                     <objective>
-                        <NUMBER>
+                        <number>
                             <xsl:value-of select="$in || current-grouping-key()"/>
-                        </NUMBER>
+                        </number>
                         <xsl:apply-templates select="current-group()"/>
                     </objective>
                 </xsl:otherwise>
