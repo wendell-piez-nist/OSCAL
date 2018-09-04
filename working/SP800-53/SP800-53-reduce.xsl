@@ -23,28 +23,30 @@
   <xsl:template match="prop[@class=('baseline-impact','priority')]"/>
   
   <!--Truncate properties that echo their parents -->
-  <xsl:template match="part/prop[@class='label'][starts-with(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])]">
+  <!--<xsl:template match="part/prop[@class='label'][starts-with(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])]">
     <prop class="label">
       <xsl:value-of select="substring-after(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])"/>
     </prop>
-  </xsl:template>
+  </xsl:template>-->
   
 <!-- Reference handling: we rewrite all literal citations into links to copies created in an earlier step
      inside /catalog/references -->
   
   <xsl:key name="citations-by-value" match="/*/references/ref/citation" use="normalize-space(.)"/>
   
-<!-- 'Withdrawn' controls are re-expressed with properties. withdrawn is an inline
-     element appearing in paragraph content. -->
-  <xsl:template match="control[exists(.//withdrawn except subcontrol//withdrawn)] | subcontrol[exists(.//withdrawn)]">
+<!-- parts including statements are dropped from 'Withdrawn' controls and subcontrols. -->
+  <xsl:template match="control[prop[@class='status']='Withdrawn']/part | subcontrol[prop[@class='status']='Withdrawn']/part"/>
+
+  <xsl:template match="control | subcontrol | part">
     <xsl:copy>
-      <xsl:copy-of select="@*"/>
-      <xsl:apply-templates select="prop/(. | preceding-sibling::*)"/>
-      <prop class="status">Withdrawn</prop>
-      <xsl:apply-templates select="prop/following-sibling::*"/>
+      <xsl:apply-templates select="@*"/>
+      <xsl:apply-templates select="title, param, prop"/>
+      <xsl:apply-templates select="* except (title | param | prop | part | link | references | subcontrol)"/>
+      <xsl:apply-templates select="part, link"/>
+      <xsl:apply-templates select="subcontrol, references"/>
     </xsl:copy>
   </xsl:template>
-
+  
 <!-- Stripping this unwanted ws -->
   <xsl:template match="text()[not(matches(.,'S'))][exists(../withdrawn)]"/>
   

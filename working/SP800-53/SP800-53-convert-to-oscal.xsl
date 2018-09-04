@@ -64,8 +64,8 @@
 <!-- Only inside controls do statements get numbers; in subcontrols (enhancements) they are unnumbered blocks -->
   <xsl:template match="statement/number" mode="label-as-id" as="xs:string">
     <xsl:variable name="control-label" select="lower-case(ancestor::feed:control/number)"/>
-<!-- the local part removes the control label and strips a final period   -->
-    <xsl:variable name="local-part" select="substring-after(lower-case(.),$control-label) ! replace(.,'\.$','')"/>
+<!-- the local part removes the control label, parentheses, and strips a final period   -->
+    <xsl:variable name="local-part" select="substring-after(lower-case(.),$control-label) ! replace(., '\(', '.') ! replace(., '\)', '') ! replace(.,'\.$','')"/>
     <xsl:value-of select="$control-label || '_smt-' || $local-part"/>
   </xsl:template>
   
@@ -237,14 +237,25 @@
           </xsl:non-matching-substring>
         </xsl:analyze-string>
       </xsl:variable>
+      <xsl:variable name="parent-label">
+        <xsl:analyze-string select="string(../number)" regex="\[[\da-z]+\]">
+          <xsl:non-matching-substring>
+            <xsl:value-of select="."/>
+          </xsl:non-matching-substring>
+        </xsl:analyze-string>
+      </xsl:variable>
       <xsl:variable name="target-as" select="replace($target-label, '\)', '.') ! replace(., '\(', '')"/>
+      <xsl:variable name="parent-as" select="replace($parent-label, '\)', '.') ! replace(., '\(', '')"/>
       
       <!--<link><xsl:value-of select="$target-as"/></link>-->
-      <xsl:apply-templates mode="corresp-link" select="key('statement-by-number',$target-as)"/>
-    
+      
       <xsl:apply-templates select="@*" mode="asElement"/>
       
       <xsl:apply-templates/>
+      
+      <xsl:if test="not($target-as = $parent-as)">
+        <xsl:apply-templates mode="corresp-link" select="key('statement-by-number',$target-as)"/>
+      </xsl:if>
     </part>
   </xsl:template>
   

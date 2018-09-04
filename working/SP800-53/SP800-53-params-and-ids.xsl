@@ -99,14 +99,14 @@
   </xsl:template>
   
   <xsl:template match="assign | selection" mode="make-id">
-    <xsl:value-of select="(ancestor::control | ancestor::subcontrol)[last()]/@id"/>
+    <xsl:value-of select="(ancestor::control | ancestor::subcontrol)[last()]/@label-id"/>
     <xsl:text>_prm_</xsl:text>
     <xsl:number count="assign | selection" from="control | subcontrol" level="any" format="1"/>
   </xsl:template>
 
   <xsl:key name="control-by-label" match="control | subcontrol" use="prop[@class='label']"/>
   
-  <xsl:template match="link">
+  <xsl:template match="link[empty(@rel)]">
     <xsl:copy>
       <xsl:attribute name="rel">related</xsl:attribute>
       <xsl:for-each select="key('control-by-label',.)">
