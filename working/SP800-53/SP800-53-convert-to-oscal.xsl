@@ -10,7 +10,8 @@
   xpath-default-namespace="http://scap.nist.gov/schema/sp800-53/2.0"
   xmlns="http://csrc.nist.gov/ns/oscal/1.0"
    exclude-result-prefixes="#all"
-  >
+   
+   xmlns:oscal="http://www.example.com/fn">
 
   <xsl:strip-space elements="feed:controls feed:control description html:div html:ol supplemental-guidance references control-enhancements control-enhancement objectives objective decisions decision potential-assessments potential-assessment withdrawn statement"/>
 
@@ -58,15 +59,21 @@
   
   <xsl:template match="feed:control/number | control-enhancement/number" mode="label-as-id" as="xs:string">
     <xsl:value-of
-      select="replace(lower-case(.), '\(', '.') ! replace(., '\)', '')"/>
+      select="oscal:parens-to-dots(.) ! lower-case(.)"/>
   </xsl:template>
   
 <!-- Only inside controls do statements get numbers; in subcontrols (enhancements) they are unnumbered blocks -->
+  <xsl:function name="oscal:parens-to-dots">
+    <xsl:param name="what"/>
+    <xsl:value-of select="replace($what, '\(', '.') ! replace(., '\)', '') ! replace(.,'\.$','')"/>
+  </xsl:function>
+  
   <xsl:template match="statement/number" mode="label-as-id" as="xs:string">
-    <xsl:variable name="control-label" select="lower-case(ancestor::feed:control/number)"/>
+    <xsl:variable name="control-label" select="if (exists(ancestor::control-enhancement)) then ancestor::control-enhancement/number else ancestor::feed:control/number"/>
+    
 <!-- the local part removes the control label, parentheses, and strips a final period   -->
-    <xsl:variable name="local-part" select="substring-after(lower-case(.),$control-label) ! replace(., '\(', '.') ! replace(., '\)', '') ! replace(.,'\.$','')"/>
-    <xsl:value-of select="$control-label || '_smt-' || $local-part"/>
+    <xsl:variable name="local-part" select="substring-after(.,$control-label) ! oscal:parens-to-dots(.)"/>
+    <xsl:value-of select="oscal:parens-to-dots($control-label) ! lower-case(.) || '_smt.' || $local-part"/>
   </xsl:template>
   
   
