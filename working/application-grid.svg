@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 800 600">
+    <!--height="100%" -->
+    <desc>OSCAL Application Grid</desc>
+    
+    <rect width="100%" height="100%" fill="none" stroke="black" stroke-width="6"/>
+    
+    <g  fill="skyblue" fill-opacity="0.2" stroke-width="2" stroke="midnightblue">
+        <rect y="0" height="150" width="100%"/>
+        <rect y="0" height="250" width="100%" stroke-dasharray="4 2" stroke-width="6"/>
+        <rect y="0" height="350" width="100%"/>
+        <rect y="0" height="450" width="100%" stroke-dasharray="4 4"/>
+        <rect y="0" height="500" width="100%" stroke-dasharray="2 2"/>
+        <rect y="0" height="500" width="100%" stroke-dasharray="2 2"/>
+    </g>
+    <rect y="25" height="25" width="100%" fill="blue"    fill-opacity="0.5"/>
+    <rect y="100" height="25" width="100%" fill="blue" fill-opacity="0.5"/>
+    
+    <g transform="translate(200 480)" font-size="18" text-anchor="end">
+        <text y="0">Metaschema</text>
+        <text y="-90">OSCAL Schema</text>
+        <text y="-70" font-size="80%">tag set / object model</text>
+        
+        <text y="-190">NIST SP800-53/53A</text>
+        <text y="-170" font-size="80%">Regulation of IDs, links</text>
+        <text y="-155" font-size="70%">parameters, labels &amp;c.</text>
+
+        <text transform="translate(85 -200) rotate(270)">rev 4</text>
+        <path d="m 100 -200 v 50" stroke="black" stroke-width="2"/>
+        <text transform="translate(125 -200) rotate(270)">rev 5</text>
+        
+        <text y="-290">FedRAMP</text>
+        <text y="-270" font-size="80%">Domain rules &amp;</text>
+        <text y="-250" font-size="80%">business logic</text>
+        
+        <!--<text transform="translate(205 -200) rotate(270)">rev 4</text>
+        <path d="m 220 -200 v 50" stroke="black" stroke-width="2"/>
+        <text transform="translate(245 -200) rotate(270)">rev 5</text>-->
+        
+        
+        <text y="-400">(Other players)</text>
+    </g>
+    
+    <g transform="translate(200 500)" font-size="28" text-anchor="end">
+        <text transform="translate(90 20) rotate(-45)">Catalog</text>
+        <path d="M -50 100 L 50 0 v -250 h 100 v 250 L 150 0 L 50 100 z" stroke="black" stroke-width="1" fill="none"/>
+    </g>
+    <g transform="translate(320 500)" font-size="28" text-anchor="end">
+        <text transform="translate(90 20) rotate(-45)">Profile</text>
+        <path d="M -50 100 L 50 0 v -350 h 100 v 350 L 150 0 L 50 100 z" stroke="black" stroke-width="1" fill="none"/>
+    </g>
+    <g transform="translate(440 500)" font-size="16" text-anchor="end">
+        <text transform="translate(100 10) rotate(-45)">Implementation</text>
+        <path d="M -50 100 L 50 0 v -500 h 100 v 500 L 150 0 L 50 100 z" stroke="black" stroke-width="1" fill="none"/>
+    </g>
+    <g transform="translate(560 500)" font-size="20" text-anchor="end">
+        <text transform="translate(80 10) rotate(-45)">assessment</text>
+        <text transform="translate(100 14) rotate(-45)">&amp; further</text>
+        <path d="M -50 100 L 50 0 v -500 h 100 v 500 L 150 0 L 50 100 z" stroke="black" stroke-width="1" fill="none"/>
+    </g>
+    
+        <!--<text transform="translate(200 0) rotate(-35)">Profile</text>
+        <text transform="translate(300 0) rotate(-35)">Implementation</text>
+        <text transform="translate(400 0) rotate(-35)">(framework / further initiatives?)</text>-->
+        <!--<text x="200" transform="rotate(-35)">Profile</text>
+        <text x="300" transform="rotate(-35)">Implementation</text>
+        <text x="400" transform="rotate(-35)">(Further initiatives)</text>-->
+    
+</svg>

@@ -57,7 +57,7 @@
 
   <xsl:variable name="brace" as="xs:string">[\p{Ps}\p{Pe}]</xsl:variable>
   
-  <xsl:template match="feed:control/number | control-enhancement/number" mode="label-as-id" as="xs:string">
+  <xsl:template match="feed:control/number | control-enhancement/number | appendixA/number" mode="label-as-id" as="xs:string">
     <xsl:value-of
       select="oscal:parens-to-dots(.) ! lower-case(.)"/>
   </xsl:template>
@@ -72,7 +72,7 @@
     <xsl:variable name="control-label" select="if (exists(ancestor::control-enhancement)) then ancestor::control-enhancement/number else ancestor::feed:control/number"/>
     
 <!-- the local part removes the control label, parentheses, and strips a final period   -->
-    <xsl:variable name="local-part" select="substring-after(.,$control-label) ! oscal:parens-to-dots(.)"/>
+    <xsl:variable name="local-part" select="substring-after(.,$control-label) ! oscal:parens-to-dots(.) ! replace(.,'^\.','')"/>
     <xsl:value-of select="oscal:parens-to-dots($control-label) ! lower-case(.) || '_smt.' || $local-part"/>
   </xsl:template>
   
@@ -163,7 +163,7 @@
   </xsl:template>
   
   <xsl:template match="statement">
-    <part class="statement">
+    <part class="{if (parent::statement) then 'item' else 'statement'}">
       <xsl:attribute name="label-id">
         <xsl:apply-templates select="number" mode="label-as-id"/>
       </xsl:attribute>
@@ -206,8 +206,11 @@
       </p>
   </xsl:template>
   
-  <xsl:template match="related">
-    <link rel="related" href="#{normalize-space(.)}">
+  <xsl:template match="related" >
+    <link rel="related">
+      <xsl:if test="matches(.,'^[A-Z][A-Z]\-\d+')">
+        <xsl:attribute name="href">#<xsl:value-of select="lower-case(.)"/></xsl:attribute>
+      </xsl:if>
       <xsl:apply-templates/>
     </link>
   </xsl:template>
@@ -222,8 +225,19 @@
        resulting in nested part//part -->
   
   <xsl:template match="appendixA">
-    <xsl:apply-templates select="objective | potential-assessments/potential-assessment"/>
+    <part class="objective">
+      <xsl:attribute name="label-id">
+        <xsl:apply-templates select="number" mode="label-as-id"/>
+        <xsl:text>_obj</xsl:text>
+      </xsl:attribute>
+      <xsl:apply-templates/>
+    </part>
+    <xsl:apply-templates select="potential-assessments/potential-assessment"/>
+    
   </xsl:template>
+  
+<!-- dropped when traversed inside 'objectives' part -->
+  <xsl:template match="potential-assessments | appendixA/prop"/>
   
   
   <xsl:template match="objective">
@@ -251,8 +265,8 @@
           </xsl:non-matching-substring>
         </xsl:analyze-string>
       </xsl:variable>
-      <xsl:variable name="target-as" select="replace($target-label, '\)', '.') ! replace(., '\(', '')"/>
-      <xsl:variable name="parent-as" select="replace($parent-label, '\)', '.') ! replace(., '\(', '')"/>
+      <!--<xsl:variable name="target-as" select="replace($target-label, '\)', '.') ! replace(., '\(', '')"/>
+      <xsl:variable name="parent-as" select="replace($parent-label, '\)', '.') ! replace(., '\(', '')"/>-->
       
       <!--<link><xsl:value-of select="$target-as"/></link>-->
       
@@ -260,8 +274,9 @@
       
       <xsl:apply-templates/>
       
-      <xsl:if test="not($target-as = $parent-as)">
-        <xsl:apply-templates mode="corresp-link" select="key('statement-by-number',$target-as)"/>
+      <!--<link rel="corresp"><xsl:value-of select="$target-label"/></link>-->
+      <xsl:if test="not($target-label = $parent-label)">
+        <xsl:apply-templates mode="corresp-link" select="key('statement-by-number',$target-label)"/>
       </xsl:if>
     </part>
   </xsl:template>
