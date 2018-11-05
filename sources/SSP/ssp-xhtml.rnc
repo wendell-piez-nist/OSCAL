@@ -1,0 +1,119 @@
+default namespace = "http://www.w3.org/1999/xhtml"
+
+start =
+  element html {
+    element head {
+      element meta {
+        attribute charset { xsd:NCName }
+      },
+      element style {
+        attribute type { text },
+        text
+      }
+    },
+    element body { \div+ }
+  }
+\div =
+  element div {
+    attribute class { xsd:NCName },
+    (text
+     | p
+     | section
+     | table
+     | element img {
+         attribute src { xsd:anyURI }
+       })+
+  }
+p =
+  element p {
+    attribute class { xsd:NCName }?,
+    attribute data-xsweet-list-level { xsd:integer }?,
+    attribute style { text }?,
+    (text
+     | a
+     | b
+     | br
+     | \div
+     | highlight
+     | i
+     | span
+     | tab
+     | element sup { xsd:NCName })+
+  }
+section =
+  element section {
+    element h1 {
+      attribute class { xsd:NCName },
+      attribute data-xsweet-outline-level { xsd:integer },
+      attribute style { text },
+      (text | a)+
+    }?,
+    (p
+     | section
+     | table
+     | element h2 {
+         attribute class { xsd:NCName },
+         attribute data-xsweet-list-level { xsd:integer },
+         attribute data-xsweet-outline-level { xsd:integer },
+         attribute style { text },
+         (text | a | span)+
+       }
+     | element h3 {
+         attribute class { xsd:NCName },
+         attribute data-xsweet-outline-level { xsd:integer },
+         attribute style { text },
+         (text | a | span)+
+       }
+     | element h4 {
+         attribute class { xsd:NCName },
+         attribute data-xsweet-outline-level { xsd:integer },
+         attribute style { text },
+         (text | a)+
+       })*
+  }
+table =
+  element table {
+    element tr {
+      element td {
+        attribute colspan { xsd:integer }?,
+        attribute rowspan { xsd:integer }?,
+        attribute style { text },
+        a*,
+        p+
+      }*
+    }+
+  }
+a =
+  element a {
+    attribute class { xsd:NCName }?,
+    attribute href { xsd:anyURI }?,
+    attribute id { xsd:NCName }?,
+    (text | a | noProof | span | webHidden)+
+  }
+highlight = element highlight { (text | u)+ }
+br =
+  element br {
+    attribute class { xsd:NCName }
+  }
+b = element b { (text | br | highlight | i)+ }
+tab = element tab { empty }
+i = element i { text }
+span =
+  element span {
+    attribute class { xsd:NCName }?,
+    attribute style { text }?,
+    (text
+     | b
+     | br
+     | highlight
+     | i
+     | noProof
+     | span
+     | u
+     | element caps { noProof }
+     | element iCs { xsd:anyURI }
+     | element spacing { empty })+
+  }
+webHidden = element webHidden { (text | tab)+ }
+noProof = element noProof { (text | tab | webHidden)+ }
+u = element u { (text | br)+ }

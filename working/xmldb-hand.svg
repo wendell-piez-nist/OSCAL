@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg
+  PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  
+  <g stroke="black" fill="green" fill-opacity="0.2" transform="translate(300 350)" text-anchor="middle" font-size="32">
+    <text x="-150" id="xml-label">XML</text>
+    <text x="0"    id="json-label">JSON</text>
+    <text x="150"  id="html-label">HTML</text>
+    
+    <rect x="-200" y="-300" width="400" height="250"
+      id="platform-box"/>
+    <rect x="-180" y="-280" width="360" height="200"
+      id="application-box"/>
+    
+    <g transform="translate(90 -120)">
+      <text y="-100" font-size="24.0" id="TextFigure-15">BaseX</text>
+      <text  font-size="24.0" font-weight="bold"
+        id="TextFigure-14">SaxonHE</text>
+      <rect x="-70" y="-40" width="140" height="60"
+        id="xslt-box"/>
+      
+    </g>
+    
+    <g id="GroupFigure-21"  font-size="14.0" transform="translate(-90 -240)">
+      <rect x="-50" width="100" height="120"
+        id="RectFigure-16"/>
+      <text y="20" font-size="12" text-decoration="underline"
+        id="TextFigure-17">Library</text>
+      <text y="60" id="TextFigure-18">Catalogs</text>
+      <text  y="100" font-size="14.0" id="TextFigure-19">Profiles</text>
+    </g>
+    
+  </g>
+  
+  <g stroke="black" fill="midnightblue" fill-opacity="0.2">
+   
+    
+  </g>
+</svg>

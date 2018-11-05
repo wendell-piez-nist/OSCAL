@@ -22,12 +22,30 @@
 <!-- Unwanted properties - these will be provided at the profile level and don't belong in the catalog  -->
   <xsl:template match="prop[@class=('baseline-impact','priority')]"/>
   
-  <!--Truncate properties that echo their parents -->
-  <!--<xsl:template match="part/prop[@class='label'][starts-with(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])]">
-    <prop class="label">
-      <xsl:value-of select="substring-after(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])"/>
-    </prop>
-  </xsl:template>-->
+  <!-- XXX Truncate properties that echo their parents -
+       do not apply to subcontrol or objectives labels
+       commit as WIP pull request CLEAN
+       (oxygen will compare documents at two URLs) -->
+  <!-- nb this matches part/prop only, not control/prop or subcontrol/prop -->
+  <xsl:template match="part/prop[@class='label']
+    [starts-with(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])]">
+    <xsl:variable name="truncated" select="substring-after(.,../ancestor::*[prop/@class='label'][1]/prop[@class='label'])"/>
+    <xsl:choose>
+      <!-- truncated is the empty string when the label is a perfect echo; drop it
+           (whether in 'objectives' or elsewhere) -->
+      <xsl:when test="$truncated eq ''"/>
+      <xsl:when test="ancestor::part/@class='objective'">
+        <!-- inside objectives, leave labels alone -->
+        <xsl:next-match/>
+      </xsl:when>
+      <xsl:otherwise>
+        <!-- If not inside objectives, we write only the truncated value -->
+        <prop class="label">
+          <xsl:value-of select="$truncated"/>
+        </prop>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
   
 <!-- Reference handling: we rewrite all literal citations into links to copies created in an earlier step
      inside /catalog/references -->
@@ -46,7 +64,7 @@
       <xsl:apply-templates select="subcontrol, references"/>
     </xsl:copy>
   </xsl:template>
-  
+
 <!-- Stripping this unwanted ws -->
   <xsl:template match="text()[not(matches(.,'S'))][exists(../withdrawn)]"/>
   

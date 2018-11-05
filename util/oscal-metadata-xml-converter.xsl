@@ -15,11 +15,12 @@
    </xsl:character-map>
    <xsl:param name="json-indent" as="xs:string">no</xsl:param>
    <xsl:mode name="rectify" on-no-match="shallow-copy"/>
+   
    <xsl:template mode="rectify"
       xpath-default-namespace="http://www.w3.org/2005/xpath-functions"
       match="/*/@key | array/*/@key"/>
    
-   <xsl:template mode="rectify" priority="2"
+   <!--<xsl:template mode="rectify" priority="2"
       xpath-default-namespace="http://www.w3.org/2005/xpath-functions"
       match="array[(count(map)=1) and not(*/*/@key != 'STRVALUE')]">
       <string key="{map/@key (: or use another address :)}">
@@ -37,6 +38,7 @@
          </xsl:for-each>
       </map>
    </xsl:template>
+   
    <xsl:template mode="rectify" priority="2"
       xpath-default-namespace="http://www.w3.org/2005/xpath-functions"
       match="map[not(*/@key != 'STRVALUE')]">
@@ -45,7 +47,7 @@
             <xsl:apply-templates mode="#current"/>
          </xsl:for-each>
       </string>
-   </xsl:template>
+   </xsl:template>-->
    
    <xsl:variable name="write-options" as="map(*)" expand-text="true">
       <xsl:map>

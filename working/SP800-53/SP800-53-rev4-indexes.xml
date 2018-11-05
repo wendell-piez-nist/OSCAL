@@ -4,7 +4,7 @@
    <index>
       <head>Parameters and insertions</head>
       <location>
-         <label>AC-1</label>
+         <label/>
          <param id="ac-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -14,9 +14,6 @@
          <param id="ac-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2</label>
          <param id="ac-2_prm_1">
             <label>organization-defined information system account types</label>
          </param>
@@ -29,9 +26,6 @@
          <param id="ac-2_prm_4">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(2)</label>
          <param id="ac-2.2_prm_1">
             <select>
                <choice>removes</choice>
@@ -41,81 +35,45 @@
          <param id="ac-2.2_prm_2">
             <label>organization-defined time period for each type of account</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(3)</label>
          <param id="ac-2.3_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(4)</label>
          <param id="ac-2.4_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(5)</label>
          <param id="ac-2.5_prm_1">
             <label>organization-defined time-period of expected inactivity or description of when to log out</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(6)</label>
          <param id="ac-2.6_prm_1">
             <label>organization-defined list of dynamic privilege management capabilities</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(7)</label>
          <param id="ac-2.7_prm_1">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(8)</label>
          <param id="ac-2.8_prm_1">
             <label>organization-defined information system accounts</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(9)</label>
          <param id="ac-2.9_prm_1">
             <label>organization-defined conditions for establishing shared/group accounts</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(11)</label>
          <param id="ac-2.11_prm_1">
             <label>organization-defined circumstances and/or usage conditions</label>
          </param>
          <param id="ac-2.11_prm_2">
             <label>organization-defined information system accounts</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(12)</label>
          <param id="ac-2.12_prm_1">
             <label>organization-defined atypical usage</label>
          </param>
          <param id="ac-2.12_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>AC-2(13)</label>
          <param id="ac-2.13_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(2)</label>
          <param id="ac-3.2_prm_1">
             <label>organization-defined privileged commands and/or other organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(3)</label>
          <param id="ac-3.3_prm_1">
             <label>organization-defined mandatory access control policy</label>
          </param>
@@ -125,33 +83,18 @@
          <param id="ac-3.3_prm_3">
             <label>organization-defined privileges (i.e., they are trusted subjects)</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(4)</label>
          <param id="ac-3.4_prm_1">
             <label>organization-defined discretionary access control policy</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(5)</label>
          <param id="ac-3.5_prm_1">
             <label>organization-defined security-relevant information</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(7)</label>
          <param id="ac-3.7_prm_1">
             <label>organization-defined roles and users authorized to assume such roles</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(8)</label>
          <param id="ac-3.8_prm_1">
             <label>organization-defined rules governing the timing of revocations of access authorizations</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(9)</label>
          <param id="ac-3.9_prm_1">
             <label>organization-defined information system or system component</label>
          </param>
@@ -161,21 +104,12 @@
          <param id="ac-3.9_prm_3">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>AC-3(10)</label>
          <param id="ac-3.10_prm_1">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4</label>
          <param id="ac-4_prm_1">
             <label>organization-defined information flow control policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(1)</label>
          <param id="ac-4.1_prm_1">
             <label>organization-defined security attributes</label>
          </param>
@@ -185,21 +119,12 @@
          <param id="ac-4.1_prm_3">
             <label>organization-defined information flow control policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(2)</label>
          <param id="ac-4.2_prm_1">
             <label>organization-defined information flow control policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(3)</label>
          <param id="ac-4.3_prm_1">
             <label>organization-defined policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(4)</label>
          <param id="ac-4.4_prm_1">
             <select how-many="one or more">
                <choice>decrypting the information</choice>
@@ -213,167 +138,98 @@
          <param id="ac-4.4_prm_2" depends-on="ac-4.4_prm_1">
             <label>organization-defined procedure or method</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(5)</label>
          <param id="ac-4.5_prm_1">
             <label>organization-defined limitations</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(6)</label>
          <param id="ac-4.6_prm_1">
             <label>organization-defined metadata</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(7)</label>
          <param id="ac-4.7_prm_1">
             <label>organization-defined one-way information flows</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(8)</label>
          <param id="ac-4.8_prm_1">
             <label>organization-defined security policy filters</label>
          </param>
          <param id="ac-4.8_prm_2">
             <label>organization-defined information flows</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(9)</label>
          <param id="ac-4.9_prm_1">
             <label>organization-defined information flows</label>
          </param>
          <param id="ac-4.9_prm_2">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(10)</label>
          <param id="ac-4.10_prm_1">
             <label>organization-defined security policy filters</label>
          </param>
          <param id="ac-4.10_prm_2">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(11)</label>
          <param id="ac-4.11_prm_1">
             <label>organization-defined security policy filters</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(12)</label>
          <param id="ac-4.12_prm_1">
             <label>organization-defined data type identifiers</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(13)</label>
          <param id="ac-4.13_prm_1">
             <label>organization-defined policy-relevant subcomponents</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(14)</label>
          <param id="ac-4.14_prm_1">
             <label>organization-defined security policy filters</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(15)</label>
          <param id="ac-4.15_prm_1">
             <label>organized-defined unsanctioned information</label>
          </param>
          <param id="ac-4.15_prm_2">
             <label>organization-defined security policy</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(17)</label>
          <param id="ac-4.17_prm_1">
             <select how-many="one or more">
                <choice>organization, system, application, individual</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AC-4(18)</label>
          <param id="ac-4.18_prm_1">
             <label>organization-defined binding techniques</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(20)</label>
          <param id="ac-4.20_prm_1">
             <label>organization-defined solutions in approved configurations</label>
          </param>
          <param id="ac-4.20_prm_2">
             <label>organization-defined information</label>
          </param>
-      </location>
-      <location>
-         <label>AC-4(21)</label>
          <param id="ac-4.21_prm_1">
             <label>organization-defined mechanisms and/or techniques</label>
          </param>
          <param id="ac-4.21_prm_2">
             <label>organization-defined required separations by types of information</label>
          </param>
-      </location>
-      <location>
-         <label>AC-5</label>
          <param id="ac-5_prm_1">
             <label>organization-defined duties of individuals</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(1)</label>
          <param id="ac-6.1_prm_1">
             <label>organization-defined security functions (deployed in hardware, software, and firmware) and security-relevant information</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(2)</label>
          <param id="ac-6.2_prm_1">
             <label>organization-defined security functions or security-relevant information</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(3)</label>
          <param id="ac-6.3_prm_1">
             <label>organization-defined privileged commands</label>
          </param>
          <param id="ac-6.3_prm_2">
             <label>organization-defined compelling operational needs</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(5)</label>
          <param id="ac-6.5_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(7)</label>
          <param id="ac-6.7_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="ac-6.7_prm_2">
             <label>organization-defined roles or classes of users</label>
          </param>
-      </location>
-      <location>
-         <label>AC-6(8)</label>
          <param id="ac-6.8_prm_1">
             <label>organization-defined software</label>
          </param>
-      </location>
-      <location>
-         <label>AC-7</label>
          <param id="ac-7_prm_1">
             <label>organization-defined number</label>
          </param>
@@ -395,9 +251,6 @@
          <param id="ac-7_prm_5" depends-on="ac-7_prm_3">
             <label>organization-defined delay algorithm</label>
          </param>
-      </location>
-      <location>
-         <label>AC-7(2)</label>
          <param id="ac-7.2_prm_1">
             <label>organization-defined mobile devices</label>
          </param>
@@ -407,18 +260,12 @@
          <param id="ac-7.2_prm_3">
             <label>organization-defined number</label>
          </param>
-      </location>
-      <location>
-         <label>AC-8</label>
          <param id="ac-8_prm_1">
             <label>organization-defined system use notification message or banner</label>
          </param>
          <param id="ac-8_prm_2">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-9(2)</label>
          <param id="ac-9.2_prm_1">
             <select>
                <choice>successful logons/accesses</choice>
@@ -429,57 +276,33 @@
          <param id="ac-9.2_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-9(3)</label>
          <param id="ac-9.3_prm_1">
             <label>organization-defined security-related characteristics/parameters of the user’s account</label>
          </param>
          <param id="ac-9.3_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-9(4)</label>
          <param id="ac-9.4_prm_1">
             <label>organization-defined information to be included in addition to the date and time of the last logon (access)</label>
          </param>
-      </location>
-      <location>
-         <label>AC-10</label>
          <param id="ac-10_prm_1">
             <label>organization-defined account and/or account type</label>
          </param>
          <param id="ac-10_prm_2">
             <label>organization-defined number</label>
          </param>
-      </location>
-      <location>
-         <label>AC-11</label>
          <param id="ac-11_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-12</label>
          <param id="ac-12_prm_1">
             <label>organization-defined conditions or trigger events requiring session disconnect</label>
          </param>
-      </location>
-      <location>
-         <label>AC-12(1)</label>
          <param id="ac-12.1_prm_1">
             <label>organization-defined information resources</label>
          </param>
-      </location>
-      <location>
-         <label>AC-14</label>
          <param id="ac-14_prm_1">
             <label>organization-defined user actions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16</label>
          <param id="ac-16_prm_1">
             <label>organization-defined types of security attributes</label>
          </param>
@@ -495,45 +318,30 @@
          <param id="ac-16_prm_5">
             <label>organization-defined values or ranges</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(1)</label>
          <param id="ac-16.1_prm_1">
             <label>organization-defined subjects and objects</label>
          </param>
          <param id="ac-16.1_prm_2">
             <label>organization-defined security policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(3)</label>
          <param id="ac-16.3_prm_1">
             <label>organization-defined security attributes</label>
          </param>
          <param id="ac-16.3_prm_2">
             <label>organization-defined subjects and objects</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(4)</label>
          <param id="ac-16.4_prm_1">
             <label>organization-defined security attributes</label>
          </param>
          <param id="ac-16.4_prm_2">
             <label>organization-defined subjects and objects</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(5)</label>
          <param id="ac-16.5_prm_1">
             <label>organization-identified special dissemination, handling, or distribution instructions</label>
          </param>
          <param id="ac-16.5_prm_2">
             <label>organization-identified human-readable, standard naming conventions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(6)</label>
          <param id="ac-16.6_prm_1">
             <label>organization-defined security attributes</label>
          </param>
@@ -543,60 +351,36 @@
          <param id="ac-16.6_prm_3">
             <label>organization-defined security policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(8)</label>
          <param id="ac-16.8_prm_1">
             <label>organization-defined techniques or technologies</label>
          </param>
          <param id="ac-16.8_prm_2">
             <label>organization-defined level of assurance</label>
          </param>
-      </location>
-      <location>
-         <label>AC-16(9)</label>
          <param id="ac-16.9_prm_1">
             <label>organization-defined techniques or procedures</label>
          </param>
-      </location>
-      <location>
-         <label>AC-17(3)</label>
          <param id="ac-17.3_prm_1">
             <label>organization-defined number</label>
          </param>
-      </location>
-      <location>
-         <label>AC-17(4)</label>
          <param id="ac-17.4_prm_1">
             <label>organization-defined needs</label>
          </param>
-      </location>
-      <location>
-         <label>AC-17(9)</label>
          <param id="ac-17.9_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AC-18(1)</label>
          <param id="ac-18.1_prm_1">
             <select how-many="one or more">
                <choice>users</choice>
                <choice>devices</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AC-19(4)</label>
          <param id="ac-19.4_prm_1">
             <label>organization-defined security officials</label>
          </param>
          <param id="ac-19.4_prm_2">
             <label>organization-defined security policies</label>
          </param>
-      </location>
-      <location>
-         <label>AC-19(5)</label>
          <param id="ac-19.5_prm_1">
             <select>
                <choice>full-device encryption</choice>
@@ -606,69 +390,42 @@
          <param id="ac-19.5_prm_2">
             <label>organization-defined mobile devices</label>
          </param>
-      </location>
-      <location>
-         <label>AC-20(2)</label>
          <param id="ac-20.2_prm_1">
             <select>
                <choice>restricts</choice>
                <choice>prohibits</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AC-20(3)</label>
          <param id="ac-20.3_prm_1">
             <select>
                <choice>restricts</choice>
                <choice>prohibits</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AC-20(4)</label>
          <param id="ac-20.4_prm_1">
             <label>organization-defined network accessible storage devices</label>
          </param>
-      </location>
-      <location>
-         <label>AC-21</label>
          <param id="ac-21_prm_1">
             <label>organization-defined information sharing circumstances where user discretion is required</label>
          </param>
          <param id="ac-21_prm_2">
             <label>organization-defined automated mechanisms or manual processes</label>
          </param>
-      </location>
-      <location>
-         <label>AC-21(2)</label>
          <param id="ac-21.2_prm_1">
             <label>organization-defined information sharing restrictions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-22</label>
          <param id="ac-22_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AC-23</label>
          <param id="ac-23_prm_1">
             <label>organization-defined data mining prevention and detection techniques</label>
          </param>
          <param id="ac-23_prm_2">
             <label>organization-defined data storage objects</label>
          </param>
-      </location>
-      <location>
-         <label>AC-24</label>
          <param id="ac-24_prm_1">
             <label>organization-defined access control decisions</label>
          </param>
-      </location>
-      <location>
-         <label>AC-24(1)</label>
          <param id="ac-24.1_prm_1">
             <label>organization-defined access authorization information</label>
          </param>
@@ -678,21 +435,12 @@
          <param id="ac-24.1_prm_3">
             <label>organization-defined information systems</label>
          </param>
-      </location>
-      <location>
-         <label>AC-24(2)</label>
          <param id="ac-24.2_prm_1">
             <label>organization-defined security attributes</label>
          </param>
-      </location>
-      <location>
-         <label>AC-25</label>
          <param id="ac-25_prm_1">
             <label>organization-defined access control policies</label>
          </param>
-      </location>
-      <location>
-         <label>AT-1</label>
          <param id="at-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -702,51 +450,30 @@
          <param id="at-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AT-2</label>
          <param id="at-2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AT-3</label>
          <param id="at-3_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AT-3(1)</label>
          <param id="at-3.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="at-3.1_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AT-3(2)</label>
          <param id="at-3.2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="at-3.2_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AT-3(4)</label>
          <param id="at-3.4_prm_1">
             <label>organization-defined indicators of malicious code</label>
          </param>
-      </location>
-      <location>
-         <label>AT-4</label>
          <param id="at-4_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AU-1</label>
          <param id="au-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -756,57 +483,33 @@
          <param id="au-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-2</label>
          <param id="au-2_prm_1">
             <label>organization-defined auditable events</label>
          </param>
          <param id="au-2_prm_2">
             <label>organization-defined audited events (the subset of the auditable events defined in AU-2 a.) along with the frequency of (or situation requiring) auditing for each identified event</label>
          </param>
-      </location>
-      <location>
-         <label>AU-2(3)</label>
          <param id="au-2.3_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-3(1)</label>
          <param id="au-3.1_prm_1">
             <label>organization-defined additional, more detailed information</label>
          </param>
-      </location>
-      <location>
-         <label>AU-3(2)</label>
          <param id="au-3.2_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>AU-4</label>
          <param id="au-4_prm_1">
             <label>organization-defined audit record storage requirements</label>
          </param>
-      </location>
-      <location>
-         <label>AU-4(1)</label>
          <param id="au-4.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-5</label>
          <param id="au-5_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="au-5_prm_2">
             <label>organization-defined actions to be taken (e.g., shut down information system, overwrite oldest audit records, stop generating audit records)</label>
          </param>
-      </location>
-      <location>
-         <label>AU-5(1)</label>
          <param id="au-5.1_prm_1">
             <label>organization-defined personnel, roles, and/or locations</label>
          </param>
@@ -816,9 +519,6 @@
          <param id="au-5.1_prm_3">
             <label>organization-defined percentage</label>
          </param>
-      </location>
-      <location>
-         <label>AU-5(2)</label>
          <param id="au-5.2_prm_1">
             <label>organization-defined real-time period</label>
          </param>
@@ -828,18 +528,12 @@
          <param id="au-5.2_prm_3">
             <label>organization-defined audit failure events requiring real-time alerts</label>
          </param>
-      </location>
-      <location>
-         <label>AU-5(3)</label>
          <param id="au-5.3_prm_1">
             <select>
                <choice>rejects</choice>
                <choice>delays</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AU-5(4)</label>
          <param id="au-5.4_prm_1">
             <select>
                <choice>full system shutdown</choice>
@@ -850,9 +544,6 @@
          <param id="au-5.4_prm_2">
             <label>organization-defined audit failures</label>
          </param>
-      </location>
-      <location>
-         <label>AU-6</label>
          <param id="au-6_prm_1">
             <label>organization-defined frequency</label>
          </param>
@@ -862,9 +553,6 @@
          <param id="au-6_prm_3">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>AU-6(5)</label>
          <param id="au-6.5_prm_1">
             <select how-many="one or more">
                <choice>vulnerability scanning information</choice>
@@ -878,9 +566,6 @@
          <param id="au-6.5_prm_2" depends-on="au-6.5_prm_1">
             <label>organization-defined data/information collected from other sources</label>
          </param>
-      </location>
-      <location>
-         <label>AU-6(7)</label>
          <param id="au-6.7_prm_1">
             <select how-many="one or more">
                <choice>information system process</choice>
@@ -888,27 +573,15 @@
                <choice>user</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>AU-7(1)</label>
          <param id="au-7.1_prm_1">
             <label>organization-defined audit fields within audit records</label>
          </param>
-      </location>
-      <location>
-         <label>AU-7(2)</label>
          <param id="au-7.2_prm_1">
             <label>organization-defined audit fields within audit records</label>
          </param>
-      </location>
-      <location>
-         <label>AU-8</label>
          <param id="au-8_prm_1">
             <label>organization-defined granularity of time measurement</label>
          </param>
-      </location>
-      <location>
-         <label>AU-8(1)</label>
          <param id="au-8.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
@@ -918,21 +591,12 @@
          <param id="au-8.1_prm_3">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>AU-9(2)</label>
          <param id="au-9.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-9(4)</label>
          <param id="au-9.4_prm_1">
             <label>organization-defined subset of privileged users</label>
          </param>
-      </location>
-      <location>
-         <label>AU-9(5)</label>
          <param id="au-9.5_prm_1">
             <select how-many="one or more">
                <choice>movement</choice>
@@ -942,75 +606,45 @@
          <param id="au-9.5_prm_2">
             <label>organization-defined audit information</label>
          </param>
-      </location>
-      <location>
-         <label>AU-9(6)</label>
          <param id="au-9.6_prm_1">
             <label>organization-defined subset of privileged users</label>
          </param>
-      </location>
-      <location>
-         <label>AU-10</label>
          <param id="au-10_prm_1">
             <label>organization-defined actions to be covered by non-repudiation</label>
          </param>
-      </location>
-      <location>
-         <label>AU-10(1)</label>
          <param id="au-10.1_prm_1">
             <label>organization-defined strength of binding</label>
          </param>
-      </location>
-      <location>
-         <label>AU-10(2)</label>
          <param id="au-10.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="au-10.2_prm_2">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>AU-10(4)</label>
          <param id="au-10.4_prm_1">
             <label>organization-defined security domains</label>
          </param>
          <param id="au-10.4_prm_2">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>AU-11</label>
          <param id="au-11_prm_1">
             <label>organization-defined time period consistent with records retention policy</label>
          </param>
-      </location>
-      <location>
-         <label>AU-11(1)</label>
          <param id="au-11.1_prm_1">
             <label>organization-defined measures</label>
          </param>
-      </location>
-      <location>
-         <label>AU-12</label>
          <param id="au-12_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="au-12_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>AU-12(1)</label>
          <param id="au-12.1_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="au-12.1_prm_2">
             <label>organization-defined level of tolerance for the relationship between time stamps of individual records in the audit trail</label>
          </param>
-      </location>
-      <location>
-         <label>AU-12(3)</label>
          <param id="au-12.3_prm_1">
             <label>organization-defined individuals or roles</label>
          </param>
@@ -1023,48 +657,30 @@
          <param id="au-12.3_prm_4">
             <label>organization-defined time thresholds</label>
          </param>
-      </location>
-      <location>
-         <label>AU-13</label>
          <param id="au-13_prm_1">
             <label>organization-defined open source information and/or information sites</label>
          </param>
          <param id="au-13_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-13(2)</label>
          <param id="au-13.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>AU-15</label>
          <param id="au-15_prm_1">
             <label>organization-defined alternate audit functionality</label>
          </param>
-      </location>
-      <location>
-         <label>AU-16</label>
          <param id="au-16_prm_1">
             <label>organization-defined methods</label>
          </param>
          <param id="au-16_prm_2">
             <label>organization-defined audit information</label>
          </param>
-      </location>
-      <location>
-         <label>AU-16(2)</label>
          <param id="au-16.2_prm_1">
             <label>organization-defined organizations</label>
          </param>
          <param id="au-16.2_prm_2">
             <label>organization-defined cross-organizational sharing agreements</label>
          </param>
-      </location>
-      <location>
-         <label>CA-1</label>
          <param id="ca-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1074,24 +690,15 @@
          <param id="ca-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CA-2</label>
          <param id="ca-2_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="ca-2_prm_2">
             <label>organization-defined individuals or roles</label>
          </param>
-      </location>
-      <location>
-         <label>CA-2(1)</label>
          <param id="ca-2.1_prm_1">
             <label>organization-defined level of independence</label>
          </param>
-      </location>
-      <location>
-         <label>CA-2(2)</label>
          <param id="ca-2.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
@@ -1116,9 +723,6 @@
          <param id="ca-2.2_prm_4" depends-on="ca-2.2_prm_3">
             <label>organization-defined other forms of security assessment</label>
          </param>
-      </location>
-      <location>
-         <label>CA-2(3)</label>
          <param id="ca-2.3_prm_1">
             <label>organization-defined information system</label>
          </param>
@@ -1128,45 +732,27 @@
          <param id="ca-2.3_prm_3">
             <label>organization-defined requirements</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3</label>
          <param id="ca-3_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3(1)</label>
          <param id="ca-3.1_prm_1">
             <label>organization-defined unclassified, national security system</label>
          </param>
          <param id="ca-3.1_prm_2">
             <label>organization-defined boundary protection device</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3(2)</label>
          <param id="ca-3.2_prm_1">
             <label>organization-defined boundary protection device</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3(3)</label>
          <param id="ca-3.3_prm_1">
             <label>organization-defined unclassified, non-national security system</label>
          </param>
          <param id="ca-3.3_prm_2">
             <label>Assignment; organization-defined boundary protection device</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3(4)</label>
          <param id="ca-3.4_prm_1">
             <label>organization-defined information system</label>
          </param>
-      </location>
-      <location>
-         <label>CA-3(5)</label>
          <param id="ca-3.5_prm_1">
             <select>
                <choice>allow-all, deny-by-exception</choice>
@@ -1176,21 +762,12 @@
          <param id="ca-3.5_prm_2">
             <label>organization-defined information systems</label>
          </param>
-      </location>
-      <location>
-         <label>CA-5</label>
          <param id="ca-5_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CA-6</label>
          <param id="ca-6_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CA-7</label>
          <param id="ca-7_prm_1">
             <label>organization-defined metrics</label>
          </param>
@@ -1206,39 +783,24 @@
          <param id="ca-7_prm_5">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CA-7(1)</label>
          <param id="ca-7.1_prm_1">
             <label>organization-defined level of independence</label>
          </param>
-      </location>
-      <location>
-         <label>CA-8</label>
          <param id="ca-8_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="ca-8_prm_2">
             <label>organization-defined information systems or system components</label>
          </param>
-      </location>
-      <location>
-         <label>CA-8(2)</label>
          <param id="ca-8.2_prm_1">
             <label>organization-defined red team exercises</label>
          </param>
          <param id="ca-8.2_prm_2">
             <label>organization-defined rules of engagement</label>
          </param>
-      </location>
-      <location>
-         <label>CA-9</label>
          <param id="ca-9_prm_1">
             <label>organization-defined information system components or classes of components</label>
          </param>
-      </location>
-      <location>
-         <label>CM-1</label>
          <param id="cm-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1248,24 +810,15 @@
          <param id="cm-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-2(1)</label>
          <param id="cm-2.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="cm-2.1_prm_2">
             <label>Assignment organization-defined circumstances</label>
          </param>
-      </location>
-      <location>
-         <label>CM-2(3)</label>
          <param id="cm-2.3_prm_1">
             <label>organization-defined previous versions of baseline configurations of the information system</label>
          </param>
-      </location>
-      <location>
-         <label>CM-2(7)</label>
          <param id="cm-2.7_prm_1">
             <label>organization-defined information systems, system components, or devices</label>
          </param>
@@ -1275,9 +828,6 @@
          <param id="cm-2.7_prm_3">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>CM-3</label>
          <param id="cm-3_prm_1">
             <label>organization-defined time period</label>
          </param>
@@ -1300,9 +850,6 @@
          <param id="cm-3_prm_5" depends-on="cm-3_prm_3">
             <label>organization-defined configuration change conditions</label>
          </param>
-      </location>
-      <location>
-         <label>CM-3(1)</label>
          <param id="cm-3.1_prm_1">
             <label>organized-defined approval authorities</label>
          </param>
@@ -1312,54 +859,30 @@
          <param id="cm-3.1_prm_3">
             <label>organization-defined personnel</label>
          </param>
-      </location>
-      <location>
-         <label>CM-3(4)</label>
          <param id="cm-3.4_prm_1">
             <label>organization-defined configuration change control element</label>
          </param>
-      </location>
-      <location>
-         <label>CM-3(5)</label>
          <param id="cm-3.5_prm_1">
             <label>organization-defined security responses</label>
          </param>
-      </location>
-      <location>
-         <label>CM-3(6)</label>
          <param id="cm-3.6_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>CM-5(2)</label>
          <param id="cm-5.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="cm-5.2_prm_2">
             <label>organization-defined circumstances</label>
          </param>
-      </location>
-      <location>
-         <label>CM-5(3)</label>
          <param id="cm-5.3_prm_1">
             <label>organization-defined software and firmware components</label>
          </param>
-      </location>
-      <location>
-         <label>CM-5(4)</label>
          <param id="cm-5.4_prm_1">
             <label>organization-defined information system components and system-level information</label>
          </param>
-      </location>
-      <location>
-         <label>CM-5(5)</label>
          <param id="cm-5.5_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-6</label>
          <param id="cm-6_prm_1">
             <label>organization-defined security configuration checklists</label>
          </param>
@@ -1369,39 +892,24 @@
          <param id="cm-6_prm_3">
             <label>organization-defined operational requirements</label>
          </param>
-      </location>
-      <location>
-         <label>CM-6(1)</label>
          <param id="cm-6.1_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>CM-6(2)</label>
          <param id="cm-6.2_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="cm-6.2_prm_2">
             <label>organization-defined configuration settings</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7</label>
          <param id="cm-7_prm_1">
             <label>organization-defined prohibited or restricted functions, ports, protocols, and/or services</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7(1)</label>
          <param id="cm-7.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="cm-7.1_prm_2">
             <label>organization-defined functions, ports, protocols, and services within the information system deemed to be unnecessary and/or nonsecure</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7(2)</label>
          <param id="cm-7.2_prm_1">
             <select how-many="one or more">
                <choice>
@@ -1413,42 +921,27 @@
          <param id="cm-7.2_prm_2" depends-on="cm-7.2_prm_1">
             <label>organization-defined policies regarding software program usage and restrictions</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7(3)</label>
          <param id="cm-7.3_prm_1">
             <label>organization-defined registration requirements for functions, ports, protocols, and services</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7(4)</label>
          <param id="cm-7.4_prm_1">
             <label>organization-defined software programs not authorized to execute on the information system</label>
          </param>
          <param id="cm-7.4_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-7(5)</label>
          <param id="cm-7.5_prm_1">
             <label>organization-defined software programs authorized to execute on the information system</label>
          </param>
          <param id="cm-7.5_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-8</label>
          <param id="cm-8_prm_1">
             <label>organization-defined information deemed necessary to achieve effective information system component accountability</label>
          </param>
          <param id="cm-8_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-8(3)</label>
          <param id="cm-8.3_prm_1">
             <label>organization-defined frequency</label>
          </param>
@@ -1463,9 +956,6 @@
          <param id="cm-8.3_prm_3" depends-on="cm-8.3_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>CM-8(4)</label>
          <param id="cm-8.4_prm_1">
             <select how-many="one or more">
                <choice>name</choice>
@@ -1473,21 +963,12 @@
                <choice>role</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>CM-8(9)</label>
          <param id="cm-8.9_prm_1">
             <label>organization-defined acquired information system components</label>
          </param>
-      </location>
-      <location>
-         <label>CM-10(1)</label>
          <param id="cm-10.1_prm_1">
             <label>organization-defined restrictions</label>
          </param>
-      </location>
-      <location>
-         <label>CM-11</label>
          <param id="cm-11_prm_1">
             <label>organization-defined policies</label>
          </param>
@@ -1497,15 +978,9 @@
          <param id="cm-11_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CM-11(1)</label>
          <param id="cm-11.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>CP-1</label>
          <param id="cp-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1515,9 +990,6 @@
          <param id="cp-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CP-2</label>
          <param id="cp-2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1530,69 +1002,42 @@
          <param id="cp-2_prm_4">
             <label>organization-defined key contingency personnel (identified by name and/or by role) and organizational elements</label>
          </param>
-      </location>
-      <location>
-         <label>CP-2(3)</label>
          <param id="cp-2.3_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>CP-2(4)</label>
          <param id="cp-2.4_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>CP-3</label>
          <param id="cp-3_prm_1">
             <label>organization-defined time period</label>
          </param>
          <param id="cp-3_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CP-4</label>
          <param id="cp-4_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="cp-4_prm_2">
             <label>organization-defined tests</label>
          </param>
-      </location>
-      <location>
-         <label>CP-7</label>
          <param id="cp-7_prm_1">
             <label>organization-defined information system operations</label>
          </param>
          <param id="cp-7_prm_2">
             <label>organization-defined time period consistent with recovery time and recovery point objectives</label>
          </param>
-      </location>
-      <location>
-         <label>CP-8</label>
          <param id="cp-8_prm_1">
             <label>organization-defined information system operations</label>
          </param>
          <param id="cp-8_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>CP-8(4)</label>
          <param id="cp-8.4_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CP-8(5)</label>
          <param id="cp-8.5_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CP-9</label>
          <param id="cp-9_prm_1">
             <label>organization-defined frequency consistent with recovery time and recovery point objectives</label>
          </param>
@@ -1602,63 +1047,36 @@
          <param id="cp-9_prm_3">
             <label>organization-defined frequency consistent with recovery time and recovery point objectives</label>
          </param>
-      </location>
-      <location>
-         <label>CP-9(1)</label>
          <param id="cp-9.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>CP-9(3)</label>
          <param id="cp-9.3_prm_1">
             <label>organization-defined critical information system software and other security-related information</label>
          </param>
-      </location>
-      <location>
-         <label>CP-9(5)</label>
          <param id="cp-9.5_prm_1">
             <label>organization-defined time period and transfer rate consistent with the recovery time and recovery point objectives</label>
          </param>
-      </location>
-      <location>
-         <label>CP-9(7)</label>
          <param id="cp-9.7_prm_1">
             <label>organization-defined backup information</label>
          </param>
-      </location>
-      <location>
-         <label>CP-10(4)</label>
          <param id="cp-10.4_prm_1">
             <label>organization-defined restoration time-periods</label>
          </param>
-      </location>
-      <location>
-         <label>CP-11</label>
          <param id="cp-11_prm_1">
             <label>organization-defined alternative communications protocols</label>
          </param>
-      </location>
-      <location>
-         <label>CP-12</label>
          <param id="cp-12_prm_1">
             <label>organization-defined conditions</label>
          </param>
          <param id="cp-12_prm_2">
             <label>organization-defined restrictions of safe mode of operation</label>
          </param>
-      </location>
-      <location>
-         <label>CP-13</label>
          <param id="cp-13_prm_1">
             <label>organization-defined alternative or supplemental security mechanisms</label>
          </param>
          <param id="cp-13_prm_2">
             <label>organization-defined security functions</label>
          </param>
-      </location>
-      <location>
-         <label>IA-1</label>
          <param id="ia-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1668,42 +1086,24 @@
          <param id="ia-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>IA-2(6)</label>
          <param id="ia-2.6_prm_1">
             <label>organization-defined strength of mechanism requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-2(7)</label>
          <param id="ia-2.7_prm_1">
             <label>organization-defined strength of mechanism requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-2(10)</label>
          <param id="ia-2.10_prm_1">
             <label>organization-defined information system accounts and services</label>
          </param>
-      </location>
-      <location>
-         <label>IA-2(11)</label>
          <param id="ia-2.11_prm_1">
             <label>organization-defined strength of mechanism requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-2(13)</label>
          <param id="ia-2.13_prm_1">
             <label>organization-defined out-of-band authentication</label>
          </param>
          <param id="ia-2.13_prm_2">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>IA-3</label>
          <param id="ia-3_prm_1">
             <label>organization-defined specific and/or types of devices</label>
          </param>
@@ -1714,9 +1114,6 @@
                <choice>network</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>IA-3(1)</label>
          <param id="ia-3.1_prm_1">
             <label>organization-defined specific devices and/or types of devices</label>
          </param>
@@ -1727,21 +1124,12 @@
                <choice>network</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>IA-3(3)</label>
          <param id="ia-3.3_prm_1">
             <label>organization-defined lease information and lease duration</label>
          </param>
-      </location>
-      <location>
-         <label>IA-3(4)</label>
          <param id="ia-3.4_prm_1">
             <label>organization-defined configuration management process</label>
          </param>
-      </location>
-      <location>
-         <label>IA-4</label>
          <param id="ia-4_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1751,27 +1139,15 @@
          <param id="ia-4_prm_3">
             <label>organization-defined time period of inactivity</label>
          </param>
-      </location>
-      <location>
-         <label>IA-4(4)</label>
          <param id="ia-4.4_prm_1">
             <label>organization-defined characteristic identifying individual status</label>
          </param>
-      </location>
-      <location>
-         <label>IA-4(6)</label>
          <param id="ia-4.6_prm_1">
             <label>organization-defined external organizations</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5</label>
          <param id="ia-5_prm_1">
             <label>organization-defined time period by authenticator type</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(1)</label>
          <param id="ia-5.1_prm_1">
             <label>organization-defined requirements for case sensitivity, number of characters, mix of upper-case letters, lower-case letters, numbers, and special characters, including minimum requirements for each type</label>
          </param>
@@ -1784,9 +1160,6 @@
          <param id="ia-5.1_prm_4">
             <label>organization-defined number</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(3)</label>
          <param id="ia-5.3_prm_1">
             <label>organization-defined types of and/or specific authenticators</label>
          </param>
@@ -1802,81 +1175,45 @@
          <param id="ia-5.3_prm_4">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(4)</label>
          <param id="ia-5.4_prm_1">
             <label>organization-defined requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(8)</label>
          <param id="ia-5.8_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(9)</label>
          <param id="ia-5.9_prm_1">
             <label>organization-defined external organizations</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(11)</label>
          <param id="ia-5.11_prm_1">
             <label>organization-defined token quality requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(12)</label>
          <param id="ia-5.12_prm_1">
             <label>organization-defined biometric quality requirements</label>
          </param>
-      </location>
-      <location>
-         <label>IA-5(13)</label>
          <param id="ia-5.13_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>IA-8(3)</label>
          <param id="ia-8.3_prm_1">
             <label>organization-defined information systems</label>
          </param>
-      </location>
-      <location>
-         <label>IA-9</label>
          <param id="ia-9_prm_1">
             <label>organization-defined information system services</label>
          </param>
          <param id="ia-9_prm_2">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>IA-9(2)</label>
          <param id="ia-9.2_prm_1">
             <label>organization-defined services</label>
          </param>
-      </location>
-      <location>
-         <label>IA-10</label>
          <param id="ia-10_prm_1">
             <label>organization-defined supplemental authentication techniques or mechanisms</label>
          </param>
          <param id="ia-10_prm_2">
             <label>organization-defined circumstances or situations</label>
          </param>
-      </location>
-      <location>
-         <label>IA-11</label>
          <param id="ia-11_prm_1">
             <label>organization-defined circumstances or situations requiring re-authentication</label>
          </param>
-      </location>
-      <location>
-         <label>IR-1</label>
          <param id="ir-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1886,84 +1223,51 @@
          <param id="ir-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>IR-2</label>
          <param id="ir-2_prm_1">
             <label>organization-defined time period</label>
          </param>
          <param id="ir-2_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>IR-3</label>
          <param id="ir-3_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="ir-3_prm_2">
             <label>organization-defined tests</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(2)</label>
          <param id="ir-4.2_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(3)</label>
          <param id="ir-4.3_prm_1">
             <label>organization-defined classes of incidents</label>
          </param>
          <param id="ir-4.3_prm_2">
             <label>organization-defined actions to take in response to classes of incidents</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(5)</label>
          <param id="ir-4.5_prm_1">
             <label>organization-defined security violations</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(7)</label>
          <param id="ir-4.7_prm_1">
             <label>organization-defined components or elements of the organization</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(8)</label>
          <param id="ir-4.8_prm_1">
             <label>organization-defined external organizations</label>
          </param>
          <param id="ir-4.8_prm_2">
             <label>organization-defined incident information</label>
          </param>
-      </location>
-      <location>
-         <label>IR-4(9)</label>
          <param id="ir-4.9_prm_1">
             <label>organization-defined dynamic response capabilities</label>
          </param>
-      </location>
-      <location>
-         <label>IR-6</label>
          <param id="ir-6_prm_1">
             <label>organization-defined time period</label>
          </param>
          <param id="ir-6_prm_2">
             <label>organization-defined authorities</label>
          </param>
-      </location>
-      <location>
-         <label>IR-6(2)</label>
          <param id="ir-6.2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>IR-8</label>
          <param id="ir-8_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -1976,42 +1280,24 @@
          <param id="ir-8_prm_4">
             <label>organization-defined incident response personnel (identified by name and/or by role) and organizational elements</label>
          </param>
-      </location>
-      <location>
-         <label>IR-9</label>
          <param id="ir-9_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="ir-9_prm_2">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>IR-9(1)</label>
          <param id="ir-9.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>IR-9(2)</label>
          <param id="ir-9.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>IR-9(3)</label>
          <param id="ir-9.3_prm_1">
             <label>organization-defined procedures</label>
          </param>
-      </location>
-      <location>
-         <label>IR-9(4)</label>
          <param id="ir-9.4_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>MA-1</label>
          <param id="ma-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2021,72 +1307,45 @@
          <param id="ma-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>MA-2</label>
          <param id="ma-2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="ma-2_prm_2">
             <label>organization-defined maintenance-related information</label>
          </param>
-      </location>
-      <location>
-         <label>MA-3(3)</label>
          <param id="ma-3.3_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>MA-4(1)</label>
          <param id="ma-4.1_prm_1">
             <label>organization-defined audit events</label>
          </param>
-      </location>
-      <location>
-         <label>MA-4(4)</label>
          <param id="ma-4.4_prm_1">
             <label>organization-defined authenticators that are replay resistant</label>
          </param>
-      </location>
-      <location>
-         <label>MA-4(5)</label>
          <param id="ma-4.5_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="ma-4.5_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>MA-6</label>
          <param id="ma-6_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="ma-6_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>MA-6(1)</label>
          <param id="ma-6.1_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="ma-6.1_prm_2">
             <label>organization-defined time intervals</label>
          </param>
-      </location>
-      <location>
-         <label>MA-6(2)</label>
          <param id="ma-6.2_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="ma-6.2_prm_2">
             <label>organization-defined time intervals</label>
          </param>
-      </location>
-      <location>
-         <label>MP-1</label>
          <param id="mp-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2096,81 +1355,51 @@
          <param id="mp-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>MP-2</label>
          <param id="mp-2_prm_1">
             <label>organization-defined types of digital and/or non-digital media</label>
          </param>
          <param id="mp-2_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>MP-3</label>
          <param id="mp-3_prm_1">
             <label>organization-defined types of information system media</label>
          </param>
          <param id="mp-3_prm_2">
             <label>organization-defined controlled areas</label>
          </param>
-      </location>
-      <location>
-         <label>MP-4</label>
          <param id="mp-4_prm_1">
             <label>organization-defined types of digital and/or non-digital media</label>
          </param>
          <param id="mp-4_prm_2">
             <label>organization-defined controlled areas</label>
          </param>
-      </location>
-      <location>
-         <label>MP-5</label>
          <param id="mp-5_prm_1">
             <label>organization-defined types of information system media</label>
          </param>
          <param id="mp-5_prm_2">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>MP-6</label>
          <param id="mp-6_prm_1">
             <label>organization-defined information system media</label>
          </param>
          <param id="mp-6_prm_2">
             <label>organization-defined sanitization techniques and procedures</label>
          </param>
-      </location>
-      <location>
-         <label>MP-6(2)</label>
          <param id="mp-6.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>MP-6(3)</label>
          <param id="mp-6.3_prm_1">
             <label>organization-defined circumstances requiring sanitization of portable storage devices</label>
          </param>
-      </location>
-      <location>
-         <label>MP-6(7)</label>
          <param id="mp-6.7_prm_1">
             <label>organization-defined information system media</label>
          </param>
-      </location>
-      <location>
-         <label>MP-6(8)</label>
          <param id="mp-6.8_prm_1">
             <label>organization-defined information systems, system components, or devices</label>
          </param>
          <param id="mp-6.8_prm_2">
             <label>organization-defined conditions</label>
          </param>
-      </location>
-      <location>
-         <label>MP-7</label>
          <param id="mp-7_prm_1">
             <select>
                <choice>restricts</choice>
@@ -2186,9 +1415,6 @@
          <param id="mp-7_prm_4">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>MP-8</label>
          <param id="mp-8_prm_1">
             <label>organization-defined information system media downgrading process</label>
          </param>
@@ -2198,24 +1424,15 @@
          <param id="mp-8_prm_3">
             <label>organization-defined information system media requiring downgrading</label>
          </param>
-      </location>
-      <location>
-         <label>MP-8(2)</label>
          <param id="mp-8.2_prm_1">
             <label>organization-defined tests</label>
          </param>
          <param id="mp-8.2_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>MP-8(3)</label>
          <param id="mp-8.3_prm_1">
             <label>organization-defined Controlled Unclassified Information (CUI)</label>
          </param>
-      </location>
-      <location>
-         <label>PE-1</label>
          <param id="pe-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2225,21 +1442,12 @@
          <param id="pe-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-2</label>
          <param id="pe-2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-2(2)</label>
          <param id="pe-2.2_prm_1">
             <label>organization-defined list of acceptable forms of identification</label>
          </param>
-      </location>
-      <location>
-         <label>PE-2(3)</label>
          <param id="pe-2.3_prm_1">
             <select how-many="one or more">
                <choice>security clearances for all information contained within the system</choice>
@@ -2253,9 +1461,6 @@
          <param id="pe-2.3_prm_2" depends-on="pe-2.3_prm_1">
             <label>organization-defined credentials</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3</label>
          <param id="pe-3_prm_1">
             <label>organization-defined entry/exit points to the facility where the information system resides</label>
          </param>
@@ -2288,27 +1493,15 @@
          <param id="pe-3_prm_9">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3(1)</label>
          <param id="pe-3.1_prm_1">
             <label>organization-defined physical spaces containing one or more components of the information system</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3(2)</label>
          <param id="pe-3.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3(4)</label>
          <param id="pe-3.4_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3(5)</label>
          <param id="pe-3.5_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
@@ -2321,180 +1514,108 @@
          <param id="pe-3.5_prm_3">
             <label>organization-defined hardware components</label>
          </param>
-      </location>
-      <location>
-         <label>PE-3(6)</label>
          <param id="pe-3.6_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-4</label>
          <param id="pe-4_prm_1">
             <label>organization-defined information system distribution and transmission lines</label>
          </param>
          <param id="pe-4_prm_2">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>PE-5(1)</label>
          <param id="pe-5.1_prm_1">
             <label>organization-defined output devices</label>
          </param>
-      </location>
-      <location>
-         <label>PE-5(2)</label>
          <param id="pe-5.2_prm_1">
             <label>organization-defined output devices</label>
          </param>
-      </location>
-      <location>
-         <label>PE-5(3)</label>
          <param id="pe-5.3_prm_1">
             <label>organization-defined information system output devices</label>
          </param>
-      </location>
-      <location>
-         <label>PE-6</label>
          <param id="pe-6_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="pe-6_prm_2">
             <label>organization-defined events or potential indications of events</label>
          </param>
-      </location>
-      <location>
-         <label>PE-6(2)</label>
          <param id="pe-6.2_prm_1">
             <label>organization-defined classes/types of intrusions</label>
          </param>
          <param id="pe-6.2_prm_2">
             <label>organization-defined response actions</label>
          </param>
-      </location>
-      <location>
-         <label>PE-6(3)</label>
          <param id="pe-6.3_prm_1">
             <label>organization-defined operational areas</label>
          </param>
          <param id="pe-6.3_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>PE-6(4)</label>
          <param id="pe-6.4_prm_1">
             <label>organization-defined physical spaces containing one or more components of the information system</label>
          </param>
-      </location>
-      <location>
-         <label>PE-8</label>
          <param id="pe-8_prm_1">
             <label>organization-defined time period</label>
          </param>
          <param id="pe-8_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-9(1)</label>
          <param id="pe-9.1_prm_1">
             <label>organization-defined distance</label>
          </param>
-      </location>
-      <location>
-         <label>PE-9(2)</label>
          <param id="pe-9.2_prm_1">
             <label>organization-defined critical information system components</label>
          </param>
-      </location>
-      <location>
-         <label>PE-10</label>
          <param id="pe-10_prm_1">
             <label>organization-defined location by information system or system component</label>
          </param>
-      </location>
-      <location>
-         <label>PE-11</label>
          <param id="pe-11_prm_1">
             <select how-many="one or more">
                <choice>an orderly shutdown of the information system</choice>
                <choice>transition of the information system to long-term alternate power</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>PE-11(2)</label>
          <param id="pe-11.2_prm_1">
             <select>
                <choice>minimally required operational capability</choice>
                <choice>full operational capability</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>PE-13(1)</label>
          <param id="pe-13.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="pe-13.1_prm_2">
             <label>organization-defined emergency responders</label>
          </param>
-      </location>
-      <location>
-         <label>PE-13(2)</label>
          <param id="pe-13.2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="pe-13.2_prm_2">
             <label>organization-defined emergency responders</label>
          </param>
-      </location>
-      <location>
-         <label>PE-13(4)</label>
          <param id="pe-13.4_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="pe-13.4_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>PE-14</label>
          <param id="pe-14_prm_1">
             <label>organization-defined acceptable levels</label>
          </param>
          <param id="pe-14_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PE-15(1)</label>
          <param id="pe-15.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>PE-16</label>
          <param id="pe-16_prm_1">
             <label>organization-defined types of information system components</label>
          </param>
-      </location>
-      <location>
-         <label>PE-17</label>
          <param id="pe-17_prm_1">
             <label>organization-defined security controls</label>
          </param>
-      </location>
-      <location>
-         <label>PE-18</label>
          <param id="pe-18_prm_1">
             <label>organization-defined physical and environmental hazards</label>
          </param>
-      </location>
-      <location>
-         <label>PE-20</label>
          <param id="pe-20_prm_1">
             <label>organization-defined asset location technologies</label>
          </param>
@@ -2504,9 +1625,6 @@
          <param id="pe-20_prm_3">
             <label>organization-defined controlled areas</label>
          </param>
-      </location>
-      <location>
-         <label>PL-1</label>
          <param id="pl-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2516,66 +1634,39 @@
          <param id="pl-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PL-2</label>
          <param id="pl-2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="pl-2_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PL-2(3)</label>
          <param id="pl-2.3_prm_1">
             <label>organization-defined individuals or groups</label>
          </param>
-      </location>
-      <location>
-         <label>PL-4</label>
          <param id="pl-4_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PL-7</label>
          <param id="pl-7_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PL-8</label>
          <param id="pl-8_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PL-8(1)</label>
          <param id="pl-8.1_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="pl-8.1_prm_2">
             <label>organization-defined locations and architectural layers</label>
          </param>
-      </location>
-      <location>
-         <label>PL-8(2)</label>
          <param id="pl-8.2_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="pl-8.2_prm_2">
             <label>organization-defined locations and architectural layers</label>
          </param>
-      </location>
-      <location>
-         <label>PL-9</label>
          <param id="pl-9_prm_1">
             <label>organization-defined security controls and related processes</label>
          </param>
-      </location>
-      <location>
-         <label>PS-1</label>
          <param id="ps-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2585,27 +1676,15 @@
          <param id="ps-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PS-2</label>
          <param id="ps-2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PS-3</label>
          <param id="ps-3_prm_1">
             <label>organization-defined conditions requiring rescreening and, where rescreening is so indicated, the frequency of such rescreening</label>
          </param>
-      </location>
-      <location>
-         <label>PS-3(3)</label>
          <param id="ps-3.3_prm_1">
             <label>organization-defined additional personnel screening criteria</label>
          </param>
-      </location>
-      <location>
-         <label>PS-4</label>
          <param id="ps-4_prm_1">
             <label>organization-defined time period</label>
          </param>
@@ -2618,15 +1697,9 @@
          <param id="ps-4_prm_4">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>PS-4(2)</label>
          <param id="ps-4.2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>PS-5</label>
          <param id="ps-5_prm_1">
             <label>organization-defined transfer or reassignment actions</label>
          </param>
@@ -2639,36 +1712,24 @@
          <param id="ps-5_prm_4">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>PS-6</label>
          <param id="ps-6_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="ps-6_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PS-7</label>
          <param id="ps-7_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="ps-7_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>PS-8</label>
          <param id="ps-8_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="ps-8_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>RA-1</label>
          <param id="ra-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2678,9 +1739,6 @@
          <param id="ra-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>RA-3</label>
          <param id="ra-3_prm_1">
             <select>
                <choice>security plan</choice>
@@ -2702,9 +1760,6 @@
          <param id="ra-3_prm_5">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>RA-5</label>
          <param id="ra-5_prm_1">
             <label>organization-defined frequency and/or randomly in accordance with organization-defined process</label>
          </param>
@@ -2714,9 +1769,6 @@
          <param id="ra-5_prm_3">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>RA-5(2)</label>
          <param id="ra-5.2_prm_1">
             <select how-many="one or more">
                <choice>
@@ -2729,24 +1781,15 @@
          <param id="ra-5.2_prm_2" depends-on="ra-5.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>RA-5(4)</label>
          <param id="ra-5.4_prm_1">
             <label>organization-defined corrective actions</label>
          </param>
-      </location>
-      <location>
-         <label>RA-5(5)</label>
          <param id="ra-5.5_prm_1">
             <label>organization-identified information system components</label>
          </param>
          <param id="ra-5.5_prm_2">
             <label>organization-defined vulnerability scanning activities</label>
          </param>
-      </location>
-      <location>
-         <label>RA-6</label>
          <param id="ra-6_prm_1">
             <label>organization-defined locations</label>
          </param>
@@ -2766,9 +1809,6 @@
          <param id="ra-6_prm_4" depends-on="ra-6_prm_2">
             <label>organization-defined events or indicators occur</label>
          </param>
-      </location>
-      <location>
-         <label>SA-1</label>
          <param id="sa-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -2778,15 +1818,9 @@
          <param id="sa-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SA-3</label>
          <param id="sa-3_prm_1">
             <label>organization-defined system development life cycle</label>
          </param>
-      </location>
-      <location>
-         <label>SA-4(2)</label>
          <param id="sa-4.2_prm_1">
             <select how-many="one or more">
                <choice>security-relevant external system interfaces</choice>
@@ -2804,72 +1838,42 @@
          <param id="sa-4.2_prm_3">
             <label>organization-defined level of detail</label>
          </param>
-      </location>
-      <location>
-         <label>SA-4(3)</label>
          <param id="sa-4.3_prm_1">
             <label>organization-defined state-of-the-practice system/security engineering methods, software development methods, testing/evaluation/validation techniques, and quality control processes</label>
          </param>
-      </location>
-      <location>
-         <label>SA-4(5)</label>
          <param id="sa-4.5_prm_1">
             <label>organization-defined security configurations</label>
          </param>
-      </location>
-      <location>
-         <label>SA-4(8)</label>
          <param id="sa-4.8_prm_1">
             <label>organization-defined level of detail</label>
          </param>
-      </location>
-      <location>
-         <label>SA-5</label>
          <param id="sa-5_prm_1">
             <label>organization-defined actions</label>
          </param>
          <param id="sa-5_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9</label>
          <param id="sa-9_prm_1">
             <label>organization-defined security controls</label>
          </param>
          <param id="sa-9_prm_2">
             <label>organization-defined processes, methods, and techniques</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9(1)</label>
          <param id="sa-9.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9(2)</label>
          <param id="sa-9.2_prm_1">
             <label>organization-defined external information system services</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9(3)</label>
          <param id="sa-9.3_prm_1">
             <label>organization-defined security requirements, properties, factors, or conditions defining acceptable trust relationships</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9(4)</label>
          <param id="sa-9.4_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="sa-9.4_prm_2">
             <label>organization-defined external service providers</label>
          </param>
-      </location>
-      <location>
-         <label>SA-9(5)</label>
          <param id="sa-9.5_prm_1">
             <select how-many="one or more">
                <choice>information processing</choice>
@@ -2883,9 +1887,6 @@
          <param id="sa-9.5_prm_3">
             <label>organization-defined requirements or conditions</label>
          </param>
-      </location>
-      <location>
-         <label>SA-10</label>
          <param id="sa-10_prm_1">
             <select how-many="one or more">
                <choice>design</choice>
@@ -2900,9 +1901,6 @@
          <param id="sa-10_prm_3">
             <label>organization-defined personnel</label>
          </param>
-      </location>
-      <location>
-         <label>SA-11</label>
          <param id="sa-11_prm_1">
             <select how-many="one or more">
                <choice>unit</choice>
@@ -2914,69 +1912,39 @@
          <param id="sa-11_prm_2">
             <label>organization-defined depth and coverage</label>
          </param>
-      </location>
-      <location>
-         <label>SA-11(3)</label>
          <param id="sa-11.3_prm_1">
             <label>organization-defined independence criteria</label>
          </param>
-      </location>
-      <location>
-         <label>SA-11(4)</label>
          <param id="sa-11.4_prm_1">
             <label>organization-defined specific code</label>
          </param>
          <param id="sa-11.4_prm_2">
             <label>organization-defined processes, procedures, and/or techniques</label>
          </param>
-      </location>
-      <location>
-         <label>SA-11(5)</label>
          <param id="sa-11.5_prm_1">
             <label>organization-defined breadth/depth</label>
          </param>
          <param id="sa-11.5_prm_2">
             <label>organization-defined constraints</label>
          </param>
-      </location>
-      <location>
-         <label>SA-11(7)</label>
          <param id="sa-11.7_prm_1">
             <label>organization-defined depth of testing/evaluation</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12</label>
          <param id="sa-12_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(1)</label>
          <param id="sa-12.1_prm_1">
             <label>organization-defined tailored acquisition strategies, contract tools, and procurement methods</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(5)</label>
          <param id="sa-12.5_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(9)</label>
          <param id="sa-12.9_prm_1">
             <label>organization-defined Operations Security (OPSEC) safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(10)</label>
          <param id="sa-12.10_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(11)</label>
          <param id="sa-12.11_prm_1">
             <select how-many="one or more">
                <choice>organizational analysis, independent third-party analysis, organizational penetration testing, independent third-party penetration testing</choice>
@@ -2985,51 +1953,33 @@
          <param id="sa-12.11_prm_2">
             <label>organization-defined supply chain elements, processes, and actors</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(13)</label>
          <param id="sa-12.13_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="sa-12.13_prm_2">
             <label>organization-defined critical information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SA-12(14)</label>
          <param id="sa-12.14_prm_1">
             <label>organization-defined supply chain elements, processes, and actors</label>
          </param>
-      </location>
-      <location>
-         <label>SA-13</label>
          <param id="sa-13_prm_1">
             <label>organization-defined information system, information system component, or information system service</label>
          </param>
          <param id="sa-13_prm_2">
             <label>organization-defined assurance overlay</label>
          </param>
-      </location>
-      <location>
-         <label>SA-14</label>
          <param id="sa-14_prm_1">
             <label>organization-defined information systems, information system components, or information system services</label>
          </param>
          <param id="sa-14_prm_2">
             <label>organization-defined decision points in the system development life cycle</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15</label>
          <param id="sa-15_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="sa-15_prm_2">
             <label>organization-defined security requirements</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15(1)</label>
          <param id="sa-15.1_prm_1">
             <select how-many="one or more">
                <choice>
@@ -3047,18 +1997,12 @@
          <param id="sa-15.1_prm_3" depends-on="sa-15.1_prm_1">
             <label>organization-defined program review milestones</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15(3)</label>
          <param id="sa-15.3_prm_1">
             <label>organization-defined breadth/depth</label>
          </param>
          <param id="sa-15.3_prm_2">
             <label>organization-defined decision points in the system development life cycle</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15(4)</label>
          <param id="sa-15.4_prm_1">
             <label>organization-defined breadth/depth</label>
          </param>
@@ -3071,44 +2015,26 @@
          <param id="sa-15.4_prm_4">
             <label>organization-defined acceptance criteria</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15(5)</label>
          <param id="sa-15.5_prm_1">
             <label>organization-defined thresholds</label>
          </param>
-      </location>
-      <location>
-         <label>SA-15(7)</label>
          <param id="sa-15.7_prm_1">
             <label>organization-defined tools</label>
          </param>
          <param id="sa-15.7_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SA-16</label>
          <param id="sa-16_prm_1">
             <label>organization-defined training</label>
          </param>
-      </location>
-      <location>
-         <label>SA-17(1)</label>
          <param id="sa-17.1_prm_1">
             <label>organization-defined elements of organizational security policy</label>
          </param>
-      </location>
-      <location>
-         <label>SA-17(4)</label>
          <param id="sa-17.4_prm_1">
             <select>
                <choice>informal demonstration, convincing argument with formal methods as feasible</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SA-18(2)</label>
          <param id="sa-18.2_prm_1">
             <label>organization-defined information systems, system components, or devices</label>
          </param>
@@ -3125,9 +2051,6 @@
          <param id="sa-18.2_prm_4" depends-on="sa-18.2_prm_2">
             <label>organization-defined indications of need for inspection</label>
          </param>
-      </location>
-      <location>
-         <label>SA-19</label>
          <param id="sa-19_prm_1">
             <select how-many="one or more">
                <choice>source of counterfeit component</choice>
@@ -3145,39 +2068,21 @@
          <param id="sa-19_prm_3" depends-on="sa-19_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SA-19(1)</label>
          <param id="sa-19.1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SA-19(2)</label>
          <param id="sa-19.2_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SA-19(3)</label>
          <param id="sa-19.3_prm_1">
             <label>organization-defined techniques and methods</label>
          </param>
-      </location>
-      <location>
-         <label>SA-19(4)</label>
          <param id="sa-19.4_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SA-20</label>
          <param id="sa-20_prm_1">
             <label>organization-defined critical information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SA-21</label>
          <param id="sa-21_prm_1">
             <label>organization-defined information system, system component, or information system service</label>
          </param>
@@ -3187,15 +2092,9 @@
          <param id="sa-21_prm_3">
             <label>organization-defined additional personnel screening criteria</label>
          </param>
-      </location>
-      <location>
-         <label>SA-21(1)</label>
          <param id="sa-21.1_prm_1">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>SA-22(1)</label>
          <param id="sa-22.1_prm_1">
             <select how-many="one or more">
                <choice>in-house support</choice>
@@ -3207,9 +2106,6 @@
          <param id="sa-22.1_prm_2" depends-on="sa-22.1_prm_1">
             <label>organization-defined support from external providers</label>
          </param>
-      </location>
-      <location>
-         <label>SC-1</label>
          <param id="sc-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -3219,39 +2115,24 @@
          <param id="sc-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SC-4(2)</label>
          <param id="sc-4.2_prm_1">
             <label>organization-defined procedures</label>
          </param>
-      </location>
-      <location>
-         <label>SC-5</label>
          <param id="sc-5_prm_1">
             <label>organization-defined types of denial of service attacks or references to sources for such information</label>
          </param>
          <param id="sc-5_prm_2">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-5(1)</label>
          <param id="sc-5.1_prm_1">
             <label>organization-defined denial of service attacks</label>
          </param>
-      </location>
-      <location>
-         <label>SC-5(3)</label>
          <param id="sc-5.3_prm_1">
             <label>organization-defined monitoring tools</label>
          </param>
          <param id="sc-5.3_prm_2">
             <label>organization-defined information system resources</label>
          </param>
-      </location>
-      <location>
-         <label>SC-6</label>
          <param id="sc-6_prm_1">
             <label>organization-defined resources</label>
          </param>
@@ -3267,93 +2148,57 @@
          <param id="sc-6_prm_3" depends-on="sc-6_prm_2">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7</label>
          <param id="sc-7_prm_1">
             <select>
                <choice>physically</choice>
                <choice>logically</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-7(4)</label>
          <param id="sc-7.4_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(8)</label>
          <param id="sc-7.8_prm_1">
             <label>organization-defined internal communications traffic</label>
          </param>
          <param id="sc-7.8_prm_2">
             <label>organization-defined external networks</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(11)</label>
          <param id="sc-7.11_prm_1">
             <label>organization-defined authorized sources</label>
          </param>
          <param id="sc-7.11_prm_2">
             <label>organization-defined authorized destinations</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(12)</label>
          <param id="sc-7.12_prm_1">
             <label>organization-defined host-based boundary protection mechanisms</label>
          </param>
          <param id="sc-7.12_prm_2">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(13)</label>
          <param id="sc-7.13_prm_1">
             <label>organization-defined information security tools, mechanisms, and support components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(14)</label>
          <param id="sc-7.14_prm_1">
             <label>organization-defined managed interfaces</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(19)</label>
          <param id="sc-7.19_prm_1">
             <label>organization-defined communication clients</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(20)</label>
          <param id="sc-7.20_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-7(21)</label>
          <param id="sc-7.21_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="sc-7.21_prm_2">
             <label>organization-defined missions and/or business functions</label>
          </param>
-      </location>
-      <location>
-         <label>SC-8</label>
          <param id="sc-8_prm_1">
             <select how-many="one or more">
                <choice>confidentiality</choice>
                <choice>integrity</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-8(1)</label>
          <param id="sc-8.1_prm_1">
             <select how-many="one or more">
                <choice>prevent unauthorized disclosure of information</choice>
@@ -3363,57 +2208,33 @@
          <param id="sc-8.1_prm_2">
             <label>organization-defined alternative physical safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-8(2)</label>
          <param id="sc-8.2_prm_1">
             <select how-many="one or more">
                <choice>confidentiality</choice>
                <choice>integrity</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-8(3)</label>
          <param id="sc-8.3_prm_1">
             <label>organization-defined alternative physical safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-8(4)</label>
          <param id="sc-8.4_prm_1">
             <label>organization-defined alternative physical safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-10</label>
          <param id="sc-10_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>SC-11</label>
          <param id="sc-11_prm_1">
             <label>organization-defined security functions to include at a minimum, information system authentication and re-authentication</label>
          </param>
-      </location>
-      <location>
-         <label>SC-12</label>
          <param id="sc-12_prm_1">
             <label>organization-defined requirements for key generation, distribution, storage, access, and destruction</label>
          </param>
-      </location>
-      <location>
-         <label>SC-12(2)</label>
          <param id="sc-12.2_prm_1">
             <select>
                <choice>NIST FIPS-compliant</choice>
                <choice>NSA-approved</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-12(3)</label>
          <param id="sc-12.3_prm_1">
             <select>
                <choice>NSA-approved key management technology and processes</choice>
@@ -3421,90 +2242,51 @@
                <choice>approved PKI Class 3 or Class 4 certificates and hardware security tokens that protect the user’s private key</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-13</label>
          <param id="sc-13_prm_1">
             <label>organization-defined cryptographic uses and type of cryptography required for each use</label>
          </param>
-      </location>
-      <location>
-         <label>SC-15</label>
          <param id="sc-15_prm_1">
             <label>organization-defined exceptions where remote activation is to be allowed</label>
          </param>
-      </location>
-      <location>
-         <label>SC-15(3)</label>
          <param id="sc-15.3_prm_1">
             <label>organization-defined information systems or information system components</label>
          </param>
          <param id="sc-15.3_prm_2">
             <label>organization-defined secure work areas</label>
          </param>
-      </location>
-      <location>
-         <label>SC-15(4)</label>
          <param id="sc-15.4_prm_1">
             <label>organization-defined online meetings and teleconferences</label>
          </param>
-      </location>
-      <location>
-         <label>SC-16</label>
          <param id="sc-16_prm_1">
             <label>organization-defined security attributes</label>
          </param>
-      </location>
-      <location>
-         <label>SC-17</label>
          <param id="sc-17_prm_1">
             <label>organization-defined certificate policy</label>
          </param>
-      </location>
-      <location>
-         <label>SC-18(1)</label>
          <param id="sc-18.1_prm_1">
             <label>organization-defined unacceptable mobile code</label>
          </param>
          <param id="sc-18.1_prm_2">
             <label>organization-defined corrective actions</label>
          </param>
-      </location>
-      <location>
-         <label>SC-18(2)</label>
          <param id="sc-18.2_prm_1">
             <label>organization-defined mobile code requirements</label>
          </param>
-      </location>
-      <location>
-         <label>SC-18(3)</label>
          <param id="sc-18.3_prm_1">
             <label>organization-defined unacceptable mobile code</label>
          </param>
-      </location>
-      <location>
-         <label>SC-18(4)</label>
          <param id="sc-18.4_prm_1">
             <label>organization-defined software applications</label>
          </param>
          <param id="sc-18.4_prm_2">
             <label>organization-defined actions</label>
          </param>
-      </location>
-      <location>
-         <label>SC-23(3)</label>
          <param id="sc-23.3_prm_1">
             <label>organization-defined randomness requirements</label>
          </param>
-      </location>
-      <location>
-         <label>SC-23(5)</label>
          <param id="sc-23.5_prm_1">
             <label>organization-defined certificate authorities</label>
          </param>
-      </location>
-      <location>
-         <label>SC-24</label>
          <param id="sc-24_prm_1">
             <label>organization-defined known-state</label>
          </param>
@@ -3514,21 +2296,12 @@
          <param id="sc-24_prm_3">
             <label>organization-defined system state information</label>
          </param>
-      </location>
-      <location>
-         <label>SC-25</label>
          <param id="sc-25_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-27</label>
          <param id="sc-27_prm_1">
             <label>organization-defined platform-independent applications</label>
          </param>
-      </location>
-      <location>
-         <label>SC-28</label>
          <param id="sc-28_prm_1">
             <select how-many="one or more">
                <choice>confidentiality</choice>
@@ -3538,36 +2311,21 @@
          <param id="sc-28_prm_2">
             <label>organization-defined information at rest</label>
          </param>
-      </location>
-      <location>
-         <label>SC-28(1)</label>
          <param id="sc-28.1_prm_1">
             <label>organization-defined information</label>
          </param>
          <param id="sc-28.1_prm_2">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-28(2)</label>
          <param id="sc-28.2_prm_1">
             <label>organization-defined information</label>
          </param>
-      </location>
-      <location>
-         <label>SC-29</label>
          <param id="sc-29_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-29(1)</label>
          <param id="sc-29.1_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SC-30</label>
          <param id="sc-30_prm_1">
             <label>organization-defined concealment and misdirection techniques</label>
          </param>
@@ -3577,15 +2335,9 @@
          <param id="sc-30_prm_3">
             <label>organization-defined time periods</label>
          </param>
-      </location>
-      <location>
-         <label>SC-30(2)</label>
          <param id="sc-30.2_prm_1">
             <label>organization-defined techniques</label>
          </param>
-      </location>
-      <location>
-         <label>SC-30(3)</label>
          <param id="sc-30.3_prm_1">
             <label>organization-defined processing and/or storage</label>
          </param>
@@ -3600,33 +2352,21 @@
          <param id="sc-30.3_prm_3" depends-on="sc-30.3_prm_2">
             <label>organization-defined time frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SC-30(4)</label>
          <param id="sc-30.4_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-30(5)</label>
          <param id="sc-30.5_prm_1">
             <label>organization-defined techniques</label>
          </param>
          <param id="sc-30.5_prm_2">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-31</label>
          <param id="sc-31_prm_1">
             <select how-many="one or more">
                <choice>storage</choice>
                <choice>timing</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SC-31(2)</label>
          <param id="sc-31.2_prm_1">
             <select how-many="one or more">
                <choice>storage</choice>
@@ -3636,60 +2376,36 @@
          <param id="sc-31.2_prm_2">
             <label>organization-defined values</label>
          </param>
-      </location>
-      <location>
-         <label>SC-31(3)</label>
          <param id="sc-31.3_prm_1">
             <label>organization-defined subset of identified covert channels</label>
          </param>
-      </location>
-      <location>
-         <label>SC-32</label>
          <param id="sc-32_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="sc-32_prm_2">
             <label>organization-defined circumstances for physical separation of components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-34</label>
          <param id="sc-34_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="sc-34_prm_2">
             <label>organization-defined applications</label>
          </param>
-      </location>
-      <location>
-         <label>SC-34(1)</label>
          <param id="sc-34.1_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-34(3)</label>
          <param id="sc-34.3_prm_1">
             <label>organization-defined information system firmware components</label>
          </param>
          <param id="sc-34.3_prm_2">
             <label>organization-defined authorized individuals</label>
          </param>
-      </location>
-      <location>
-         <label>SC-36</label>
          <param id="sc-36_prm_1">
             <label>organization-defined processing and storage</label>
          </param>
-      </location>
-      <location>
-         <label>SC-36(1)</label>
          <param id="sc-36.1_prm_1">
             <label>organization-defined distributed processing and storage components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-37</label>
          <param id="sc-37_prm_1">
             <label>organization-defined out-of-band channels</label>
          </param>
@@ -3699,9 +2415,6 @@
          <param id="sc-37_prm_3">
             <label>organization-defined individuals or information systems</label>
          </param>
-      </location>
-      <location>
-         <label>SC-37(1)</label>
          <param id="sc-37.1_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
@@ -3711,102 +2424,60 @@
          <param id="sc-37.1_prm_3">
             <label>organization-defined information, information system components, or devices</label>
          </param>
-      </location>
-      <location>
-         <label>SC-38</label>
          <param id="sc-38_prm_1">
             <label>organization-defined operations security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SC-39(2)</label>
          <param id="sc-39.2_prm_1">
             <label>organization-defined multi-threaded processing</label>
          </param>
-      </location>
-      <location>
-         <label>SC-40</label>
          <param id="sc-40_prm_1">
             <label>organization-defined wireless links</label>
          </param>
          <param id="sc-40_prm_2">
             <label>organization-defined types of signal parameter attacks or references to sources for such attacks</label>
          </param>
-      </location>
-      <location>
-         <label>SC-40(1)</label>
          <param id="sc-40.1_prm_1">
             <label>organization-defined level of protection</label>
          </param>
-      </location>
-      <location>
-         <label>SC-40(2)</label>
          <param id="sc-40.2_prm_1">
             <label>organization-defined level of reduction</label>
          </param>
-      </location>
-      <location>
-         <label>SC-40(4)</label>
          <param id="sc-40.4_prm_1">
             <label>organization-defined wireless transmitters</label>
          </param>
-      </location>
-      <location>
-         <label>SC-41</label>
          <param id="sc-41_prm_1">
             <label>organization-defined connection ports or input/output devices</label>
          </param>
          <param id="sc-41_prm_2">
             <label>organization-defined information systems or information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-42</label>
          <param id="sc-42_prm_1">
             <label>organization-defined exceptions where remote activation of sensors is allowed</label>
          </param>
          <param id="sc-42_prm_2">
             <label>organization-defined class of users</label>
          </param>
-      </location>
-      <location>
-         <label>SC-42(1)</label>
          <param id="sc-42.1_prm_1">
             <label>organization-defined sensors</label>
          </param>
-      </location>
-      <location>
-         <label>SC-42(2)</label>
          <param id="sc-42.2_prm_1">
             <label>organization-defined measures</label>
          </param>
          <param id="sc-42.2_prm_2">
             <label>organization-defined sensors</label>
          </param>
-      </location>
-      <location>
-         <label>SC-42(3)</label>
          <param id="sc-42.3_prm_1">
             <label>organization-defined environmental sensing capabilities</label>
          </param>
          <param id="sc-42.3_prm_2">
             <label>organization-defined facilities, areas, or systems</label>
          </param>
-      </location>
-      <location>
-         <label>SC-43</label>
          <param id="sc-43_prm_1">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SC-44</label>
          <param id="sc-44_prm_1">
             <label>organization-defined information system, system component, or location</label>
          </param>
-      </location>
-      <location>
-         <label>SI-1</label>
          <param id="si-1_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
@@ -3816,42 +2487,24 @@
          <param id="si-1_prm_3">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-2</label>
          <param id="si-2_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>SI-2(2)</label>
          <param id="si-2.2_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-2(3)</label>
          <param id="si-2.3_prm_1">
             <label>organization-defined benchmarks</label>
          </param>
-      </location>
-      <location>
-         <label>SI-2(5)</label>
          <param id="si-2.5_prm_1">
             <label>organization-defined security-relevant software and firmware updates</label>
          </param>
          <param id="si-2.5_prm_2">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SI-2(6)</label>
          <param id="si-2.6_prm_1">
             <label>organization-defined software and firmware components</label>
          </param>
-      </location>
-      <location>
-         <label>SI-3</label>
          <param id="si-3_prm_1">
             <label>organization-defined frequency</label>
          </param>
@@ -3874,15 +2527,9 @@
          <param id="si-3_prm_4" depends-on="si-3_prm_3">
             <label>organization-defined action</label>
          </param>
-      </location>
-      <location>
-         <label>SI-3(6)</label>
          <param id="si-3.6_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-3(8)</label>
          <param id="si-3.8_prm_1">
             <label>organization-defined unauthorized operating system commands</label>
          </param>
@@ -3896,24 +2543,15 @@
                <choice>prevents the execution of the command</choice>
             </select>
          </param>
-      </location>
-      <location>
-         <label>SI-3(9)</label>
          <param id="si-3.9_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="si-3.9_prm_2">
             <label>organization-defined remote commands</label>
          </param>
-      </location>
-      <location>
-         <label>SI-3(10)</label>
          <param id="si-3.10_prm_1">
             <label>organization-defined tools and techniques</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4</label>
          <param id="si-4_prm_1">
             <label>organization-defined monitoring objectives</label>
          </param>
@@ -3937,90 +2575,54 @@
          <param id="si-4_prm_6" depends-on="si-4_prm_5">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(4)</label>
          <param id="si-4.4_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(5)</label>
          <param id="si-4.5_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
          <param id="si-4.5_prm_2">
             <label>organization-defined compromise indicators</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(7)</label>
          <param id="si-4.7_prm_1">
             <label>organization-defined incident response personnel (identified by name and/or by role)</label>
          </param>
          <param id="si-4.7_prm_2">
             <label>organization-defined least-disruptive actions to terminate suspicious events</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(9)</label>
          <param id="si-4.9_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(10)</label>
          <param id="si-4.10_prm_1">
             <label>organization-defined encrypted communications traffic</label>
          </param>
          <param id="si-4.10_prm_2">
             <label>organization-defined information system monitoring tools</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(11)</label>
          <param id="si-4.11_prm_1">
             <label>organization-defined interior points within the system (e.g., subnetworks, subsystems)</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(12)</label>
          <param id="si-4.12_prm_1">
             <label>organization-defined activities that trigger alerts</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(18)</label>
          <param id="si-4.18_prm_1">
             <label>organization-defined interior points within the system (e.g., subsystems, subnetworks)</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(19)</label>
          <param id="si-4.19_prm_1">
             <label>organization-defined additional monitoring</label>
          </param>
          <param id="si-4.19_prm_2">
             <label>organization-defined sources</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(20)</label>
          <param id="si-4.20_prm_1">
             <label>organization-defined additional monitoring</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(21)</label>
          <param id="si-4.21_prm_1">
             <label>organization-defined additional monitoring</label>
          </param>
          <param id="si-4.21_prm_2">
             <label>organization-defined probationary period</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(22)</label>
          <param id="si-4.22_prm_1">
             <label>organization-defined authorization or approval processes</label>
          </param>
@@ -4034,18 +2636,12 @@
          <param id="si-4.22_prm_3" depends-on="si-4.22_prm_2">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SI-4(23)</label>
          <param id="si-4.23_prm_1">
             <label>organization-defined host-based monitoring mechanisms</label>
          </param>
          <param id="si-4.23_prm_2">
             <label>organization-defined information system components</label>
          </param>
-      </location>
-      <location>
-         <label>SI-5</label>
          <param id="si-5_prm_1">
             <label>organization-defined external organizations</label>
          </param>
@@ -4071,9 +2667,6 @@
          <param id="si-5_prm_5" depends-on="si-5_prm_2">
             <label>organization-defined external organizations</label>
          </param>
-      </location>
-      <location>
-         <label>SI-6</label>
          <param id="si-6_prm_1">
             <label>organization-defined security functions</label>
          </param>
@@ -4109,21 +2702,12 @@
          <param id="si-6_prm_7" depends-on="si-6_prm_6">
             <label>organization-defined alternative action(s)</label>
          </param>
-      </location>
-      <location>
-         <label>SI-6(3)</label>
          <param id="si-6.3_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7</label>
          <param id="si-7_prm_1">
             <label>organization-defined software, firmware, and information</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(1)</label>
          <param id="si-7.1_prm_1">
             <label>organization-defined software, firmware, and information</label>
          </param>
@@ -4143,15 +2727,9 @@
          <param id="si-7.1_prm_4" depends-on="si-7.1_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(2)</label>
          <param id="si-7.2_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(5)</label>
          <param id="si-7.5_prm_1">
             <select how-many="one or more">
                <choice>shuts the information system down</choice>
@@ -4163,15 +2741,9 @@
          <param id="si-7.5_prm_2" depends-on="si-7.5_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(7)</label>
          <param id="si-7.7_prm_1">
             <label>organization-defined security-relevant changes to the information system</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(8)</label>
          <param id="si-7.8_prm_1">
             <select how-many="one or more">
                <choice>generates an audit record</choice>
@@ -4189,114 +2761,66 @@
          <param id="si-7.8_prm_3" depends-on="si-7.8_prm_1">
             <label>organization-defined other actions</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(9)</label>
          <param id="si-7.9_prm_1">
             <label>organization-defined devices</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(10)</label>
          <param id="si-7.10_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
          <param id="si-7.10_prm_2">
             <label>organization-defined devices</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(11)</label>
          <param id="si-7.11_prm_1">
             <label>organization-defined user-installed software</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(12)</label>
          <param id="si-7.12_prm_1">
             <label>organization-defined user-installed software</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(13)</label>
          <param id="si-7.13_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(15)</label>
          <param id="si-7.15_prm_1">
             <label>organization-defined software or firmware components</label>
          </param>
-      </location>
-      <location>
-         <label>SI-7(16)</label>
          <param id="si-7.16_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>SI-10</label>
          <param id="si-10_prm_1">
             <label>organization-defined information inputs</label>
          </param>
-      </location>
-      <location>
-         <label>SI-10(1)</label>
          <param id="si-10.1_prm_1">
             <label>organization-defined inputs</label>
          </param>
          <param id="si-10.1_prm_2">
             <label>organization-defined authorized individuals</label>
          </param>
-      </location>
-      <location>
-         <label>SI-10(2)</label>
          <param id="si-10.2_prm_1">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>SI-10(5)</label>
          <param id="si-10.5_prm_1">
             <label>organization-defined trusted sources</label>
          </param>
          <param id="si-10.5_prm_2">
             <label>organization-defined formats</label>
          </param>
-      </location>
-      <location>
-         <label>SI-11</label>
          <param id="si-11_prm_1">
             <label>organization-defined personnel or roles</label>
          </param>
-      </location>
-      <location>
-         <label>SI-13</label>
          <param id="si-13_prm_1">
             <label>organization-defined information system components</label>
          </param>
          <param id="si-13_prm_2">
             <label>organization-defined MTTF substitution criteria</label>
          </param>
-      </location>
-      <location>
-         <label>SI-13(1)</label>
          <param id="si-13.1_prm_1">
             <label>organization-defined fraction or percentage</label>
          </param>
-      </location>
-      <location>
-         <label>SI-13(3)</label>
          <param id="si-13.3_prm_1">
             <label>organization-defined frequency</label>
          </param>
          <param id="si-13.3_prm_2">
             <label>organization-defined time period</label>
          </param>
-      </location>
-      <location>
-         <label>SI-13(4)</label>
          <param id="si-13.4_prm_1">
             <label>organization-defined time period</label>
          </param>
@@ -4310,9 +2834,6 @@
          <param id="si-13.4_prm_3" depends-on="si-13.4_prm_2">
             <label>organization-defined alarm</label>
          </param>
-      </location>
-      <location>
-         <label>SI-13(5)</label>
          <param id="si-13.5_prm_1">
             <select>
                <choice>real-time</choice>
@@ -4322,9 +2843,6 @@
          <param id="si-13.5_prm_2">
             <label>organization-defined failover capability</label>
          </param>
-      </location>
-      <location>
-         <label>SI-14</label>
          <param id="si-14_prm_1">
             <label>organization-defined information system components and services</label>
          </param>
@@ -4338,42 +2856,24 @@
          <param id="si-14_prm_3" depends-on="si-14_prm_2">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>SI-14(1)</label>
          <param id="si-14.1_prm_1">
             <label>organization-defined trusted sources</label>
          </param>
-      </location>
-      <location>
-         <label>SI-15</label>
          <param id="si-15_prm_1">
             <label>organization-defined software programs and/or applications</label>
          </param>
-      </location>
-      <location>
-         <label>SI-16</label>
          <param id="si-16_prm_1">
             <label>organization-defined security safeguards</label>
          </param>
-      </location>
-      <location>
-         <label>SI-17</label>
          <param id="si-17_prm_1">
             <label>organization-defined fail-safe procedures</label>
          </param>
          <param id="si-17_prm_2">
             <label>organization-defined failure conditions occur</label>
          </param>
-      </location>
-      <location>
-         <label>PM-1</label>
          <param id="pm-1_prm_1">
             <label>organization-defined frequency</label>
          </param>
-      </location>
-      <location>
-         <label>PM-9</label>
          <param id="pm-9_prm_1">
             <label>organization-defined frequency</label>
          </param>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-model href="../NVD-objective-numbering.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<!--<?xml-model href="../NVD-objective-numbering.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>-->
 <controls:controls xmlns="http://scap.nist.gov/schema/sp800-53/2.0"
                    xmlns:controls="http://scap.nist.gov/schema/sp800-53/feed/2.0"
                    xmlns:xhtml="http://www.w3.org/1999/xhtml"
