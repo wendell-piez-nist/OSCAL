@@ -18,14 +18,14 @@ primary:
     links:
       - text: Background
         href: /learnmore/
-      - text: For Assessors
-        href: /learnmore/assessors
-      - text: For Security Professionals
-        href: /learnmore/securitypros
-      - text: For Tool Developers
-        href: /learnmore/tooldevelopers
-      - text: For Content Authors
-        href: /learnmore/authors
+#     - text: For Assessors
+#       href: /learnmore/assessors
+#     - text: For Security Professionals
+#       href: /learnmore/securitypros
+#     - text: For Tool Developers
+#       href: /learnmore/tooldevelopers
+#     - text: For Content Authors
+#       href: /learnmore/authors
       - text: Relations to Industry Standards
         href: /learnmore/relations
   - text: Resources
