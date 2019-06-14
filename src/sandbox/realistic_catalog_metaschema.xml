@@ -6,19 +6,20 @@
 <?xml-stylesheet type="text/css" href="../../build/metaschema/lib/metaschema-author.css"?>
 <METASCHEMA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://csrc.nist.gov/ns/oscal/metaschema/1.0 ../../build/metaschema/lib/metaschema.xsd"
- xmlns="http://csrc.nist.gov/ns/oscal/metaschema/1.0" xmlns:o="http://csrc.nist.gov/ns/oscal/example"
+ xmlns="http://csrc.nist.gov/ns/oscal/metaschema/1.0" xmlns:o="http://csrc.nist.gov/ns/oscal/1.0"
  root="catalog">
 
-  <schema-name>OSCAL Control Catalog Format</schema-name>
-  <schema-version>1.0-milestone1</schema-version>
-  <short-name>oscal-catalog</short-name>
-  <namespace>http://csrc.nist.gov/ns/oscal/1.0</namespace>
+  <schema-name>OSCAL Realistic (testing) Control Catalog Format</schema-name>
+  <schema-version>1.0-M1</schema-version>
+  <short-name>realistic-catalog</short-name>
+  <namespace>urn:faux-catalog</namespace>
 
   <remarks>
     <p>The OSCAL Control Catalog format can be used to describe a collection of security controls and related control enhancements (subcontrols), along with contextualizing documentation and metadata. The root of the Control Catalog format is <code>catalog</code>.</p>
+    <p>An XML Schema is <a href="https://raw.githubusercontent.com/usnistgov/OSCAL/master/xml/schema/oscal_catalog_schema.xsd">provided</a> for the OSCAL Catalog XML model.</p>
   </remarks>
   
-  <import href="oscal_metadata_metaschema.xml"/>
+  <import href="realistic_metadata_metaschema.xml"/>
   
   <define-assembly name="catalog" group-as="control-catalog">
     <flag name="id" datatype="ID" required="yes"/>
@@ -39,8 +40,6 @@
       <assembly named="back-matter">
         <description>Back matter including references and resources.</description>
       </assembly>
-        <description>Back matter including references and resources.</description>
-      </assembly>
     </model>
     <example>
       <description>A small catalog with a single control</description>
@@ -52,7 +51,7 @@
       </catalog>
     </example>
   </define-assembly>
-
+  
   <!--<define-field name="declarations" as="empty">
     <flag name="href" datatype="anyURI"/>
     <formal-name>Declarations</formal-name>
@@ -117,6 +116,7 @@
   </define-assembly>
 
   <define-assembly name="control" group-as="controls">
+    
     <flag name="id" datatype="ID" required="yes"/>
     <flag name="class"/>
     <formal-name>Control</formal-name>
@@ -283,11 +283,17 @@
     <formal-name>Part</formal-name>
     <description>A partition or component of a control, subcontrol or part</description>
     <remarks>
-      <p>A <code>part</code> provides for logical partitioning of prose, and can be thought of as a grouping structure (e.g., section). A <code>part</code> can have child parts allowing for arbitrary nesting of prose content (e.g., statement hierarchy). A <code>part</code> can contain <code>prop</code> objects that allow for enriching prose text with structured name/value information.</p>
-      <p>A <code>part</code> can be assigned an optional <code>id</code>>, which allows for internal and external references to the textual concept contained within a <code>part</code>. A <code>id</code> provides a means for an OSCAL profile, or a higher layer OSCAL model to reference a specific part within a <code>catalog</code>. For example, an <code>id</code> can be used to reference or to make modifications to a control statement in a profile.</p>
-      <p>Use of <code>part</code> and <code>prop</code> provides for a wide degree of extensibility within the OSCAL catalog model. The optional <code>ns</code> provides a means to qualify a part's <code>name</code>, allowing for organization-specific vocabularies to be defined with clear semantics. Any organization that extends OSCAL in this way should consistently assign a <code>ns</code> value that represents the organization, making a given namespace qualified <code>name</code> unique to that organization. This allows the combination of <code>ns</code> and <code>name</code> to always be unique and unambiguous, even when mixed with extensions from other organizations. Each organization is responsible for governance of their own extensions, and is strongly encouraged to publish their extensions as standards to their user community. If no <code>ns</code> is provided, the name is expected to be in the "OSCAL" namespace.</p>
-      <p>To ensure a <code>ns</code> is unique to an organization and naming conflicts are avoided, a URI containing a DNS or other globally defined organization name should be used. For example, if FedRAMP and DoD both extend OSCAL, FedRAMP will use the <code>ns</code> "https://fedramp.gov", while DoD will use the <code>ns</code> "https://defense.gov" for any organization specific <code>name</code>.</p>
-      <p>Tools that process OSCAL content are not required to interpret unrecognized OSCAL extensions; however, OSCAL-compliant tools should not modify or remove unrecognized extensions, unless there is a compelling reason to do so, such as data sensitivity.</p>
+      <p>Like properties (<code>prop</code>) and parameters (<code>param</code>), parts can be
+        distinguished from other elements within their controls by their assigned
+        <code>class</code>, such that they may be subjected to <q>declarations logic</q> using
+        these values as bindings (and thereby getting open-ended extensibility).</p>
+      <p>An assigned class may frequently provide for a header in display, such that
+        <code>part</code><code>[@class='objectives']</code> is displayed under a header <em>Objectives</em>, etc.
+        Parts may also however have their own titles (<code>title</code> elements).</p>
+      <p>Many parts are logical partitions or sections for prose. Other parts may be more formally
+        constructed out of properties (<code>prop</code> elements) and/or their own parts. Such
+        structured objects may, at the extreme, function virtually as control extensions or
+        subcontrol-like objects (<q>enhancements</q>).</p>
     </remarks>
     <model>
       <field named="title"/>
@@ -297,13 +303,6 @@
       <fields named="link"/>
       <any/>
     </model>
-    <example>
-      <description>Multiple Parts with Different Organization-Specific Names</description>
-      <o:part name="statement" id="statement-A">
-        <o:part ns="https://fedramp.gov" name="status"  id="statement-A-FedRAMP">Something FedRAMP Cares About</o:part>
-        <o:part ns="https://defense.gov" name="status"  id="statement-A-DoD">Something DoD Cares About</o:part>
-      </o:part>
-    </example>
   </define-assembly>
 
   <define-flag name="test" datatype="string">
