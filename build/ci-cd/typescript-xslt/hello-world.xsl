@@ -12,6 +12,7 @@
       </head>
       <body>
         <h1>
+          <xsl:text>Hooray </xsl:text>
           <xsl:text>Hello </xsl:text>        
 			    <xsl:apply-templates/>
           <xsl:text>!</xsl:text>

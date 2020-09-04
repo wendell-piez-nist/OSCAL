@@ -1,10 +1,13 @@
-﻿import * as SaxonJS from "../node_modules/saxon-js/SaxonJS2N.js"
+﻿import * as SaxonJS from "saxon-js/SaxonJS2N.js"
 
 /*let xslt = 'hello-world.xsl'*/
 /* const sysPath: string = 'file:///C:/Users/wap1/source/repos/NodejsTestConsole/src' */
 let helloXML:   string = 'hello-world.xml'
 let xsltFile:   string = 'hello-world.xsl'
 let sefFile: string = 'hello.sef.json'
+
+console.log(process.cwd());
+
 /*let resultFile: URL = 'file:///C:/Users/wap1/source/repos/NodejsTestConsole/src/hello.html'*/
 
 /*API docs: http://www.saxonica.com/saxon-js/documentation/index.html#!api/transform */
