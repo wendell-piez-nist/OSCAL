@@ -1,12 +1,14 @@
 ﻿import * as SaxonJS from "saxon-js/SaxonJS2N.js"
 
+const workingDir: string = process.cwd()
+
 /*let xslt = 'hello-world.xsl'*/
 /* const sysPath: string = 'file:///C:/Users/wap1/source/repos/NodejsTestConsole/src' */
-let helloXML:   string = 'hello-world.xml'
-let xsltFile:   string = 'hello-world.xsl'
-let sefFile: string = 'hello.sef.json'
+let helloXML:   string = `${workingDir}/hello-world.xml`
+let xsltFile:   string = `${workingDir}/hello-world.xsl`
+let sefFile: string = `${workingDir}/hello.sef.json`
 
-console.log(process.cwd());
+console.log(workingDir);
 
 /*let resultFile: URL = 'file:///C:/Users/wap1/source/repos/NodejsTestConsole/src/hello.html'*/
 
