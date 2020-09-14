@@ -25,15 +25,15 @@ Any recent version should work; using the latest (now 10.2) is always a good cho
 If no Saxon HE `jar` file is in place, download Saxon and set up $SAXON_HOME as described in 
 [../../ci-cd/README.md](../README.md)
 
-From the command line, this instruction will confirm that Saxon can be run:
+From the command line, this instruction (as adjusted to point to your `jar` file) will confirm that Saxon can be run:
 
 ```
-java -jar $SAXON  net.sf.saxon.Transform -versionmsg
+java -jar $SAXON_HOME/Saxon-HE-9.9.1-3.jar net.sf.saxon.Transform -versionmsg
 ```
 
 ### Make yourself a shell to run Saxon in Java
 
-We can run simple XSLT transformations with a simple CL syntax using a Bash script to call Saxon.
+To simplify the command syntax we can run XSLT transformations sing a Bash script to call Saxon.
 
 Such a shell is included as `java-saxon.sh`. Copy it with a new name and/or edit to point to your copy of Saxon (the jar file in the $SAXON_HOME directory).
 
@@ -45,20 +45,20 @@ This should work (from a bash shell prompt in this directory):
 ./java-saxon.sh hello-world.xml hello-world.xsl
 ```
 
-A successful run will write HTML results to STDOUT. Try with other XML and XSLT files as well. If you wish to capture the results to a file, use the `>` output redirect, e.g.
+A successful run will write HTML results to STDOUT, showing it in the console. Try with other XML and XSLT files as well. If you wish to capture the results to a file, use the `>` output redirect, e.g.
 
 ```
 ./java-saxon.sh hello-world.xml hello-world.xsl > hello.html
 ```
 
 
-If it does not run, the problem is one of: Java setup; Saxon setup; command line syntax.
+If it does not run, the problem is one of: Java setup; Saxon setup; command line syntax as scripted.
 
 ### Test diagnostic 'reflection' XSLT
 
 In the `src/xslt` subdirectory is an XSLT that will produce an HTML file for any (well-formed) XML input, describing that XML.
 
-Try it on `hello-world.xsl` like this:
+Try it on `hello-world.xml` like this:
 
 ```
 $ ./java-saxon.sh hello-world.xml src/xslt/reflect-xml.xsl
