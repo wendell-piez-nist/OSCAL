@@ -7,7 +7,7 @@ This is useful if you wish to check whether XSLTs run correctly outside SaxonJS 
 ### Check Java
 
 ```
-> java -version
+$ java -version
 ```
 
 This should give you version information for a reasonably current version of Java. If it does not you need to install it.
@@ -15,7 +15,7 @@ This should give you version information for a reasonably current version of Jav
 ### Check $SAXON_HOME and confirm Saxon runtime
 
 ```
-> ls $SAXON_HOME
+$ ls $SAXON_HOME
 ```
 
 I see `Saxon-HE-9.9.1-3.jar`. Similarly, you should see a directory listing including a copy of a SAXON jar file.
@@ -28,7 +28,7 @@ If no Saxon HE `jar` file is in place, download Saxon and set up $SAXON_HOME as 
 From the command line, this instruction (as adjusted to point to your `jar` file) will confirm that Saxon can be run:
 
 ```
-java -jar $SAXON_HOME/Saxon-HE-9.9.1-3.jar net.sf.saxon.Transform -versionmsg
+$ java -jar $SAXON_HOME/Saxon-HE-9.9.1-3.jar net.sf.saxon.Transform -versionmsg
 ```
 
 ### Make yourself a shell to run Saxon in Java
@@ -42,13 +42,13 @@ Such a shell is included as `java-saxon.sh`. Copy it with a new name and/or edit
 This should work (from a bash shell prompt in this directory):
 
 ```
-./java-saxon.sh hello-world.xml hello-world.xsl
+$ ./java-saxon.sh hello-world.xml hello-world.xsl
 ```
 
 A successful run will write HTML results to STDOUT, showing it in the console. Try with other XML and XSLT files as well. If you wish to capture the results to a file, use the `>` output redirect, e.g.
 
 ```
-./java-saxon.sh hello-world.xml hello-world.xsl > hello.html
+$ ./java-saxon.sh hello-world.xml hello-world.xsl > hello.html
 ```
 
 
