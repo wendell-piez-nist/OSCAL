@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<METASCHEMA xmlns="http://csrc.nist.gov/ns/oscal/metaschema/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://csrc.nist.gov/ns/oscal/metaschema/1.0 ../../../../metaschema/toolchains/oscal-m2/lib/metaschema.xsd" root="MEMO">
+    <schema-name>Test Metaschema</schema-name>
+    <schema-version>0.1</schema-version>
+    <short-name>test</short-name>
+    <namespace>http://csrc.nist.gov/ns/oscal/metaschema/test</namespace>
+    <remarks>
+        <p>A mini metaschema made for testing production of Metaschema process results</p>
+    </remarks>
+    <define-assembly name="MEMO">
+        <formal-name>Memorandum</formal-name>
+        <description>Something to be noted and remembered.</description>
+        <model>
+            <field ref="from"/>
+            <field ref="to"/>
+            <field ref="re"/>
+            <field ref="BODY" in-xml="UNWRAPPED"/>
+        </model>
+    </define-assembly>
+    <define-field name="from" as-type="markup-line">
+        <formal-name>FROM field</formal-name>
+        <description>Names the sender of the memo</description>
+    </define-field>
+    <define-field name="to" as-type="markup-line">
+        <formal-name>TO field</formal-name>
+        <description>Names the recipient of the memo</description>
+    </define-field>
+    <define-field name="re" as-type="markup-line">
+        <formal-name>RE field</formal-name>
+        <description>The subject or topic of the memo</description>
+    </define-field>
+    <define-field name="BODY" as-type="markup-multiline">
+        <formal-name>BODY</formal-name>
+        <description>The body of the memo (in paragraphs)</description>
+    </define-field>
+</METASCHEMA>
