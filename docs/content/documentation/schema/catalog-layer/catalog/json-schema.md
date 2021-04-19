@@ -8,7 +8,7 @@ weight: 20
 sidenav:
   title: JSON Format Reference
   toc:
-    headingselectors: "h2.toc1, h3.toc2"
+    headingselectors: "h1.toc1, h2.toc2, h3.toc3, h4.toc4, h5.toc5, h6.toc6"
 aliases:
   - /documentation/schema/catalog/json-schema/
 ---
